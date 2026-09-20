@@ -14,7 +14,7 @@ const pathFor = (lang: Lang, slug = "") => `${lang === "en" ? "/en" : ""}${slug 
 export function Header({ lang = "cs", slug = "", switchSlug, variant }: { lang?: Lang; slug?: string; switchSlug?: string; variant?: "v2" }) {
   const switchHref = pathFor(lang === "cs" ? "en" : "cs", switchSlug ?? slug);
   const homeHref = variant === "v2" ? "/v2" : pathFor(lang);
-  const bookingHref = variant === "v2" ? "https://n571820.alteg.io/" : pathFor(lang, "booking");
+  const bookingHref = "https://n571820.alteg.io/";
   const links = variant === "v2" ? [["PIERCING", "/v2#piercing-index"], ["STUDIO", "/v2#safety"], ["PRÁCE", "/v2#portfolio"], ["PÉČE", "/v2#healing"], ["ČLÁNKY", "/journal"], ["KONTAKT", "/v2#contact"]] : nav[lang].map(([label, page]) => [label, pathFor(lang, page)]);
   return (
     <header className="site-header">
