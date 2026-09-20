@@ -23,7 +23,7 @@ export default function Home() {
     <main>
       <Header lang="cs" />
       <section className="hero">
-        <img src="/assets/hero.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
+        <img src="/assets/hero-main.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
         <div className="hero-shade" />
         <div className="hero-topline"><span>[ PIERCINGOVÉ STUDIO / PRAHA ]</span><span>50°03&apos;58.6&quot;N / 14°27&apos;05.9&quot;E</span></div>
         <div className="hero-copy">

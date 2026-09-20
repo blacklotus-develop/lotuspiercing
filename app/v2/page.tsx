@@ -11,7 +11,7 @@ const safety = [['PREPARATION','Příprava','Oddělená pracovní plocha. Připr
 export default function HomeV2(){return <main className="v2">
  <Header lang="cs" variant="v2" />
  <section className="hero v2-hero">
-  <img src="/assets/hero.webp" alt="Detail ucha s titanovým šperkem" className="hero-image" />
+  <img src="/assets/hero-main.webp" alt="Detail ucha s titanovým šperkem" className="hero-image" />
   <div className="hero-shade"/><div className="hero-topline"><span>PIERCING STUDIO / PRAHA</span><span>PRAGUE / CZ</span></div>
   <div className="hero-copy"><p className="eyebrow light">BLACK LOTUS® / OD ROKU 2015</p><h1>Piercing<br/>promyšlený<br/>do detailu.</h1><div className="hero-action-row"><p>Individuální výběr umístění a šperku. Profesionální aplikace. Péče během celého hojení.</p><CTA href={booking} light>OBJEDNAT TERMÍN</CTA></div><a className="text-link" href="#piercing-index">PROHLÉDNOUT PIERCINGY <ArrowIcon/></a></div>
  </section>
