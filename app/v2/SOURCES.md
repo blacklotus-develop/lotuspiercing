@@ -1,0 +1,11 @@
+# V2 content provenance — 2026-09-18
+- Main / and /en homepages are unchanged; V2 lives at /v2. Header variant is opt-in.
+- Supplied section copy, named piercers, certificate conditions and workflow come from the user's brief. Maky's specialisation and exact years are not independently documented; do not invent them.
+- Prices: https://lotuspiercing.cz/cenik/ (verified same date). Lip piercing base is category-level, final amount confirmed at consultation.
+- Alex background and three short verbatim review excerpts: https://lotuspiercing.cz/ . Review authors Leila Ahmadzai, Barbara Volfová, Vika Nov. Only 14 quoted words in total. Reviews link to their source, no fabricated ratings or dates.
+- Booking: https://n571820.alteg.io/ linked from the existing studio site.
+- Gift checkout: https://lotusjewelry.cz/kategorie-produktu/darkove-poukazy/
+- Aftercare reference: https://safepiercing.org/aftercare/ . No fixed healing guarantees or inferred age policies.
+- Existing portfolio assets are generated illustrations, not verified studio results: labelled accordingly; no fake healed or body examples. Filter empty states link to the actual studio Instagram. Client photos and piercer-specific portfolio attribution still needed.
+- No verified opening-hours schedule: link to current booking availability.
+- V2 is noindex while it is an alternative. The header EN link intentionally opens existing /en; this requested V2 is Czech only.
