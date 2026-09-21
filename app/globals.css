@@ -190,3 +190,24 @@ h1,h2,h3{overflow-wrap:break-word}
   .team-card-bio p{font-size:15px;line-height:1.55}
   .team-card .portrait-code{left:18px;top:18px;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.55)}
 }
+
+
+/* Piercer card alignment and mobile disclosure */
+.team-card:first-child .team-photo img{object-position:center top}
+.team-card-summary p{min-height:3.1em}
+.team-card-bio{display:block}
+.team-card-bio>summary{display:none}
+.team-card-bio>.team-bio-content,.team-card-bio:not([open])>.team-bio-content{display:flex;height:100%;flex-direction:column;justify-content:center}
+@media(max-width:600px),(hover:none){
+  .team-card .team-photo{aspect-ratio:4/5}
+  .team-card:first-child .team-photo img{object-position:center top}
+  .team-card-summary p{min-height:0}
+  .team-card-bio{padding:0}
+  .team-card-bio>summary{display:flex;align-items:center;justify-content:space-between;padding:2px 20px 22px;list-style:none;color:#fff;font-size:10px;letter-spacing:.12em;cursor:pointer}
+  .team-card-bio>summary::-webkit-details-marker{display:none}
+  .team-card-bio>summary b{font-size:22px;font-weight:300;line-height:1;transition:transform .25s ease}
+  .team-card-bio[open]>summary b{transform:rotate(45deg)}
+  .team-card-bio>.team-bio-content{height:auto;padding:0 20px 24px}
+  .team-card-bio:not([open])>.team-bio-content{display:none}
+  .team-card-bio[open]>.team-bio-content{display:flex}
+}
