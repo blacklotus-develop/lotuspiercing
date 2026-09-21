@@ -43,9 +43,25 @@ const articles = {
     sections: [["Common reactions", "During the first days the area may be tender, warmer and slightly swollen. These signs should gradually settle."],["When to contact us", "Get in touch if pain is increasing, swelling is severe, redness is spreading or the jewelry begins to embed."],["Do not remove jewelry without advice", "Early removal may close the surface and complicate treatment. Contact the studio first."]],
   },
   "piercing-for-minors": {
-    cs: "piercing-u-nezletilych", tag: "MINORS / 05 MIN", title: "Piercing for minors",
-    lead: "Conditions depend on age, piercing type and the presence of a legal guardian.",
-    sections: [["What to bring", "Valid identification for both the minor and legal guardian. The guardian must remain present throughout the visit."],["Age limits", "Not every piercing is available at every age. Confirm the exact conditions before booking."],["Remote consent is not enough", "We do not accept written consent without the legal guardian being physically present."]],
+    cs: "piercing-u-nezletilych", tag: "MINORS / 08 MIN", title: "Piercing for children and teenagers: when is the right time?",
+    lead: "Age alone is not enough. A young person should genuinely want the piercing, understand the healing process and be able to care for it consistently.",
+    seo: {
+      description: "Piercing for children and teenagers: the child’s consent, guardian attendance, safe needle procedure, suitable initial jewelry and aftercare.",
+      keywords: ["piercing for minors", "ear piercing for children", "teen piercing Prague", "what age can you get a piercing", "needle ear piercing"],
+    },
+    sections: [
+      ["Age is not the only criterion", "There is no single age that is right for every piercing. Placement, anatomy, maturity and the ability to follow aftercare throughout healing all matter. Age requirements therefore differ by piercing type and should always be confirmed before booking."],
+      ["The young person must want the piercing", "A parent’s permission does not replace the child’s consent. The young client needs to understand what will happen, cooperate voluntarily and be free to say no at any point. If the child is hesitant, frightened or only the parent wants the piercing, we postpone the procedure."],
+      ["Are they ready for healing?", "The procedure takes a moment, but healing takes weeks or months. The child should be able to leave the jewelry alone, avoid twisting it, protect it while dressing and playing sport, and tell an adult if pain, swelling or another problem develops."],
+      ["A sterile needle, not a piercing gun", "At Black Lotus we use a sterile single-use needle. Reusable piercing guns cannot always be sterilized safely, while a blunt stud is forced through tissue under pressure. Butterfly backs can also leave too little room for swelling and are difficult to clean."],
+      ["Initial jewelry is not an ordinary earring", "For an initial piercing we choose jewelry designed for healing, usually ASTM F-136 implant-grade titanium. It needs a smooth finish, safe construction and dimensions suited to the anatomy and initial swelling. Heavy charms, unknown alloys and fashion jewelry should wait until the piercing is fully healed."],
+      ["Ears change as children grow", "The proportions of the lobe and the position of initially symmetrical piercings can change with growth. Even precise placement cannot guarantee that the holes will look exactly the same in adulthood. We plan placement for the current anatomy and leave adequate distance from the edge."],
+      ["Choose the right time", "Before booking, consider swimming, contact sports, helmets, headphones, school PE and holidays by the water. During healing, pressure and snagging need to be minimized, and a fresh piercing should not be submerged in pools, lakes or hot tubs."],
+      ["What the legal guardian must bring", "A minor attends in person with a legal guardian. Bring valid identification for both the young client and guardian; the guardian remains present during the visit. Written permission sent remotely does not replace personal attendance."],
+      ["Not every piercing is offered at every age", "Lobes, cartilage, noses and navels place different demands on anatomy, lifestyle and aftercare. The minimum age therefore depends on the piercing and studio policy. If the requested placement is unsuitable, we explain why and suggest a safer alternative or a later appointment."],
+      ["Aftercare is shared work", "The parent helps create the conditions for calm healing but should not remove or rotate the jewelry unnecessarily. Hands must be washed before contact, the area should be rinsed as instructed, and the studio should be contacted if pain increases, swelling becomes severe, the jewelry embeds or anything feels uncertain."],
+      ["So, what age do you pierce from?", "It depends on the piercing, anatomy and readiness of the young client. Before booking, send us their age and requested placement. We will confirm whether we offer the procedure and which documents to bring."],
+    ],
   },
   "anatomy-and-piercing": {
     cs: "proc-neni-kazdy-piercing-pro-kazdeho", tag: "ANATOMY / 07 MIN", title: "Why not every piercing suits everyone",
