@@ -23,12 +23,12 @@ export default function Home() {
     <main>
       <Header lang="cs" />
       <section className="hero">
-        <img src="/assets/hero.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
+        <img src="/assets/hero-main.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
         <div className="hero-shade" />
         <div className="hero-topline"><span>[ PIERCINGOVÉ STUDIO / PRAHA ]</span><span>50°03&apos;58.6&quot;N / 14°27&apos;05.9&quot;E</span></div>
         <div className="hero-copy">
           <p className="eyebrow light">BLACK LOTUS® / OD ROKU 2015</p>
-          <h1>PIERCING<br />PRO LIDSKÉ<br />TĚLO.</h1>
+          <h1>PIERCING<br />S DŮRAZEM<br />NA DETAIL</h1>
           <div className="hero-action-row">
             <p>Precizní aplikace. Implantátový titan.<br />Klidný a profesionální přístup.</p>
             <Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <span><ArrowIcon /></span></Link>
