@@ -1,4 +1,5 @@
 import ArrowIcon from "../../arrow-icon";
+import JournalIndex from "../../journal-index";
 import { notFound } from "next/navigation";
 import Link from "../../native-link";
 import { PageShell, SectionIndex } from "../../site";
@@ -44,8 +45,7 @@ function Care() {
 }
 
 function Journal() {
-  const articles = [["changing-initial-jewelry","01","CARE","When is the right time to change the initial jewelry?","It is the condition of the tissue, not only the number of weeks, that matters.","06"],["titanium-vs-surgical-steel","02","MATERIALS","Titanium vs. surgical steel: which material should you choose for a piercing?","Titanium, steel, gold and PTFE. What belongs in a fresh piercing and how to recognize quality jewelry.","09"],["first-piercing-step-by-step","03","GUIDE","Your first piercing, step by step","Consultation, placement, application and the first days of healing.","08"],["normal-during-healing","04","HEALING","What is normal during healing?","Swelling, crusting and tenderness — when to wait and when to contact us.","06"],["piercing-for-minors","05","MINORS","Piercing for children and teenagers: when is the right time?","Consent, readiness for healing, safe application and conditions for minors.","08"],["anatomy-and-piercing","06","ANATOMY","Why not every piercing suits everyone","How anatomy affects placement, jewelry choice and long-term results.","07"]];
-  return <PageShell lang="en" slug="journal" eyebrow="05 / JOURNAL" title={<>FIELD<br />NOTES.</>} intro="Practical, myth-free information about materials, healing, anatomy and safe decisions."><section className="article-index frame">{articles.map(([slug,n,cat,title,text,time])=><Link href={`/en/journal/${slug}`} key={slug}><span>{n} / {cat}</span><h2>{title}</h2><p>{text}</p><b>READ / {time} MIN <ArrowIcon /></b></Link>)}</section></PageShell>;
+  return <PageShell lang="en" slug="journal" eyebrow="05 / JOURNAL" title={<><span>FIELD</span><br />NOTES.</>} intro="Practical, myth-free information about materials, healing, anatomy and safe decisions."><JournalIndex lang="en" /></PageShell>;
 }
 
 function Contact() {
