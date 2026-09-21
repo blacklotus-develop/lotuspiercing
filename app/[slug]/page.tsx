@@ -73,7 +73,7 @@ function GiftCard() {
   return <PageShell lang="cs" slug="gift-card" eyebrow="08 / DÁRKOVÝ POUKAZ" title={<>DÁREK,<br />KTERÝ ZŮSTANE.</>} intro="Dárkový poukaz Black Lotus můžete objednat v digitální nebo tištěné podobě. Hodnotu si zvolíte podle sebe.">
     <section className="action-page frame">
       <div className="action-intro"><SectionIndex index="01" label="HODNOTA POUKAZU" /><h2>Vyberte<br />hodnotu.</h2></div>
-      <div className="voucher-grid">{values.map(value => <a key={value} href={`mailto:piercingprague@gmail.com?subject=Dárkový poukaz ${encodeURIComponent(value)}&body=Dobrý den,%0A%0AMám zájem o dárkový poukaz v hodnotě ${encodeURIComponent(value)}.%0AForma: digitální / tištěná%0AJméno obdarovaného:%0A%0ADěkuji.`}><span>BLACK LOTUS / GIFT</span><strong>{value}</strong><b>OBJEDNAT <ArrowIcon /></b></a>)}</div>
+      <div className="voucher-grid">{values.map(value => <a key={value} href="https://lotusjewelry.cz/kategorie-produktu/darkove-poukazy/"><span>BLACK LOTUS / GIFT</span><strong>{value}</strong><b>OBJEDNAT <ArrowIcon /></b></a>)}</div>
       <div className="booking-info"><div><span>DIGITÁLNÍ</span><p>Praktická varianta, kterou vám po potvrzení zašleme e-mailem.</p></div><div><span>TIŠTĚNÝ</span><p>Fyzický poukaz připravený k osobnímu vyzvednutí ve studiu.</p></div></div>
     </section>
   </PageShell>;
