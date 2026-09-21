@@ -23,12 +23,12 @@ export default function Home() {
     <main>
       <Header lang="cs" />
       <section className="hero">
-        <img src="/assets/hero-main.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
+        <img src="/assets/hero.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
         <div className="hero-shade" />
         <div className="hero-topline"><span>[ PIERCINGOVÉ STUDIO / PRAHA ]</span><span>50°03&apos;58.6&quot;N / 14°27&apos;05.9&quot;E</span></div>
         <div className="hero-copy">
           <p className="eyebrow light">BLACK LOTUS® / OD ROKU 2015</p>
-          <h1>PIERCING<br />S DŮRAZEM<br />NA DETAIL</h1>
+          <h1>PIERCING<br />PRO LIDSKÉ<br />TĚLO.</h1>
           <div className="hero-action-row">
             <p>Precizní aplikace. Implantátový titan.<br />Klidný a profesionální přístup.</p>
             <Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <span><ArrowIcon /></span></Link>
@@ -155,7 +155,7 @@ export default function Home() {
         <div className="section-title-row"><h2>Poznámky<br />z praxe.</h2><Link href="/journal" className="text-link">VŠECHNY ČLÁNKY <span><ArrowIcon /></span></Link></div>
         <div className="article-grid">
           <Link href="/journal/vymena-prvniho-sperku"><span>PÉČE / 06 MIN</span><h3>Kdy je správný čas vyměnit první šperk?</h3><p>Proč nerozhoduje jen počet týdnů a jak poznat klidné hojení.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/titan-vs-chirurgicka-ocel"><span>MATERIÁL / 04 MIN</span><h3>Titan ASTM F-136 vs. chirurgická ocel</h3><p>Rozdíl, který není vidět — ale tělo ho může poznat.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/titan-vs-chirurgicka-ocel"><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
           <Link href="/journal/prvni-piercing-krok-za-krokem"><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
         </div>
       </section>
