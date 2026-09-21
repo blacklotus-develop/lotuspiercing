@@ -87,11 +87,16 @@ export default async function Article({ params }: { params: Promise<{ article: s
   const { article } = await params;
   const data = articles[article as keyof typeof articles];
   if (!data) notFound();
+  const relatedArticles = Object.entries(articles).filter(([slug]) => slug !== article).slice(0, 3);
   return <main><Header lang="cs" slug={`journal/${article}`} switchSlug={`journal/${data.en}`} />
     <article className="article-page frame">
       <div className="article-hero"><p>{data.tag}</p><h1>{data.title}</h1><strong>{data.lead}</strong></div>
       <div className="article-body">{data.sections.map(([title,text],i)=><section key={title}><span>{String(i+1).padStart(2,"0")}</span><div><h2>{title}</h2><p>{text}</p></div></section>)}</div>
       <div className="article-cta"><p>Máte otázku ke svému piercingu?</p><Link href="https://n571820.alteg.io/" className="button button-light">REZERVOVAT KONZULTACI <ArrowIcon /></Link></div>
       <Link href="/journal" className="text-link"><ArrowIcon back /> ZPĚT NA VŠECHNY ČLÁNKY</Link>
+      <section className="journal section-space" aria-labelledby="related-articles">
+        <div className="section-title-row"><h2 id="related-articles">Čtěte také</h2><Link href="/journal" className="text-link">VŠECHNY ČLÁNKY <span><ArrowIcon /></span></Link></div>
+        <div className="article-grid">{relatedArticles.map(([slug, related]) => <Link href={`/journal/${slug}`} key={slug}><span>{related.tag}</span><h3>{related.title}</h3><p>{related.lead}</p><b><ArrowIcon /></b></Link>)}</div>
+      </section>
     </article><Footer lang="cs" /></main>;
 }
