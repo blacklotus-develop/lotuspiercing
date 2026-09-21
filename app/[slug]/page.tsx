@@ -1,4 +1,5 @@
 import ArrowIcon from "../arrow-icon";
+import JournalIndex from "../journal-index";
 import { notFound } from "next/navigation";
 import Link from "../native-link";
 import { PageShell, SectionIndex } from "../site";
@@ -44,8 +45,7 @@ function Care() {
 }
 
 function Journal() {
-  const articles = [["vymena-prvniho-sperku","01","PÉČE","Kdy je správný čas vyměnit první šperk?","Ne počet týdnů, ale stav tkáně. Jak poznat, že je čas na kontrolu.","06"],["titan-vs-chirurgicka-ocel","02","MATERIÁLY","Titan vs. chirurgická ocel: jaký materiál zvolit pro piercing?","Titan, ocel, zlato i PTFE. Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.","09"],["prvni-piercing-krok-za-krokem","03","PRŮVODCE","První piercing krok za krokem","Konzultace, umístění, aplikace a první dny hojení bez nejasností.","08"],["co-je-normalni-pri-hojeni","04","HOJENÍ","Co je normální během hojení?","Otok, krusty a citlivost — kdy vyčkat a kdy se ozvat.","06"],["piercing-u-nezletilych","05","NEZLETILÍ","Piercing u dětí a dospívajících: kdy je správný čas?","Souhlas dítěte, připravenost na hojení, bezpečná aplikace a podmínky pro nezletilé.","08"],["proc-neni-kazdy-piercing-pro-kazdeho","06","ANATOMIE","Proč není každý piercing pro každého","Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.","07"]];
-  return <PageShell lang="cs" slug="journal" eyebrow="05 / ČLÁNKY" title={<>POZNÁMKY<br />Z PRAXE.</>} intro="Praktické informace bez mýtů — o materiálech, hojení, anatomii a bezpečném rozhodování."><section className="article-index frame">{articles.map(([slug,n,cat,title,text,time])=><Link href={`/journal/${slug}`} key={slug}><span>{n} / {cat}</span><h2>{title}</h2><p>{text}</p><b>ČÍST / {time} MIN <ArrowIcon /></b></Link>)}</section></PageShell>;
+  return <PageShell lang="cs" slug="journal" eyebrow="05 / ČLÁNKY" title={<><span>POZNÁMKY</span><br />Z PRAXE.</>} intro="Praktické informace bez mýtů — o materiálech, hojení, anatomii a bezpečném rozhodování."><JournalIndex lang="cs" /></PageShell>;
 }
 
 function Contact() {
