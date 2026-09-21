@@ -22,7 +22,7 @@ export default function EnglishHome() {
   return <main>
     <Header lang="en" />
     <section className="hero">
-      <img src="/assets/hero.webp" alt="Close-up of an ear with a titanium piercing" className="hero-image" />
+      <img src="/assets/hero-main.webp" alt="Close-up of an ear with a titanium piercing" className="hero-image" />
       <div className="hero-shade" />
       <div className="hero-topline"><span>[ PIERCING STUDIO / PRAGUE ]</span><span>50°03&apos;58.6&quot;N / 14°27&apos;05.9&quot;E</span></div>
       <div className="hero-copy"><p className="eyebrow light">BLACK LOTUS® / SINCE 2015</p><h1>PIERCING<br />FOR THE<br />HUMAN BODY.</h1><div className="hero-action-row"><p>Precision application. Implant-grade titanium.<br />A calm, professional approach.</p><Link href="/en/booking" className="button button-light">BOOK APPOINTMENT <span><ArrowIcon /></span></Link></div></div>
