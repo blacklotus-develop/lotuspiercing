@@ -117,8 +117,18 @@ export default function Home() {
         <SectionIndex index="06" label="LIDÉ" />
         <div className="section-title-row"><h2>Lidé za<br />Black Lotus.</h2><p>Dva přístupy, jeden standard: klid, preciznost a respekt k vašemu tělu.</p></div>
         <div className="team-grid">
-          <article><span className="portrait-code">01 / MISTR</span><div className="portrait monogram">A</div><div><h3>Alex</h3><p>Zakladatel studia · piercer od roku 2015</p></div></article>
-          <article><span className="portrait-code">02 / MISTR</span><div className="portrait monogram">P</div><div><h3>Paxy</h3><p>Piercer · konzultace a individuální styling</p></div></article>
+          <article className="team-card" tabIndex={0}>
+            <span className="portrait-code">01 / PIERCER</span>
+            <div className="portrait team-photo"><img src="/assets/alex.webp" alt="Alex — zakladatel Black Lotus a profesionální piercer" loading="lazy" /></div>
+            <div className="team-card-summary"><h3>alex</h3><p>Zakladatel studia · profesionální piercer</p><span className="team-more">PŘEJEĎTE PRO DETAIL</span></div>
+            <div className="team-card-bio"><strong>alex</strong><p>Více než 12 let zkušeností, tisíce provedených piercingů a důraz na každý detail. Alex je zakladatelem studia a profesionálním piercerem, který spojuje technickou preciznost s citem pro estetiku.</p><p>Každý piercing přizpůsobuje individuální anatomii klienta, pracuje výhradně s kvalitními šperky a dodržuje nejvyšší hygienické standardy. Díky zkušenostem i osobnímu přístupu se můžete spolehnout na bezpečný průběh i výsledek, který obstojí v čase.</p></div>
+          </article>
+          <article className="team-card" tabIndex={0}>
+            <span className="portrait-code">02 / PIERCERKA</span>
+            <div className="portrait team-photo"><img src="/assets/maky.webp" alt="Maky — profesionální piercerka Black Lotus" loading="lazy" /></div>
+            <div className="team-card-summary"><h3>maky</h3><p>Profesionální piercerka · individuální styling</p><span className="team-more">PŘEJEĎTE PRO DETAIL</span></div>
+            <div className="team-card-bio"><strong>maky</strong><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></div>
+          </article>
         </div>
         <Link href="/studio#team" className="text-link">SEZNAMTE SE S TÝMEM <span><ArrowIcon /></span></Link>
       </section>
