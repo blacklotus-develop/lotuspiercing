@@ -143,3 +143,26 @@ h1,h2,h3{overflow-wrap:break-word}
   }
   .gift-card h3{max-width:none}
 }
+
+
+/* Searchable journal index */
+.journal-browser{padding:48px 0 var(--space-section)}
+.journal-tools{display:grid;grid-template-columns:minmax(320px,1fr) 2fr auto;gap:24px;align-items:end;padding:28px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.journal-search{display:flex;flex-direction:column;gap:12px}
+.journal-search>span,.journal-result-meta>span{font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.journal-search input{width:100%;min-height:52px;padding:0 0 10px;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:18px;outline:none;-webkit-appearance:none}
+.journal-search input::placeholder{color:#8b9290}
+.journal-search input:focus{border-bottom-width:2px}
+.journal-search input::-webkit-search-cancel-button{cursor:pointer}
+.journal-filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.journal-filters::-webkit-scrollbar{display:none}
+.journal-filters button{flex:0 0 auto;min-height:40px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-size:11px;letter-spacing:.06em;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.journal-filters button:hover,.journal-filters button.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.journal-result-meta{display:flex;flex-direction:column;align-items:flex-end;gap:10px;white-space:nowrap}
+.journal-result-meta b{font-size:18px;font-weight:400;letter-spacing:.06em}
+.journal-results{padding-top:0}
+.journal-empty{min-height:320px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;border-bottom:1px solid var(--line)}
+.journal-empty p{font-size:clamp(26px,3vw,42px);letter-spacing:-.035em}
+.journal-empty button{display:flex;align-items:center;gap:18px;padding:12px 0;border:0;border-bottom:1px solid currentColor;background:transparent;color:var(--ink);font:inherit;font-size:11px;letter-spacing:.08em;cursor:pointer}
+@media(max-width:1100px){.journal-tools{grid-template-columns:1fr auto}.journal-filters{grid-column:1/-1;grid-row:2}.journal-search{min-width:0}}
+@media(max-width:600px){.journal-browser{padding-top:32px}.journal-tools{grid-template-columns:1fr;gap:20px;padding-block:22px}.journal-result-meta{position:absolute;right:14px;align-items:flex-end}.journal-filters{grid-column:1;grid-row:auto;margin-inline:-14px;padding-inline:14px}.journal-search input{padding-right:72px}.journal-empty{min-height:240px}}
