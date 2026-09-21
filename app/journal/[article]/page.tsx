@@ -43,9 +43,25 @@ const articles = {
     sections: [["Běžné reakce", "V prvních dnech může být místo citlivé, teplejší a lehce oteklé. Příznaky by se měly postupně uklidňovat."],["Kdy nás kontaktovat", "Ozvěte se při rostoucí bolesti, výrazném otoku, šířícím se zarudnutí nebo pokud se šperk začíná zanořovat."],["Nevyndávejte šperk bez konzultace", "Předčasné vyjmutí může uzavřít povrch kanálku a zkomplikovat řešení potíží. Nejdříve kontaktujte studio."]],
   },
   "piercing-u-nezletilych": {
-    en: "piercing-for-minors", tag: "NEZLETILÍ / 05 MIN", title: "Piercing u nezletilých",
-    lead: "Podmínky se řídí věkem, typem piercingu a přítomností zákonného zástupce.",
-    sections: [["Co přinést", "Platný doklad nezletilého i zákonného zástupce. Zástupce musí být přítomen po celou dobu návštěvy."],["Věkové hranice", "Ne každý typ piercingu provádíme v každém věku. Konkrétní podmínky si ověřte před rezervací."],["Souhlas nestačí na dálku", "Písemný souhlas bez osobní přítomnosti zákonného zástupce nepřijímáme."]],
+    en: "piercing-for-minors", tag: "NEZLETILÍ / 08 MIN", title: "Piercing u dětí a dospívajících: kdy je správný čas?",
+    lead: "Samotný věk nestačí. Důležité je, zda dítě piercing skutečně chce, rozumí hojení a dokáže se o čerstvý vpich dlouhodobě starat.",
+    seo: {
+      description: "Piercing u dětí a dospívajících: souhlas dítěte, přítomnost zákonného zástupce, bezpečná aplikace jehlou, vhodný šperk a následná péče.",
+      keywords: ["piercing u dětí", "propíchnutí uší dětem", "piercing nezletilí Praha", "od kolika let piercing", "piercing jehlou"],
+    },
+    sections: [
+      ["Věk není jediné kritérium", "Neexistuje jeden univerzální věk vhodný pro každý piercing. Rozhoduje konkrétní umístění, anatomie, vyspělost dítěte a schopnost dodržovat péči během celého hojení. Proto se věkové podmínky liší podle typu piercingu a vždy je vhodné ověřit je před rezervací."],
+      ["Piercing musí chtít především dítě", "Souhlas rodiče nenahrazuje souhlas dítěte. Mladý klient musí vědět, co se bude dít, dobrovolně spolupracovat a mít možnost kdykoli říct ne. Pokud dítě váhá, bojí se nebo piercing chce pouze rodič, zákrok odložíme."],
+      ["Je dítě připravené na hojení?", "Aplikace trvá chvíli, hojení však týdny až měsíce. Dítě by mělo zvládnout nesahat na šperk, neotáčet s ním, chránit jej při oblékání a sportu a říct dospělému, když se objeví bolest, otok nebo jiný problém."],
+      ["Sterilní jehla místo nastřelovací pistole", "V Black Lotus pracujeme sterilní jednorázovou jehlou. Opakovaně používané nastřelovací pistole nelze vždy bezpečně sterilizovat a tupý hrot náušnice prochází tkání tlakem. Motýlková zapínání navíc často neposkytují dostatek prostoru pro otok a obtížně se čistí."],
+      ["První šperk není běžná náušnice", "Pro první aplikaci volíme šperk určený pro hojení, zpravidla z implantátového titanu ASTM F-136. Musí mít hladký povrch, bezpečnou konstrukci a délku odpovídající anatomii i počátečnímu otoku. Těžké přívěsky, neznámé slitiny a běžná bižuterie patří až do plně zahojeného piercingu."],
+      ["Ucho se během růstu mění", "S růstem se mohou měnit proporce lalůčku i poloha původně symetrických vpichů. Ani přesná aplikace proto nemůže zaručit, že budou dírky v dospělosti vypadat úplně stejně. Umístění vždy plánujeme podle aktuální anatomie a s dostatečným odstupem od okraje."],
+      ["Vyberte vhodné období", "Před termínem zvažte plavání, kontaktní sporty, helmu, sluchátka, školní tělocvik i dovolenou u vody. Během hojení je potřeba omezit tlak, zachytávání a ponořování čerstvého piercingu do bazénů, jezer nebo vířivek."],
+      ["Co musí přinést zákonný zástupce", "Nezletilý klient přichází osobně se zákonným zástupcem. Přineste platný doklad dítěte i zástupce; zástupce zůstává přítomen během návštěvy. Písemný souhlas zaslaný na dálku nenahrazuje osobní přítomnost."],
+      ["Ne každý piercing provádíme v každém věku", "Lalůček, chrupavka, nos nebo pupík mají odlišné nároky na anatomii, životní styl i péči. Konkrétní věkovou hranici proto posuzujeme podle typu piercingu a pravidel studia. Pokud zvolené umístění není vhodné, vysvětlíme proč a navrhneme bezpečnější alternativu nebo pozdější termín."],
+      ["Péče je společná práce", "Rodič pomáhá vytvořit podmínky pro klidné hojení, ale šperk zbytečně nevyndává ani s ním neotáčí. Před dotykem je nutné umýt ruce, místo oplachovat podle instrukcí a při rostoucí bolesti, výrazném otoku, zanořování šperku nebo nejistotě kontaktovat studio."],
+      ["Od kolika let tedy piercing děláte?", "Záleží na typu piercingu, anatomii a připravenosti mladého klienta. Před rezervací nám napište věk a požadované umístění. Potvrdíme, zda zákrok provádíme a co je potřeba přinést."],
+    ],
   },
   "proc-neni-kazdy-piercing-pro-kazdeho": {
     en: "anatomy-and-piercing", tag: "ANATOMIE / 07 MIN", title: "Proč není každý piercing pro každého",
