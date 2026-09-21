@@ -5,8 +5,8 @@ import Link from "./native-link";
 export type Lang = "cs" | "en";
 
 const nav = {
-  cs: [["STUDIO", "studio"], ["PIERCING", "piercing"], ["PRÁCE", "work"], ["PÉČE", "care"], ["ČLÁNKY", "journal"], ["KONTAKT", "contact"]],
-  en: [["STUDIO", "studio"], ["PIERCING", "piercing"], ["WORK", "work"], ["CARE", "care"], ["JOURNAL", "journal"], ["CONTACT", "contact"]],
+  cs: [["STUDIO", "studio"], ["CENÍK", "cenik"], ["PRÁCE", "work"], ["PÉČE", "care"], ["ČLÁNKY", "journal"], ["KONTAKT", "contact"]],
+  en: [["STUDIO", "studio"], ["PRICES", "cenik"], ["WORK", "work"], ["CARE", "care"], ["JOURNAL", "journal"], ["CONTACT", "contact"]],
 };
 
 const pathFor = (lang: Lang, slug = "") => `${lang === "en" ? "/en" : ""}${slug ? `/${slug}` : "/"}`;

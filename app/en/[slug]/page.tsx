@@ -1,16 +1,45 @@
 import ArrowIcon from "../../arrow-icon";
 import JournalIndex from "../../journal-index";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "../../native-link";
 import { PageShell, SectionIndex } from "../../site";
 
 const prices = [
-  ["EAR", "Lobe", "from 1,200 CZK"], ["EAR", "Helix / Rook / Conch", "from 1,400 CZK"],
-  ["FACE", "Nostril / Smiley / Tongue / Eyebrow", "from 1,400 CZK"], ["FACE", "Bridge / Septum", "from 1,500 CZK"],
-  ["BODY", "Navel / Nipple 1×", "from 1,500 CZK"], ["BODY", "Nipples 2×", "from 3,000 CZK"],
-  ["INTIMATE", "Genital piercing", "from 2,500 CZK"], ["MICRODERMAL", "Application", "from 1,500 CZK"],
-  ["SURFACE", "Surface piercing", "from 2,500 CZK"], ["SERVICE", "Change / downsizing / cleaning", "300 CZK"],
-  ["SERVICE", "Anodising", "200 CZK"], ["CARE", "Aftercare spray", "250 CZK"],
+  ["EAR", "Lobe", "from 1,200 CZK", "Price for one lobe piercing."],
+  ["EAR", "Helix", "from 1,400 CZK"],
+  ["EAR", "Rook", "from 1,400 CZK"],
+  ["EAR", "Tragus", "from 1,400 CZK"],
+  ["EAR", "Conch", "from 1,400 CZK"],
+  ["EAR", "Flat", "from 1,400 CZK"],
+  ["EAR", "Daith", "from 1,500 CZK"],
+  ["EAR", "Forward Helix", "from 1,500 CZK"],
+  ["EAR", "Industrial", "from 2,500 CZK"],
+  ["FACE", "Lip", "from 1,400 CZK"],
+  ["FACE", "Nostril", "from 1,400 CZK"],
+  ["FACE", "Smiley", "from 1,400 CZK"],
+  ["FACE", "Tongue", "from 1,400 CZK"],
+  ["FACE", "Eyebrow", "from 1,400 CZK"],
+  ["FACE", "Bridge", "from 1,500 CZK"],
+  ["FACE", "Septum", "from 1,500 CZK"],
+  ["FACE", "Cheeks", "from 3,000 CZK"],
+  ["FACE", "High nostril ×2", "from 3,000 CZK"],
+  ["BODY", "Navel", "from 1,500 CZK"],
+  ["BODY", "Nipple ×1", "from 1,500 CZK"],
+  ["BODY", "Nipples ×2", "from 3,000 CZK"],
+  ["BODY", "Genital piercing", "from 2,500 CZK"],
+  ["MICRODERMAL", "Microdermal", "from 1,500 CZK"],
+  ["MICRODERMAL", "Microdermal removal", "700 CZK"],
+  ["SURFACE", "Surface piercing", "from 2,500 CZK"],
+  ["TUNNELS", "Tunnel insertion", "from 2,000 CZK"],
+  ["TUNNELS", "Stretching by 2 mm", "from 500 CZK"],
+  ["SERVICES", "Consultation", "200–300 CZK", "Studio clients 200 CZK · external clients 300 CZK."],
+  ["SERVICES", "Microdermal top change", "300 CZK", "Jewelry is not included in the price."],
+  ["SERVICES", "Jewelry change and downsizing", "300 CZK", "Jewelry is not included in the price."],
+  ["SERVICES", "Piercing cleaning", "300 CZK"],
+  ["SERVICES", "Anodising", "200 CZK", "Color change for one titanium piece."],
+  ["CARE", "Aftercare spray", "250 CZK"],
+  ["GIFT CARDS", "Gift cards", "from 1,000 CZK", "Available digitally or in print."],
 ];
 
 function Studio() {
@@ -23,13 +52,12 @@ function Studio() {
   </PageShell>;
 }
 
-function Piercing() {
-  return <PageShell lang="en" slug="piercing" eyebrow="02 / PIERCING" title={<>SERVICES<br />& PRICES.</>} intro="Prices include basic ASTM F-136 titanium jewelry unless stated otherwise. The final price depends on your chosen piece and anatomy.">
-    <section className="sub-section frame"><div className="price-head"><span>TYPE</span><span>PROCEDURE</span><span>PRICE / CZK</span></div><div className="price-list">{prices.map(([cat,name,price],i)=><div key={`${cat}-${name}`}><span>{String(i+1).padStart(2,"0")} / {cat}</span><strong>{name}</strong><b>{price}</b></div>)}</div><p className="price-note">Prices are indicative. We always confirm the jewelry and final price before application.</p></section>
-    <section className="booking-band frame"><p>[ CONSULTATION INCLUDED ]</p><h2>Not sure what fits<br />your anatomy?</h2><Link href="/en/booking" className="button button-light">BOOK A CONSULTATION <ArrowIcon /></Link></section>
+function Cenik() {
+  return <PageShell lang="en" slug="cenik" eyebrow="02 / PRICES" title={<>PIERCING<br />PRICE LIST.</>} intro="The final price always depends on the selected jewelry. Unless stated otherwise, prices include basic internally threaded ASTM F-136 implant-grade titanium jewelry.">
+    <section className="sub-section frame"><div className="price-head"><span>CATEGORY</span><span>SERVICE</span><span>PRICE / CZK</span></div><div className="price-list">{prices.map(([cat,name,price,note],i)=><div key={`${cat}-${name}`}><span>{String(i+1).padStart(2,"0")} / {cat}</span><strong>{name}{note && <small>{note}</small>}</strong><b>{price}</b></div>)}</div><p className="price-note">We always confirm the jewelry selection and final price before the procedure. Basic ASTM F-136 titanium jewelry is included with standard piercing services.</p></section>
+    <section className="booking-band frame"><p>[ CONSULTATION INCLUDED WITH THE PROCEDURE ]</p><h2>Not sure what fits<br />your anatomy?</h2><Link href="/en/booking" className="button button-light">BOOK APPOINTMENT <ArrowIcon /></Link></section>
   </PageShell>;
 }
-
 function Work() {
   return <PageShell lang="en" slug="work" eyebrow="03 / WORK" title={<>BODY<br />ARCHIVE.</>} intro="Selected work arranged as a technical archive. Placement, material and anatomy — without visual noise.">
     <section className="archive frame"><figure className="archive-wide"><img src="/assets/hero.webp" alt="Helix piercing"/><figcaption><span>001 / HELIX</span><span>EAR · TITANIUM · 2026</span></figcaption></figure><figure><img src="/assets/conch.webp" alt="Conch piercing"/><figcaption><span>002 / CONCH</span><span>EAR · TITANIUM · 2026</span></figcaption></figure><figure><img src="/assets/nostril.webp" alt="Nostril piercing"/><figcaption><span>003 / NOSTRIL</span><span>FACE · TITANIUM · 2026</span></figcaption></figure><figure className="archive-object"><img src="/assets/titanium.webp" alt="Titanium labret"/><figcaption><span>004 / OBJECT</span><span>ASTM F-136 · SCALE 04:01</span></figcaption></figure></section>
@@ -63,7 +91,7 @@ function Booking() {
         <a href="tel:+420777547240" className="action-option"><span>02 / PHONE</span><strong>+420 777 547 240</strong><p>For a quick consultation or to check availability.</p><b><ArrowIcon /></b></a>
         <a href="https://www.instagram.com/lotus.piercing/" className="action-option"><span>03 / INSTAGRAM</span><strong>@lotus.piercing</strong><p>Send us a direct message.</p><b><ArrowIcon /></b></a>
       </div>
-      <div className="booking-info"><div><span>BEFORE BOOKING</span><p>Not sure which piercing suits you? Browse our services and prices.</p><Link href="/en/piercing" className="text-link">SERVICES & PRICES <ArrowIcon /></Link></div><div><span>MINORS</span><p>Conditions for minors vary by age and piercing type.</p><Link href="/en/care#minors" className="text-link">CONDITIONS FOR MINORS <ArrowIcon /></Link></div></div>
+      <div className="booking-info"><div><span>BEFORE BOOKING</span><p>Not sure which piercing suits you? Browse our services and prices.</p><Link href="/en/cenik" className="text-link">SERVICES & PRICES <ArrowIcon /></Link></div><div><span>MINORS</span><p>Conditions for minors vary by age and piercing type.</p><Link href="/en/care#minors" className="text-link">CONDITIONS FOR MINORS <ArrowIcon /></Link></div></div>
     </section>
   </PageShell>;
 }
@@ -79,6 +107,20 @@ function GiftCard() {
   </PageShell>;
 }
 
-const pages: Record<string, () => React.ReactNode> = { studio: Studio, piercing: Piercing, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
-export function generateStaticParams() { return Object.keys(pages).map(slug => ({ slug })); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const Component = pages[slug]; if (!Component) notFound(); return <Component />; }
+const pages: Record<string, () => React.ReactNode> = { studio: Studio, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  if (slug !== "cenik" && slug !== "piercing") return {};
+  return {
+    title: "Piercing prices in Prague | Black Lotus Piercing Studio",
+    description: "Current piercing prices in Prague. Basic ASTM F-136 implant-grade titanium jewelry is included with standard piercing services.",
+    alternates: {
+      canonical: "https://lotuspiercing.cz/en/cenik/",
+      languages: { "cs-CZ": "https://lotuspiercing.cz/cenik/", en: "https://lotuspiercing.cz/en/cenik/" },
+    },
+  };
+}
+
+export function generateStaticParams() { return [...Object.keys(pages), "piercing"].map(slug => ({ slug })); }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; if (slug === "piercing") permanentRedirect("/en/cenik"); const Component = pages[slug]; if (!Component) notFound(); return <Component />; }

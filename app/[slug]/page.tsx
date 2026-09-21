@@ -1,16 +1,45 @@
 import ArrowIcon from "../arrow-icon";
 import JournalIndex from "../journal-index";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "../native-link";
 import { PageShell, SectionIndex } from "../site";
 
 const prices = [
-  ["UCHO", "Lalůček", "od 1 200 Kč"], ["UCHO", "Helix / Rook / Conch", "od 1 400 Kč"],
-  ["OBLIČEJ", "Nostril / Smile / Jazyk / Obočí", "od 1 400 Kč"], ["OBLIČEJ", "Bridge / Septum", "od 1 500 Kč"],
-  ["TĚLO", "Pupík / Bradavka 1×", "od 1 500 Kč"], ["TĚLO", "Bradavky 2×", "od 3 000 Kč"],
-  ["INTIMNÍ", "Genitální piercing", "od 2 500 Kč"], ["MICRODERMAL", "Aplikace", "od 1 500 Kč"],
-  ["SURFACE", "Surface piercing", "od 2 500 Kč"], ["SLUŽBY", "Výměna / zkrácení / čištění", "300 Kč"],
-  ["SLUŽBY", "Anodizace", "200 Kč"], ["PÉČE", "Aftercare sprej", "250 Kč"],
+  ["UCHO", "Lalůček", "od 1 200 Kč", "Cena za piercing jednoho lalůčku."],
+  ["UCHO", "Helix", "od 1 400 Kč"],
+  ["UCHO", "Rook", "od 1 400 Kč"],
+  ["UCHO", "Tragus", "od 1 400 Kč"],
+  ["UCHO", "Conch", "od 1 400 Kč"],
+  ["UCHO", "Flat", "od 1 400 Kč"],
+  ["UCHO", "Daith", "od 1 500 Kč"],
+  ["UCHO", "Forward Helix", "od 1 500 Kč"],
+  ["UCHO", "Industrial", "od 2 500 Kč"],
+  ["OBLIČEJ", "Rty", "od 1 400 Kč"],
+  ["OBLIČEJ", "Nostril", "od 1 400 Kč"],
+  ["OBLIČEJ", "Smile", "od 1 400 Kč"],
+  ["OBLIČEJ", "Jazyk", "od 1 400 Kč"],
+  ["OBLIČEJ", "Obočí", "od 1 400 Kč"],
+  ["OBLIČEJ", "Bridge", "od 1 500 Kč"],
+  ["OBLIČEJ", "Septum", "od 1 500 Kč"],
+  ["OBLIČEJ", "Cheeky", "od 3 000 Kč"],
+  ["OBLIČEJ", "High nostril 2×", "od 3 000 Kč"],
+  ["TĚLO", "Pupík", "od 1 500 Kč"],
+  ["TĚLO", "Bradavka 1×", "od 1 500 Kč"],
+  ["TĚLO", "Bradavky 2×", "od 3 000 Kč"],
+  ["TĚLO", "Genitální piercing", "od 2 500 Kč"],
+  ["MIKRODERMÁL", "Mikrodermál", "od 1 500 Kč"],
+  ["MIKRODERMÁL", "Odstranění mikrodermálu", "700 Kč"],
+  ["SURFACE", "Surface piercing", "od 2 500 Kč"],
+  ["TUNELY", "Aplikace tunelů", "od 2 000 Kč"],
+  ["TUNELY", "Roztahování tunelů o 2 mm", "od 500 Kč"],
+  ["SLUŽBY", "Konzultace", "200–300 Kč", "Klienti studia 200 Kč · externí klienti 300 Kč."],
+  ["SLUŽBY", "Výměna koncovky mikrodermálu", "300 Kč", "Cena nezahrnuje cenu šperku."],
+  ["SLUŽBY", "Výměna a zkrácení", "300 Kč", "Cena nezahrnuje cenu šperku."],
+  ["SLUŽBY", "Čištění piercingu", "300 Kč"],
+  ["SLUŽBY", "Anodizace", "200 Kč", "Změna barvy jednoho titanového šperku."],
+  ["PÉČE", "Aftercare sprej", "250 Kč"],
+  ["POUKAZY", "Dárkové poukazy", "od 1 000 Kč", "Fyzická nebo digitální podoba."],
 ];
 
 function Studio() {
@@ -23,13 +52,12 @@ function Studio() {
   </PageShell>;
 }
 
-function Piercing() {
-  return <PageShell lang="cs" slug="piercing" eyebrow="02 / PIERCING" title={<>SLUŽBY<br />& CENY.</>} intro="Ceny zahrnují základní šperk z titanu ASTM F-136, pokud není uvedeno jinak. Konečná cena závisí na vybraném šperku a anatomii.">
-    <section className="sub-section frame"><div className="price-head"><span>TYP</span><span>SLUŽBA</span><span>CENA / CZK</span></div><div className="price-list">{prices.map(([cat,name,price],i)=><div key={`${cat}-${name}`}><span>{String(i+1).padStart(2,"0")} / {cat}</span><strong>{name}</strong><b>{price}</b></div>)}</div><p className="price-note">Uvedené ceny jsou orientační. Před aplikací vždy potvrdíme výběr šperku i konečnou cenu.</p></section>
-    <section className="booking-band frame"><p>[ KONZULTACE JE SOUČÁSTÍ ]</p><h2>Nejste si jistí,<br />co vám vyhovuje?</h2><Link href="/booking" className="button button-light">REZERVOVAT KONZULTACI <ArrowIcon /></Link></section>
+function Cenik() {
+  return <PageShell lang="cs" slug="cenik" eyebrow="02 / CENÍK" title={<>CENÍK<br />PIERCINGU.</>} intro="Konečná cena vždy záleží na vybraném šperku. Uvedené ceny zahrnují základní šperk z prvotřídního titanu ASTM F-136 s vnitřním závitem, pokud není uvedeno jinak.">
+    <section className="sub-section frame"><div className="price-head"><span>KATEGORIE</span><span>SLUŽBA</span><span>CENA / CZK</span></div><div className="price-list">{prices.map(([cat,name,price,note],i)=><div key={`${cat}-${name}`}><span>{String(i+1).padStart(2,"0")} / {cat}</span><strong>{name}{note && <small>{note}</small>}</strong><b>{price}</b></div>)}</div><p className="price-note">Před aplikací vždy potvrdíme výběr šperku i konečnou cenu. U základních piercingů je titanový šperk ASTM F-136 součástí uvedené ceny.</p></section>
+    <section className="booking-band frame"><p>[ KONZULTACE JE SOUČÁSTÍ APLIKACE ]</p><h2>Nejste si jistí,<br />co vám vyhovuje?</h2><Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <ArrowIcon /></Link></section>
   </PageShell>;
 }
-
 function Work() {
   return <PageShell lang="cs" slug="work" eyebrow="03 / PRÁCE" title={<>ARCHIV<br />TĚLA.</>} intro="Vybrané realizace řazené jako technický archiv. Umístění, materiál a anatomie — bez vizuálního šumu.">
     <section className="archive frame"><figure className="archive-wide"><img src="/assets/hero.webp" alt="Helix piercing"/><figcaption><span>001 / HELIX</span><span>UCHO · TITAN · 2026</span></figcaption></figure><figure><img src="/assets/conch.webp" alt="Conch piercing"/><figcaption><span>002 / CONCH</span><span>UCHO · TITAN · 2026</span></figcaption></figure><figure><img src="/assets/nostril.webp" alt="Nostril piercing"/><figcaption><span>003 / NOSTRIL</span><span>OBLIČEJ · TITAN · 2026</span></figcaption></figure><figure className="archive-object"><img src="/assets/titanium.webp" alt="Titanový labret"/><figcaption><span>004 / OBJEKT</span><span>ASTM F-136 · MĚŘÍTKO 04:01</span></figcaption></figure></section>
@@ -63,7 +91,7 @@ function Booking() {
         <a href="tel:+420777547240" className="action-option"><span>02 / TELEFON</span><strong>+420 777 547 240</strong><p>Pro rychlou konzultaci nebo ověření volného termínu.</p><b><ArrowIcon /></b></a>
         <a href="https://www.instagram.com/lotus.piercing/" className="action-option"><span>03 / INSTAGRAM</span><strong>@lotus.piercing</strong><p>Napište nám soukromou zprávu.</p><b><ArrowIcon /></b></a>
       </div>
-      <div className="booking-info"><div><span>PŘED REZERVACÍ</span><p>Nejste si jistí vhodným typem piercingu? Prohlédněte si přehled služeb a ceny.</p><Link href="/piercing" className="text-link">SLUŽBY A CENY <ArrowIcon /></Link></div><div><span>NEZLETILÍ</span><p>U nezletilých se podmínky liší podle věku a typu piercingu.</p><Link href="/care#minors" className="text-link">PODMÍNKY PRO NEZLETILÉ <ArrowIcon /></Link></div></div>
+      <div className="booking-info"><div><span>PŘED REZERVACÍ</span><p>Nejste si jistí vhodným typem piercingu? Prohlédněte si přehled služeb a ceny.</p><Link href="/cenik" className="text-link">SLUŽBY A CENY <ArrowIcon /></Link></div><div><span>NEZLETILÍ</span><p>U nezletilých se podmínky liší podle věku a typu piercingu.</p><Link href="/care#minors" className="text-link">PODMÍNKY PRO NEZLETILÉ <ArrowIcon /></Link></div></div>
     </section>
   </PageShell>;
 }
@@ -79,6 +107,20 @@ function GiftCard() {
   </PageShell>;
 }
 
-const pages: Record<string, () => React.ReactNode> = { studio: Studio, piercing: Piercing, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
-export function generateStaticParams() { return Object.keys(pages).map(slug => ({ slug })); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const Component = pages[slug]; if (!Component) notFound(); return <Component />; }
+const pages: Record<string, () => React.ReactNode> = { studio: Studio, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  if (slug !== "cenik" && slug !== "piercing") return {};
+  return {
+    title: "Ceník piercingu Praha | Black Lotus Piercing Studio",
+    description: "Aktuální ceny piercingu v Praze. Základní šperk z implantátového titanu ASTM F-136 je u standardních aplikací součástí ceny.",
+    alternates: {
+      canonical: "https://lotuspiercing.cz/cenik/",
+      languages: { "cs-CZ": "https://lotuspiercing.cz/cenik/", en: "https://lotuspiercing.cz/en/cenik/" },
+    },
+  };
+}
+
+export function generateStaticParams() { return [...Object.keys(pages), "piercing"].map(slug => ({ slug })); }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; if (slug === "piercing") permanentRedirect("/cenik"); const Component = pages[slug]; if (!Component) notFound(); return <Component />; }

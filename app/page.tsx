@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         <div className="service-list">
           {services.map(([n, title, detail]) => (
-            <Link href="/piercing" key={n} className="service-row">
+            <Link href="/cenik" key={n} className="service-row">
               <span>{n}</span><strong>{title}</strong><small>{detail}</small><b><ArrowIcon /></b>
             </Link>
           ))}

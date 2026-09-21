@@ -242,3 +242,10 @@ h1,h2,h3{overflow-wrap:break-word}
   .team-card-bio-mobile strong{display:none}
   .team-card-bio-mobile p{margin:0 0 16px;color:#d5dad8;font-size:15px;line-height:1.55}
 }
+
+
+/* Price-list details */
+.price-list strong small{display:block;margin-top:7px;color:var(--muted);font-size:12px;font-weight:400;line-height:1.45;letter-spacing:0}
+@media(max-width:600px){
+  .price-list strong small{font-size:12px;line-height:1.45}
+}
