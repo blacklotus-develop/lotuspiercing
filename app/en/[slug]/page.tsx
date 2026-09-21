@@ -73,7 +73,7 @@ function GiftCard() {
   return <PageShell lang="en" slug="gift-card" eyebrow="08 / GIFT CARD" title={<>A GIFT<br />THAT STAYS.</>} intro="Black Lotus gift cards are available digitally or in print. Choose the value that suits you.">
     <section className="action-page frame">
       <div className="action-intro"><SectionIndex index="01" label="GIFT CARD VALUE" /><h2>Choose<br />a value.</h2></div>
-      <div className="voucher-grid">{values.map(value => <a key={value} href={`mailto:piercingprague@gmail.com?subject=Gift card ${encodeURIComponent(value)}&body=Hello,%0A%0AI would like a gift card worth ${encodeURIComponent(value)}.%0AFormat: digital / printed%0ARecipient name:%0A%0AThank you.`}><span>BLACK LOTUS / GIFT</span><strong>{value}</strong><b>ORDER <ArrowIcon /></b></a>)}</div>
+      <div className="voucher-grid">{values.map(value => <a key={value} href="https://lotusjewelry.cz/kategorie-produktu/darkove-poukazy/"><span>BLACK LOTUS / GIFT</span><strong>{value}</strong><b>ORDER <ArrowIcon /></b></a>)}</div>
       <div className="booking-info"><div><span>DIGITAL</span><p>A practical option delivered by email after confirmation.</p></div><div><span>PRINTED</span><p>A physical gift card prepared for collection at the studio.</p></div></div>
     </section>
   </PageShell>;
