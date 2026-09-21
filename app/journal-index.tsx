@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
+import styles from "./journal-index.module.css";
 
 type Language = "cs" | "en";
 type Category = "care" | "materials" | "guide" | "healing" | "minors" | "anatomy";
@@ -85,21 +86,21 @@ export default function JournalIndex({ lang }: { lang: Language }) {
   };
 
   return (
-    <section className="journal-browser frame" aria-label={copy.search}>
-      <div className="journal-tools">
-        <label className="journal-search">
+    <section className={`${styles.browser} frame`} aria-label={copy.search}>
+      <div className={styles.tools}>
+        <label className={styles.search}>
           <span>{copy.search}</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.placeholder} type="search" />
         </label>
-        <div className="journal-filters" aria-label={lang === "cs" ? "Filtrovat podle tématu" : "Filter by topic"}>
-          <button type="button" className={category === "all" ? "active" : ""} aria-pressed={category === "all"} onClick={() => setCategory("all")}>{copy.all}</button>
-          {(Object.keys(copy.categories) as Category[]).map((key) => <button type="button" key={key} className={category === key ? "active" : ""} aria-pressed={category === key} onClick={() => setCategory(key)}>{copy.categories[key]}</button>)}
+        <div className={styles.filters} aria-label={lang === "cs" ? "Filtrovat podle tématu" : "Filter by topic"}>
+          <button type="button" aria-pressed={category === "all"} onClick={() => setCategory("all")}>{copy.all}</button>
+          {(Object.keys(copy.categories) as Category[]).map((key) => <button type="button" key={key} aria-pressed={category === key} onClick={() => setCategory(key)}>{copy.categories[key]}</button>)}
         </div>
-        <div className="journal-result-meta" aria-live="polite"><span>{copy.results}</span><b>{String(filtered.length).padStart(2, "0")} / {String(list.length).padStart(2, "0")}</b></div>
+        <div className={styles.meta} aria-live="polite"><span>{copy.results}</span><b>{String(filtered.length).padStart(2, "0")} / {String(list.length).padStart(2, "0")}</b></div>
       </div>
 
       {filtered.length > 0 ? (
-        <div className="article-index journal-results">
+        <div className={`article-index ${styles.results}`}>
           {filtered.map((article) => <Link href={lang === "cs" ? `/journal/${article.slug}` : `/en/journal/${article.slug}`} key={article.slug}>
             <span>{article.number} / {article.label}</span>
             <h2>{article.title}</h2>
@@ -108,7 +109,7 @@ export default function JournalIndex({ lang }: { lang: Language }) {
           </Link>)}
         </div>
       ) : (
-        <div className="journal-empty">
+        <div className={styles.empty}>
           <p>{copy.empty}</p>
           <button type="button" onClick={reset}>{copy.clear} <ArrowIcon /></button>
         </div>
