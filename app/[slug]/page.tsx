@@ -1,45 +1,95 @@
 import ArrowIcon from "../arrow-icon";
 import JournalIndex from "../journal-index";
+import PriceList from "../price-list";
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "../native-link";
 import { PageShell, SectionIndex } from "../site";
 
-const prices = [
-  ["UCHO", "Lalůček", "od 1 200 Kč", "Cena za piercing jednoho lalůčku."],
-  ["UCHO", "Helix", "od 1 400 Kč"],
-  ["UCHO", "Rook", "od 1 400 Kč"],
-  ["UCHO", "Tragus", "od 1 400 Kč"],
-  ["UCHO", "Conch", "od 1 400 Kč"],
-  ["UCHO", "Flat", "od 1 400 Kč"],
-  ["UCHO", "Daith", "od 1 500 Kč"],
-  ["UCHO", "Forward Helix", "od 1 500 Kč"],
-  ["UCHO", "Industrial", "od 2 500 Kč"],
-  ["OBLIČEJ", "Rty", "od 1 400 Kč"],
-  ["OBLIČEJ", "Nostril", "od 1 400 Kč"],
-  ["OBLIČEJ", "Smile", "od 1 400 Kč"],
-  ["OBLIČEJ", "Jazyk", "od 1 400 Kč"],
-  ["OBLIČEJ", "Obočí", "od 1 400 Kč"],
-  ["OBLIČEJ", "Bridge", "od 1 500 Kč"],
-  ["OBLIČEJ", "Septum", "od 1 500 Kč"],
-  ["OBLIČEJ", "Cheeky", "od 3 000 Kč"],
-  ["OBLIČEJ", "High nostril 2×", "od 3 000 Kč"],
-  ["TĚLO", "Pupík", "od 1 500 Kč"],
-  ["TĚLO", "Bradavka 1×", "od 1 500 Kč"],
-  ["TĚLO", "Bradavky 2×", "od 3 000 Kč"],
-  ["TĚLO", "Genitální piercing", "od 2 500 Kč"],
-  ["MIKRODERMÁL", "Mikrodermál", "od 1 500 Kč"],
-  ["MIKRODERMÁL", "Odstranění mikrodermálu", "700 Kč"],
-  ["SURFACE", "Surface piercing", "od 2 500 Kč"],
-  ["TUNELY", "Aplikace tunelů", "od 2 000 Kč"],
-  ["TUNELY", "Roztahování tunelů o 2 mm", "od 500 Kč"],
-  ["SLUŽBY", "Konzultace", "200–300 Kč", "Klienti studia 200 Kč · externí klienti 300 Kč."],
-  ["SLUŽBY", "Výměna koncovky mikrodermálu", "300 Kč", "Cena nezahrnuje cenu šperku."],
-  ["SLUŽBY", "Výměna a zkrácení", "300 Kč", "Cena nezahrnuje cenu šperku."],
-  ["SLUŽBY", "Čištění piercingu", "300 Kč"],
-  ["SLUŽBY", "Anodizace", "200 Kč", "Změna barvy jednoho titanového šperku."],
-  ["PÉČE", "Aftercare sprej", "250 Kč"],
-  ["POUKAZY", "Dárkové poukazy", "od 1 000 Kč", "Fyzická nebo digitální podoba."],
+const priceGroups = [
+  {
+    id: "ucho",
+    label: "Ucho",
+    description: "Základní šperk z titanu ASTM F-136 je součástí ceny.",
+    items: [
+      { name: "Lalůček", price: "od 1 200 Kč", note: "Cena za piercing jednoho lalůčku." },
+      { name: "Helix", price: "od 1 400 Kč" },
+      { name: "Rook", price: "od 1 400 Kč" },
+      { name: "Tragus", price: "od 1 400 Kč" },
+      { name: "Conch", price: "od 1 400 Kč" },
+      { name: "Flat", price: "od 1 400 Kč" },
+      { name: "Daith", price: "od 1 500 Kč" },
+      { name: "Forward Helix", price: "od 1 500 Kč" },
+      { name: "Industrial", price: "od 2 500 Kč" },
+    ],
+  },
+  {
+    id: "oblicej",
+    label: "Obličej",
+    description: "Základní šperk z titanu ASTM F-136 je součástí ceny.",
+    items: [
+      { name: "Rty", price: "od 1 400 Kč" },
+      { name: "Nostril", price: "od 1 400 Kč" },
+      { name: "Smile", price: "od 1 400 Kč" },
+      { name: "Jazyk", price: "od 1 400 Kč" },
+      { name: "Obočí", price: "od 1 400 Kč" },
+      { name: "Bridge", price: "od 1 500 Kč" },
+      { name: "Septum", price: "od 1 500 Kč" },
+      { name: "Cheeky", price: "od 3 000 Kč" },
+      { name: "High nostril 2×", price: "od 3 000 Kč" },
+    ],
+  },
+  {
+    id: "telo",
+    label: "Tělo",
+    description: "Základní šperk z titanu ASTM F-136 je součástí ceny.",
+    items: [
+      { name: "Pupík", price: "od 1 500 Kč" },
+      { name: "Bradavka 1×", price: "od 1 500 Kč" },
+      { name: "Bradavky 2×", price: "od 3 000 Kč" },
+      { name: "Genitální piercing", price: "od 2 500 Kč" },
+    ],
+  },
+  {
+    id: "mikrodermal",
+    label: "Mikrodermál",
+    description: "Aplikace zahrnuje základní šperk. Odstranění je samostatná služba.",
+    items: [
+      { name: "Mikrodermál", price: "od 1 500 Kč" },
+      { name: "Odstranění mikrodermálu", price: "700 Kč" },
+    ],
+  },
+  {
+    id: "surface",
+    label: "Surface",
+    description: "Základní šperk z titanu ASTM F-136 je součástí ceny.",
+    items: [
+      { name: "Surface piercing", price: "od 2 500 Kč" },
+    ],
+  },
+  {
+    id: "tunely",
+    label: "Tunely",
+    description: "Aplikace tunelů zahrnuje základní šperk.",
+    items: [
+      { name: "Aplikace tunelů", price: "od 2 000 Kč" },
+      { name: "Roztahování tunelů o 2 mm", price: "od 500 Kč" },
+    ],
+  },
+  {
+    id: "doplnkove-sluzby",
+    label: "Doplňkové služby",
+    description: "Konzultace, výměny, čištění, anodizace, následná péče a dárkové poukazy.",
+    items: [
+      { name: "Konzultace", price: "200–300 Kč", note: "Klienti studia 200 Kč · externí klienti 300 Kč." },
+      { name: "Výměna koncovky mikrodermálu", price: "300 Kč", note: "Cena nezahrnuje cenu šperku." },
+      { name: "Výměna a zkrácení", price: "300 Kč", note: "Cena nezahrnuje cenu šperku." },
+      { name: "Čištění piercingu", price: "300 Kč" },
+      { name: "Anodizace", price: "200 Kč", note: "Změna barvy jednoho titanového šperku." },
+      { name: "Aftercare sprej", price: "250 Kč" },
+      { name: "Dárkové poukazy", price: "od 1 000 Kč", note: "Fyzická nebo digitální podoba." },
+    ],
+  },
 ];
 
 function Studio() {
@@ -54,7 +104,7 @@ function Studio() {
 
 function Cenik() {
   return <PageShell lang="cs" slug="cenik" eyebrow="02 / CENÍK" title={<>CENÍK<br />PIERCINGU.</>} intro="Konečná cena vždy záleží na vybraném šperku. Uvedené ceny zahrnují základní šperk z prvotřídního titanu ASTM F-136 s vnitřním závitem, pokud není uvedeno jinak.">
-    <section className="sub-section frame"><div className="price-head"><span>KATEGORIE</span><span>SLUŽBA</span><span>CENA / CZK</span></div><div className="price-list">{prices.map(([cat,name,price,note],i)=><div key={`${cat}-${name}`}><span>{String(i+1).padStart(2,"0")} / {cat}</span><strong>{name}{note && <small>{note}</small>}</strong><b>{price}</b></div>)}</div><p className="price-note">Před aplikací vždy potvrdíme výběr šperku i konečnou cenu. U základních piercingů je titanový šperk ASTM F-136 součástí uvedené ceny.</p></section>
+    <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "KATEGORIE CENÍKU", item: "POLOŽKA", service: "SLUŽBA", price: "CENA / CZK" }} /><p className="price-note">Před aplikací vždy potvrdíme výběr šperku i konečnou cenu. U základních piercingů je titanový šperk ASTM F-136 součástí uvedené ceny.</p></section>
     <section className="booking-band frame"><p>[ KONZULTACE JE SOUČÁSTÍ APLIKACE ]</p><h2>Nejste si jistí,<br />co vám vyhovuje?</h2><Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <ArrowIcon /></Link></section>
   </PageShell>;
 }
