@@ -288,24 +288,17 @@ h1,h2,h3{overflow-wrap:break-word}
   .page-cenik .price-tabs button{min-height:48px;padding-inline:20px;font-size:13px}
 }
 
-/* Interactive piercing diagrams */
-.price-category-layout{display:grid;grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,64px);align-items:start}
-.price-diagram{position:sticky;top:98px;align-self:start;border:1px solid var(--line);background:var(--white)}
-.price-diagram-meta{display:flex;justify-content:space-between;gap:20px;padding:16px 18px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.11em;text-transform:uppercase}
-.price-diagram-meta span{color:var(--muted)}.price-diagram-meta b{font-weight:700}
-.price-diagram-svg{display:block;width:100%;height:auto;aspect-ratio:1/1.06;background:linear-gradient(180deg,#f8f8f5 0%,#ecefed 100%)}
-.price-diagram-svg path,.price-diagram-svg line,.price-diagram-svg circle,.price-diagram-svg rect{fill:none;stroke:var(--ink);stroke-width:1.5;vector-effect:non-scaling-stroke}
-.price-diagram-svg .diagram-fill{fill:#e8ecea;stroke:#9aa29f}
-.price-diagram-svg .diagram-fine{stroke:#9aa29f;stroke-width:1}
-.price-diagram-svg .diagram-accent{stroke:#101313;stroke-width:3}
-.price-diagram-svg .diagram-accent-fill{fill:#101313}
-.price-diagram-svg .diagram-jewel{fill:#f7f8f6;stroke:#101313;stroke-width:3}
-.price-diagram-svg .diagram-tile{fill:rgba(255,255,255,.48);stroke:#c3c8c6}
-.diagram-marker{transition:transform .2s ease}.diagram-marker circle{fill:#f4f4f1;stroke:#101313;stroke-width:1.5;transition:fill .2s ease,stroke .2s ease}.diagram-marker text{fill:#101313;stroke:none;font-size:9px;font-weight:700;letter-spacing:.04em;transition:fill .2s ease}.diagram-marker.is-active circle{fill:#101313;stroke:#101313}.diagram-marker.is-active text{fill:#f4f4f1}
-.price-diagram-legend{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.price-diagram-legend li{min-width:0;border-bottom:1px solid var(--line)}.price-diagram-legend li:nth-child(odd){border-right:1px solid var(--line)}
-.price-diagram-legend button{width:100%;min-height:42px;padding:10px 12px;display:flex;align-items:center;gap:10px;border:0;background:transparent;color:var(--ink);text-align:left;font-size:11px;line-height:1.25;cursor:pointer;transition:background-color .2s ease,color .2s ease}
-.price-diagram-legend button span{flex:0 0 auto;font-size:9px;color:var(--muted)}.price-diagram-legend button:hover,.price-diagram-legend button:focus-visible,.price-diagram-legend button.is-active{background:var(--ink);color:var(--paper);outline:0}.price-diagram-legend button:hover span,.price-diagram-legend button:focus-visible span,.price-diagram-legend button.is-active span{color:#aeb6b3}
-.price-table{min-width:0}.price-table .price-list>div{transition:background-color .2s ease}.price-table .price-list>div.is-active{background:rgba(207,210,208,.28)}
-@media(max-width:900px){.price-category-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:24px}.price-diagram{position:static}.price-diagram-legend{grid-template-columns:1fr}.price-diagram-legend li:nth-child(odd){border-right:0}}
-@media(max-width:700px){.price-category-layout{grid-template-columns:1fr}.price-diagram{width:100%}.price-diagram-svg{aspect-ratio:1/1}.price-diagram-legend{grid-template-columns:1fr 1fr}.price-diagram-legend li:nth-child(odd){border-right:1px solid var(--line)}.price-table{margin-top:8px}}
+/* Ear piercing placement map */
+.price-ear-layout{display:grid;grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,64px);align-items:start}
+.ear-scheme{position:sticky;top:98px;margin:0;overflow:hidden;background:#0a0c0c}
+.ear-scheme img{display:block;width:100%;height:auto}
+.ear-scheme-hotspots{position:absolute;inset:0}
+.ear-scheme-hotspots button{position:absolute;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:transparent;transform:translate(-50%,-50%);cursor:pointer}
+.ear-scheme-hotspots button:before{content:"";position:absolute;inset:5px;border:1px solid transparent;border-radius:50%;box-shadow:0 0 0 0 rgba(255,255,255,0);transition:background-color .2s ease,border-color .2s ease,box-shadow .25s ease,transform .2s ease}
+.ear-scheme-hotspots button:hover:before,.ear-scheme-hotspots button:focus-visible:before,.ear-scheme-hotspots button.is-active:before{background:rgba(255,255,255,.18);border-color:#fff;box-shadow:0 0 0 7px rgba(255,255,255,.14),0 0 22px rgba(255,255,255,.62);transform:scale(1.08)}
+.ear-scheme-hotspots button:focus-visible{outline:1px solid #fff;outline-offset:2px}
+.price-ear-table{min-width:0}
+.price-ear-table .price-list>div{transition:background-color .2s ease}
+.price-ear-table .price-list>div.is-active{background:rgba(207,210,208,.3)}
+@media(max-width:900px){.price-ear-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:24px}.ear-scheme{position:static}}
+@media(max-width:700px){.price-ear-layout{grid-template-columns:1fr}.ear-scheme{width:100%;max-height:78vh}.ear-scheme img{width:100%;height:auto}.price-ear-table{margin-top:8px}}
