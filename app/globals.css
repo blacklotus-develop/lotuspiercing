@@ -302,3 +302,35 @@ h1,h2,h3{overflow-wrap:break-word}
 .price-ear-table .price-list>div.is-active{background:rgba(207,210,208,.3)}
 @media(max-width:900px){.price-ear-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:24px}.ear-scheme{position:static}}
 @media(max-width:700px){.price-ear-layout{grid-template-columns:1fr}.ear-scheme{width:100%;max-height:78vh}.ear-scheme img{width:100%;height:auto}.price-ear-table{margin-top:8px}}
+
+
+/* Studio introduction — real workspace photography */
+.studio-intro-gallery{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.68fr);gap:24px;padding-block:48px var(--space-section);align-items:stretch}
+.studio-intro-main,.studio-intro-secondary{overflow:hidden;background:var(--cold)}
+.studio-intro-main{min-height:660px}
+.studio-intro-main img,.studio-intro-secondary img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03)}
+.studio-intro-main img{object-position:center}
+.studio-intro-side{display:grid;grid-template-rows:auto minmax(280px,1fr);gap:24px}
+.studio-intro-copy{display:flex;min-height:330px;flex-direction:column;justify-content:flex-end;padding:32px;background:var(--cold)}
+.studio-intro-copy>span{margin-bottom:auto;font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.studio-intro-copy strong{display:block;margin:38px 0 18px;font-size:clamp(34px,3.5vw,52px);font-weight:400;line-height:1.05;letter-spacing:-.045em}
+.studio-intro-copy p{max-width:38rem;margin:0;color:var(--ink);font-size:15px;line-height:1.5}
+.studio-intro-copy p+p{margin-top:12px}
+.studio-intro-secondary img{object-position:center 42%}
+@media(max-width:900px){
+  .studio-intro-gallery{grid-template-columns:1fr;gap:20px}
+  .studio-intro-main{min-height:0;aspect-ratio:3/2}
+  .studio-intro-side{grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:20px}
+  .studio-intro-copy{min-height:420px}
+  .studio-intro-secondary{min-height:420px}
+}
+@media(max-width:600px){
+  .studio-intro-gallery{padding-block:32px 56px}
+  .studio-intro-main{aspect-ratio:4/3}
+  .studio-intro-side{grid-template-columns:1fr}
+  .studio-intro-copy{min-height:0;padding:24px}
+  .studio-intro-copy>span{margin-bottom:42px}
+  .studio-intro-copy strong{margin:0 0 18px;font-size:36px}
+  .studio-intro-copy p{font-size:15px}
+  .studio-intro-secondary{min-height:0;aspect-ratio:4/5}
+}
