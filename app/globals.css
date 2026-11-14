@@ -271,3 +271,19 @@ h1,h2,h3{overflow-wrap:break-word}
   .price-panel-heading h2{font-size:36px}
   .price-panel-heading p{font-size:14px}
 }
+
+/* Price page hierarchy */
+.page-cenik .page-hero{padding-top:82px;padding-bottom:36px;border-bottom:0}
+.page-cenik .page-hero h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em}
+.page-cenik .page-intro{margin-top:26px}
+.page-cenik .price-tabs-label{margin-bottom:14px;font-size:12px;letter-spacing:.14em;color:var(--ink)}
+.page-cenik .price-tabs{gap:10px;padding:18px 0 30px}
+.page-cenik .price-tabs button{min-height:50px;padding:0 22px;font-size:14px;letter-spacing:.055em}
+@media(max-width:600px){
+  .page-cenik .page-hero{padding-top:64px;padding-bottom:28px}
+  .page-cenik .page-hero h1{font-size:clamp(38px,9.5vw,50px)}
+  .page-cenik .page-intro{margin-top:20px}
+  .page-cenik .price-tabs-label{font-size:11px}
+  .page-cenik .price-tabs{padding-top:14px;padding-bottom:22px}
+  .page-cenik .price-tabs button{min-height:48px;padding-inline:20px;font-size:13px}
+}
