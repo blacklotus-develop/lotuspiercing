@@ -7,14 +7,14 @@ const copy = {
     tagline: "Piercing s důrazem na detail.",
     onPage: "NA STRÁNCE",
     nav: [["Náš příběh", "story"], ["Pierceři", "team"], ["Sterilizace", "sterilisation"], ["Průběh návštěvy", "visit"]],
-    storyLabel: "NÁŠ PŘÍBĚH",
+    introAlt: "Recepce a vitríny se šperky v Black Lotus Piercing Studio",
+    storyLabel: "01 / NÁŠ PŘÍBĚH",
     storyTitle: "Piercing si zaslouží vlastní prostor.",
     story: [
-      "Piercing bývá často jen doplňkovou službou v tetovacích studiích. My jsme se rozhodli jít vlastní cestou. Vytvořit místo, kde bude piercing na prvním místě — s vlastní estetikou, důrazem na čistotu a profesionálním přístupem.",
-      "Věříme, že dobrý piercing začíná dávno před samotným vpichem. Proto každému klientovi vyhrazujeme celou hodinu, přestože samotný zákrok trvá jen několik vteřin. Chceme mít čas naslouchat, poradit a najít řešení, které respektuje individuální anatomii. Nespěcháme a neděláme kompromisy v bezpečnosti.",
-      "Každý člověk je jiný a žádné dva piercingy nejsou úplně stejné. Právě v tom vidíme krásu naší práce — pomáhat lidem najít něco, co podtrhne jejich individualitu. A když vidíme jejich úsměv v zrcadle nebo se k nám po letech vracejí, připomíná nám to, proč tuhle práci milujeme.",
+      "Piercing bývá v tetovacích studiích často jen doplňkovou službou. My jsme pro něj chtěli vytvořit vlastní prostor. Místo s osobitou estetikou, důrazem na čistotu a přístupem, který bere piercing jako samostatnou profesi.",
+      "Samotný vpich trvá jen několik vteřin. My si ale na každého klienta vyhrazujeme celou hodinu. Chceme naslouchat, poradit, posoudit anatomii a dát prostor otázkám. Nespěcháme, neděláme kompromisy v bezpečnosti a pokud piercing není vhodný, otevřeně to řekneme.",
+      "Žádné dva piercingy nejsou úplně stejné. Každému sluší něco jiného — a právě v hledání toho správného detailu vidíme krásu naší práce. Největší radost nám dělá úsměv v zrcadle a klienti, kteří se k nám vracejí.",
     ],
-    storyAlt: "Světlý pracovní prostor Black Lotus Piercing Studio v Praze",
     stats: [["700+", "recenzí"], ["12 let", "praxe"], ["7000+", "provedených piercingů"]],
     teamLabel: "NÁŠ TÝM",
     teamTitle: "Lidé za Black Lotus.",
@@ -48,14 +48,14 @@ const copy = {
     tagline: "Piercing with attention to detail.",
     onPage: "ON THIS PAGE",
     nav: [["Our story", "story"], ["Piercers", "team"], ["Sterilisation", "sterilisation"], ["Your visit", "visit"]],
-    storyLabel: "OUR STORY",
+    introAlt: "Reception and jewellery displays at Black Lotus Piercing Studio",
+    storyLabel: "01 / OUR STORY",
     storyTitle: "Piercing deserves a space of its own.",
     story: [
       "Piercing is often only an additional service in tattoo studios. We decided to take our own path. To create a place where piercing comes first — with its own aesthetic, a focus on cleanliness and a professional approach.",
       "We believe that a good piercing begins long before the needle. That is why we reserve a full hour for every client, even though the procedure itself takes only a few seconds. We want time to listen, advise and find a solution that respects individual anatomy. We do not rush and we do not compromise on safety.",
       "Every person is different and no two piercings are exactly alike. This is where we see the beauty of our work — helping people find something that highlights their individuality. And when we see their smile in the mirror or they return to us years later, it reminds us why we love this work.",
     ],
-    storyAlt: "Bright workspace at Black Lotus Piercing Studio in Prague",
     stats: [["700+", "reviews"], ["12 years", "of experience"], ["7000+", "piercings performed"]],
     teamLabel: "OUR TEAM",
     teamTitle: "People behind Black Lotus.",
@@ -94,24 +94,30 @@ export default function StudioPage({ lang, preview = false }: { lang: Lang; prev
       <Header lang={lang} slug={preview ? "studio-preview" : "studio"} />
 
       <section className="studio-v3-hero frame">
-        <div className="studio-v3-hero-copy">
-          <p className="eyebrow">01 / STUDIO</p>
-          <h1>STUDIO</h1>
-          <p>{t.tagline as string}</p>
+        <div className="studio-v3-hero-main">
+          <div className="studio-v3-hero-copy">
+            <p className="eyebrow">01 / STUDIO</p>
+            <h1>STUDIO</h1>
+            <p>{t.tagline as string}</p>
+          </div>
+          <nav className="studio-v3-nav" aria-label={t.onPage as string}>
+            <span>{t.onPage as string}</span>
+            {(t.nav as string[][]).map(([label, id], index) => <a key={id} href={`#${id}`}><b>{String(index + 1).padStart(2, "0")}</b><em>{label}</em></a>)}
+          </nav>
         </div>
-        <nav className="studio-v3-nav" aria-label={t.onPage as string}>
-          <span>{t.onPage as string}</span>
-          {(t.nav as string[][]).map(([label, id], index) => <a key={id} href={`#${id}`}><b>{String(index + 1).padStart(2, "0")}</b><em>{label}</em></a>)}
-        </nav>
+        <div className="studio-v3-hero-image"><img src="/assets/studio-intro-reception.webp" alt={t.introAlt as string} /></div>
       </section>
 
       <section id="story" className="studio-story frame studio-anchor">
-        <div className="studio-section-copy">
-          <p className="studio-kicker">{t.storyLabel as string}</p>
-          <h2>{t.storyTitle as string}</h2>
-          {(t.story as string[]).map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+        <p className="studio-kicker">{t.storyLabel as string}</p>
+        <h2>{t.storyTitle as string}</h2>
+        <div className="studio-story-columns">
+          <p>{(t.story as string[])[0]}</p>
+          <div>
+            <p>{(t.story as string[])[1]}</p>
+            <p>{(t.story as string[])[2]}</p>
+          </div>
         </div>
-        <div className="studio-story-image"><img src="/assets/studio-history.webp" alt={t.storyAlt as string} loading="lazy" /></div>
       </section>
 
       <section className="studio-stats frame" aria-label={lang === "cs" ? "Black Lotus v číslech" : "Black Lotus in numbers"}>
