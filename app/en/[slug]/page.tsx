@@ -5,6 +5,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "../../native-link";
 import { PageShell, SectionIndex } from "../../site";
+import StudioPage from "../../studio-page";
 
 const priceGroups = [
   {
@@ -108,6 +109,8 @@ function Studio() {
   </PageShell>;
 }
 
+function StudioPreview() { return <StudioPage lang="en" preview />; }
+
 function Cenik() {
   return <PageShell lang="en" slug="cenik" eyebrow="02 / PRICES" title={<>PIERCING<br />PRICE LIST.</>} intro="The final price always depends on the selected jewelry. Unless stated otherwise, prices include basic internally threaded ASTM F-136 implant-grade titanium jewelry.">
     <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "NAVIGATION", item: "ITEM", service: "SERVICE", price: "PRICE / CZK", diagram: "ANATOMY / DIAGRAM" }} /><p className="price-note">We always confirm the jewelry selection and final price before the procedure. Basic ASTM F-136 titanium jewelry is included with standard piercing services.</p></section>
@@ -163,10 +166,11 @@ function GiftCard() {
   </PageShell>;
 }
 
-const pages: Record<string, () => React.ReactNode> = { studio: Studio, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+const pages: Record<string, () => React.ReactNode> = { studio: Studio, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "studio-preview") return { title: "Studio preview | Black Lotus", robots: { index: false, follow: false } };
   if (slug !== "cenik" && slug !== "piercing") return {};
   return {
     title: "Piercing prices in Prague | Black Lotus Piercing Studio",
