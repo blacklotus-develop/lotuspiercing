@@ -104,7 +104,7 @@ function Studio() {
 
 function Cenik() {
   return <PageShell lang="en" slug="cenik" eyebrow="02 / PRICES" title={<>PIERCING<br />PRICE LIST.</>} intro="The final price always depends on the selected jewelry. Unless stated otherwise, prices include basic internally threaded ASTM F-136 implant-grade titanium jewelry.">
-    <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "NAVIGATION", item: "ITEM", service: "SERVICE", price: "PRICE / CZK" }} /><p className="price-note">We always confirm the jewelry selection and final price before the procedure. Basic ASTM F-136 titanium jewelry is included with standard piercing services.</p></section>
+    <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "NAVIGATION", item: "ITEM", service: "SERVICE", price: "PRICE / CZK", diagram: "ANATOMY / DIAGRAM" }} /><p className="price-note">We always confirm the jewelry selection and final price before the procedure. Basic ASTM F-136 titanium jewelry is included with standard piercing services.</p></section>
     <section className="booking-band frame"><p>[ CONSULTATION INCLUDED WITH THE PROCEDURE ]</p><h2>Not sure what fits<br />your anatomy?</h2><Link href="/en/booking" className="button button-light">BOOK APPOINTMENT <ArrowIcon /></Link></section>
   </PageShell>;
 }

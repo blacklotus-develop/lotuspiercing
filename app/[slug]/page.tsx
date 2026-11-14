@@ -104,7 +104,7 @@ function Studio() {
 
 function Cenik() {
   return <PageShell lang="cs" slug="cenik" eyebrow="02 / CENÍK" title={<>CENÍK<br />PIERCINGU.</>} intro="Konečná cena vždy záleží na vybraném šperku. Uvedené ceny zahrnují základní šperk z prvotřídního titanu ASTM F-136 s vnitřním závitem, pokud není uvedeno jinak.">
-    <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "NAVIGACE", item: "POLOŽKA", service: "SLUŽBA", price: "CENA / CZK" }} /><p className="price-note">Před aplikací vždy potvrdíme výběr šperku i konečnou cenu. U základních piercingů je titanový šperk ASTM F-136 součástí uvedené ceny.</p></section>
+    <section className="sub-section frame price-browser-section"><PriceList groups={priceGroups} labels={{ tabs: "NAVIGACE", item: "POLOŽKA", service: "SLUŽBA", price: "CENA / CZK", diagram: "ANATOMIE / SCHÉMA" }} /><p className="price-note">Před aplikací vždy potvrdíme výběr šperku i konečnou cenu. U základních piercingů je titanový šperk ASTM F-136 součástí uvedené ceny.</p></section>
     <section className="booking-band frame"><p>[ KONZULTACE JE SOUČÁSTÍ APLIKACE ]</p><h2>Nejste si jistí,<br />co vám vyhovuje?</h2><Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <ArrowIcon /></Link></section>
   </PageShell>;
 }
