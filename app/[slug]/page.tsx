@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Link from "../native-link";
 import { PageShell, SectionIndex } from "../site";
 import StudioPage from "../studio-page";
+import BookingPage from "../booking-page";
 
 const priceGroups = [
   {
@@ -142,17 +143,7 @@ function Contact() {
 }
 
 function Booking() {
-  return <PageShell lang="cs" slug="booking" eyebrow="07 / REZERVACE" title={<>VÁŠ<br />TERMÍN.</>} intro="Napište nám, jaký piercing zvažujete a který den vám vyhovuje. Ozveme se s potvrzením nebo navrhneme nejbližší volný termín.">
-    <section className="action-page frame">
-      <div className="action-intro"><SectionIndex index="01" label="VYBERTE ZPŮSOB" /><h2>Jak chcete<br />rezervovat?</h2></div>
-      <div className="action-options">
-        <a href="mailto:piercingprague@gmail.com?subject=Rezervace termínu&body=Dobrý den,%0A%0AMám zájem o:%0APreferovaný termín:%0ATelefon:%0A%0ADěkuji." className="action-option"><span>01 / E-MAIL</span><strong>Napsat žádost</strong><p>Uveďte požadovaný piercing a preferovaný termín.</p><b><ArrowIcon /></b></a>
-        <a href="tel:+420777547240" className="action-option"><span>02 / TELEFON</span><strong>+420 777 547 240</strong><p>Pro rychlou konzultaci nebo ověření volného termínu.</p><b><ArrowIcon /></b></a>
-        <a href="https://www.instagram.com/lotus.piercing/" className="action-option"><span>03 / INSTAGRAM</span><strong>@lotus.piercing</strong><p>Napište nám soukromou zprávu.</p><b><ArrowIcon /></b></a>
-      </div>
-      <div className="booking-info"><div><span>PŘED REZERVACÍ</span><p>Nejste si jistí vhodným typem piercingu? Prohlédněte si přehled služeb a ceny.</p><Link href="/cenik" className="text-link">SLUŽBY A CENY <ArrowIcon /></Link></div><div><span>NEZLETILÍ</span><p>U nezletilých se podmínky liší podle věku a typu piercingu.</p><Link href="/care#minors" className="text-link">PODMÍNKY PRO NEZLETILÉ <ArrowIcon /></Link></div></div>
-    </section>
-  </PageShell>;
+  return <BookingPage lang="cs" />;
 }
 
 function GiftCard() {

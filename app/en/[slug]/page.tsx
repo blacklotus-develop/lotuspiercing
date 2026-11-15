@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Link from "../../native-link";
 import { PageShell, SectionIndex } from "../../site";
 import StudioPage from "../../studio-page";
+import BookingPage from "../../booking-page";
 
 const priceGroups = [
   {
@@ -142,17 +143,7 @@ function Contact() {
 }
 
 function Booking() {
-  return <PageShell lang="en" slug="booking" eyebrow="07 / BOOKING" title={<>YOUR<br />APPOINTMENT.</>} intro="Tell us which piercing you are considering and which day suits you. We will confirm it or suggest the nearest available appointment.">
-    <section className="action-page frame">
-      <div className="action-intro"><SectionIndex index="01" label="CHOOSE A METHOD" /><h2>How would you<br />like to book?</h2></div>
-      <div className="action-options">
-        <a href="mailto:piercingprague@gmail.com?subject=Appointment request&body=Hello,%0A%0AI am interested in:%0APreferred date:%0APhone:%0A%0AThank you." className="action-option"><span>01 / EMAIL</span><strong>Send a request</strong><p>Include the piercing and your preferred appointment time.</p><b><ArrowIcon /></b></a>
-        <a href="tel:+420777547240" className="action-option"><span>02 / PHONE</span><strong>+420 777 547 240</strong><p>For a quick consultation or to check availability.</p><b><ArrowIcon /></b></a>
-        <a href="https://www.instagram.com/lotus.piercing/" className="action-option"><span>03 / INSTAGRAM</span><strong>@lotus.piercing</strong><p>Send us a direct message.</p><b><ArrowIcon /></b></a>
-      </div>
-      <div className="booking-info"><div><span>BEFORE BOOKING</span><p>Not sure which piercing suits you? Browse our services and prices.</p><Link href="/en/cenik" className="text-link">SERVICES & PRICES <ArrowIcon /></Link></div><div><span>MINORS</span><p>Conditions for minors vary by age and piercing type.</p><Link href="/en/care#minors" className="text-link">CONDITIONS FOR MINORS <ArrowIcon /></Link></div></div>
-    </section>
-  </PageShell>;
+  return <BookingPage lang="en" />;
 }
 
 function GiftCard() {
