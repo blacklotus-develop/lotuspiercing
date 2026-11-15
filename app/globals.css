@@ -575,3 +575,10 @@ h1,h2,h3{overflow-wrap:break-word}
 @media(max-width:900px){.care-guide-hero{grid-template-columns:1.4fr .8fr;gap:40px}.care-guide-duration-layout{grid-template-columns:1fr 260px;gap:28px}.care-guide-principles article{grid-template-columns:42px 1fr}.care-guide-principles p{grid-column:2}.care-guide-consent{gap:30px}}
 @media(max-width:600px){.care-guide-hero{grid-template-columns:1fr;gap:44px;padding-top:72px;padding-bottom:38px}.care-guide-hero-copy h1{font-size:clamp(38px,9.5vw,50px)}.care-guide-hero-copy>p:last-child{font-size:22px;margin-top:26px}.care-guide [id]{scroll-margin-top:74px}.care-guide-section{padding-block:70px}.care-guide-section h2{font-size:clamp(36px,10vw,48px)}.care-guide-section h3{font-size:27px;margin-top:45px}.care-guide-opening,.care-guide-duration-layout,.care-guide-healing-grid,.care-guide-consent{grid-template-columns:1fr;gap:26px}.care-guide-opening img{max-height:none}.care-guide-steps{grid-template-columns:1fr;gap:0}.care-guide-steps article{border-bottom:1px solid var(--line);padding:20px 0}.care-guide-steps h4{margin:10px 0}.care-guide-principles article{gap:12px;padding:22px 0}.care-guide-duration-layout>img{max-width:440px}.care-guide-duration-row{grid-template-columns:minmax(0,1fr) minmax(120px,auto);font-size:14px}.care-guide-dark-note{grid-template-columns:1fr;gap:8px}.care-guide-ages article{grid-template-columns:1fr;gap:8px}.care-guide-ages article>span{font-size:70px}.care-guide-consent{margin-top:45px}.care-guide-consent .button{width:100%;font-size:10px;gap:12px}.care-guide-faq-item button{grid-template-columns:28px minmax(0,1fr) 24px;gap:10px;padding:22px 0;font-size:19px}.care-guide-faq-answer{margin-left:38px}.care-guide-consult .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.care-guide-faq-answer{transition:none}}
+@media(max-width:600px){
+  .care-guide-duration-table h3{font-size:13px;margin:0;padding:0 0 15px}
+  .care-guide-note h3{font-size:23px;margin:0 0 12px}
+  .care-guide-ages h3{margin:5px 0 18px}
+  .care-guide-consent h3,.care-guide-faq-item h3{margin:0}
+  .care-guide-healing-grid h3{margin:28px 0 26px}
+}
