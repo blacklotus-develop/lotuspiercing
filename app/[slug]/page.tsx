@@ -7,6 +7,7 @@ import Link from "../native-link";
 import { PageShell, SectionIndex } from "../site";
 import StudioPage from "../studio-page";
 import BookingPage from "../booking-page";
+import CarePage from "../care-page";
 
 const priceGroups = [
   {
@@ -125,11 +126,7 @@ function Work() {
 }
 
 function Care() {
-  return <PageShell lang="cs" slug="care" eyebrow="04 / PÉČE" title={<>PŘED<br />& PO.</>} intro="Přehled pro klidnou přípravu, správnou péči a včasné řešení všeho, co během hojení potřebujete.">
-    <section id="aftercare" className="sub-section frame"><SectionIndex index="01" label="NÁSLEDNÁ PÉČE"/><h2>Méně dotyků.<br />Více hojení.</h2><div className="care-grid"><article><span>DĚLAT / 01</span><h3>Čisté ruce</h3><p>Piercingu se dotýkejte pouze při nezbytném čištění a vždy čistýma rukama.</p></article><article><span>DĚLAT / 02</span><h3>Sterilní roztok</h3><p>Používejte sterilní fyziologický roztok podle doporučení piercera.</p></article><article><span>VYNECHAT / 03</span><h3>Bez manipulace</h3><p>Šperkem neotáčejte, nevyndávejte ho předčasně a netlačte na něj při spánku.</p></article><article><span>KONTROLA / 04</span><h3>Kontrola</h3><p>V případě nejistoty pošlete fotografii nebo si rezervujte kontrolu ve studiu.</p></article></div></section>
-    <section id="healing" className="sub-section technical"><div className="frame"><SectionIndex index="02" label="HOJENÍ"/><h2>Hojení není<br />lineární.</h2><div className="timeline"><div><span>00—24 H</span><p>Citlivost a mírný otok mohou být běžnou reakcí.</p></div><div><span>01—04 TÝDNY</span><p>Piercing může působit klidně, ale kanálek se stále vytváří.</p></div><div><span>KONTROLA</span><p>Kontrola a případné zkrácení šperku podle typu piercingu.</p></div><div><span>ZAHOJENO</span><p>Výměnu doporučíme podle skutečného stavu, ne jen kalendáře.</p></div></div></div></section>
-    <section id="minors" className="sub-section frame"><SectionIndex index="03" label="NEZLETILÍ"/><div className="minor-grid"><h2>Piercing pro<br />nezletilé.</h2><div><p className="lead">U nezletilých rozhoduje věk, typ piercingu a přítomnost zákonného zástupce.</p><ul><li>Přineste platný doklad nezletilého i zákonného zástupce.</li><li>Zákonný zástupce musí být přítomen po celou dobu.</li><li>Některé typy piercingu provádíme až od stanoveného věku.</li><li>Před rezervací ověřte konkrétní podmínky telefonicky.</li></ul><Link href="/contact" className="text-link">OVĚŘIT PODMÍNKY <span><ArrowIcon /></span></Link></div></div></section>
-  </PageShell>;
+  return <CarePage lang="cs" />;
 }
 
 function Journal() {

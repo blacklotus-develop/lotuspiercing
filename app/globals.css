@@ -505,3 +505,73 @@ h1,h2,h3{overflow-wrap:break-word}
 }
 
 @media(prefers-reduced-motion:reduce){.sterilisation-visual img{animation:none}}
+
+/* CARE guide — scoped to the existing care route */
+.care-guide-hero{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:clamp(48px,8vw,130px);align-items:end;padding-top:clamp(70px,7vw,106px);padding-bottom:clamp(44px,5vw,68px);border-bottom:1px solid var(--ink)}
+.care-guide-hero-copy h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em;font-weight:500;margin:0;text-transform:uppercase}
+.care-guide-hero-copy>p:last-child{max-width:720px;font-size:clamp(22px,2.2vw,32px);line-height:1.2;letter-spacing:-.035em;margin:38px 0 0}
+.care-guide [id]{scroll-margin-top:92px}
+.care-guide-section{padding-block:clamp(75px,9vw,130px);border-bottom:1px solid var(--line)}
+.care-guide-index{font-size:10px;font-weight:600;letter-spacing:.12em;margin:0 0 36px}
+.care-guide-section h2{font-size:clamp(40px,5.5vw,76px);font-weight:400;line-height:1.05;letter-spacing:-.055em;margin:0 0 28px;max-width:1000px}
+.care-guide-section h3{font-size:clamp(25px,2.8vw,38px);font-weight:400;letter-spacing:-.04em;line-height:1.18;margin:60px 0 26px}
+.care-guide-section p{line-height:1.6}
+.care-guide-opening{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.62fr);gap:clamp(36px,7vw,100px);align-items:start}
+.care-guide-opening>div>p,.care-guide-lead{font-size:clamp(18px,1.7vw,23px);max-width:670px;line-height:1.5}
+.care-guide-opening img{width:100%;height:auto;max-height:620px;object-fit:contain;object-position:top center}
+.care-guide-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--ink)}
+.care-guide-steps article{padding-top:20px}
+.care-guide-steps span,.care-guide-principles span{font-size:11px;color:var(--muted)}
+.care-guide-steps h4,.care-guide-principles h4{font-size:clamp(20px,2vw,28px);font-weight:400;letter-spacing:-.035em;margin:28px 0 12px}
+.care-guide-steps p,.care-guide-principles p{font-size:16px;max-width:700px;margin:0}
+.care-guide-principles{border-top:1px solid var(--ink)}
+.care-guide-principles article{display:grid;grid-template-columns:70px minmax(180px,.7fr) minmax(0,1.3fr);gap:24px;align-items:start;border-bottom:1px solid var(--line);padding:28px 0}
+.care-guide-principles h4{margin:0}
+.care-guide-duration-intro{max-width:740px;margin-bottom:50px;font-size:18px}
+.care-guide-duration-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.65fr);gap:clamp(35px,6vw,90px);align-items:start}
+.care-guide-duration-layout>img{width:100%;height:auto;object-fit:contain}
+.care-guide-duration-table>div{margin-bottom:36px}
+.care-guide-duration-table h3{font-size:13px;letter-spacing:.11em;font-weight:600;margin:0;padding:0 0 15px;border-bottom:1px solid var(--ink)}
+.care-guide-duration-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,auto);gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+.care-guide-duration-row span:last-child{text-align:right}
+.care-guide-note{border-top:1px solid var(--ink);margin-top:54px;padding-top:20px}
+.care-guide-note h3{font-size:23px;margin:0 0 12px}
+.care-guide-note p{font-size:16px;margin:0 0 12px}
+.care-guide-dark{background:#111719;color:#f5f5f2;border:0}
+.care-guide-dark .care-guide-dark-intro{font-size:19px;max-width:900px;margin:0 0 55px;color:#d7dcda}
+.care-guide-healing-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px)}
+.care-guide-healing-grid>div{border-top:1px solid #59615e}
+.care-guide-healing-grid h3{font-size:clamp(25px,2.6vw,36px);margin:28px 0 26px}
+.care-guide-healing-grid p,.care-guide-healing-grid li{font-size:16px;line-height:1.6;color:#d7dcda}
+.care-guide-healing-grid strong{color:white;font-weight:500}
+.care-guide-healing-grid li{margin:0 0 8px}
+.care-guide-healing-grid ul{padding-left:20px}
+.care-guide-dark-note{display:grid;grid-template-columns:1fr 2fr;gap:35px;border-top:1px solid #59615e;margin-top:55px;padding-top:24px}
+.care-guide-dark-note p{margin:0;color:#d7dcda}
+.care-guide-ages{border-top:1px solid var(--ink);margin-top:48px}
+.care-guide-ages article{display:grid;grid-template-columns:minmax(140px,.45fr) minmax(0,1fr);gap:30px;padding:34px 0;border-bottom:1px solid var(--line)}
+.care-guide-ages article>span{font-size:clamp(60px,8vw,112px);line-height:1;letter-spacing:-.07em}
+.care-guide-ages h3{margin:5px 0 18px}
+.care-guide-ages p{max-width:780px;margin:0 0 15px;font-size:17px}
+.care-guide-consent{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;margin-top:60px}
+.care-guide-consent h3{margin:0}
+.care-guide-consent p{max-width:780px;margin:0 0 17px;font-size:17px}
+.care-guide-consent .button{margin-top:18px}
+.care-guide-consent .text-link{margin-top:20px}
+.care-guide-faq{border-top:1px solid var(--ink);margin-top:50px}
+.care-guide-faq-item{border-bottom:1px solid var(--line)}
+.care-guide-faq-item h3{margin:0;font-size:inherit}
+.care-guide-faq-item button{border:0;background:transparent;color:inherit;width:100%;display:grid;grid-template-columns:55px minmax(0,1fr) 28px;gap:14px;align-items:center;padding:25px 0;text-align:left;cursor:pointer;font-size:clamp(18px,2vw,26px);letter-spacing:-.025em}
+.care-guide-faq-item button:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+.care-guide-faq-number{font-size:11px;letter-spacing:0;color:var(--muted)}
+.care-guide-faq-toggle{text-align:right;font-size:28px;font-weight:300}
+.care-guide-faq-answer{display:grid;grid-template-rows:0fr;opacity:0;max-width:800px;margin-left:69px;transition:grid-template-rows .25s ease,opacity .25s ease}
+.care-guide-faq-answer>div{min-height:0;overflow:hidden}
+.care-guide-faq-item.is-open .care-guide-faq-answer{grid-template-rows:1fr;opacity:1}
+.care-guide-faq-item.is-open .care-guide-faq-answer>div{padding-bottom:26px}
+.care-guide-faq-answer p{font-size:16px;margin:0 0 13px}
+.care-guide-consult{border-top:1px solid var(--ink);border-bottom:0}
+.care-guide-consult p:not(.care-guide-index){max-width:700px;font-size:18px;margin-bottom:28px}
+@media(max-width:900px){.care-guide-hero{grid-template-columns:1.4fr .8fr;gap:40px}.care-guide-duration-layout{grid-template-columns:1fr 260px;gap:28px}.care-guide-principles article{grid-template-columns:42px 1fr}.care-guide-principles p{grid-column:2}.care-guide-consent{gap:30px}}
+@media(max-width:600px){.care-guide-hero{grid-template-columns:1fr;gap:44px;padding-top:72px;padding-bottom:38px}.care-guide-hero-copy h1{font-size:clamp(38px,9.5vw,50px)}.care-guide-hero-copy>p:last-child{font-size:22px;margin-top:26px}.care-guide [id]{scroll-margin-top:74px}.care-guide-section{padding-block:70px}.care-guide-section h2{font-size:clamp(36px,10vw,48px)}.care-guide-section h3{font-size:27px;margin-top:45px}.care-guide-opening,.care-guide-duration-layout,.care-guide-healing-grid,.care-guide-consent{grid-template-columns:1fr;gap:26px}.care-guide-opening img{max-height:none}.care-guide-steps{grid-template-columns:1fr;gap:0}.care-guide-steps article{border-bottom:1px solid var(--line);padding:20px 0}.care-guide-steps h4{margin:10px 0}.care-guide-principles article{gap:12px;padding:22px 0}.care-guide-duration-layout>img{max-width:440px}.care-guide-duration-row{grid-template-columns:minmax(0,1fr) minmax(120px,auto);font-size:14px}.care-guide-dark-note{grid-template-columns:1fr;gap:8px}.care-guide-ages article{grid-template-columns:1fr;gap:8px}.care-guide-ages article>span{font-size:70px}.care-guide-consent{margin-top:45px}.care-guide-consent .button{width:100%;font-size:10px;gap:12px}.care-guide-faq-item button{grid-template-columns:28px minmax(0,1fr) 24px;gap:10px;padding:22px 0;font-size:19px}.care-guide-faq-answer{margin-left:38px}.care-guide-consult .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.care-guide-faq-answer{transition:none}}

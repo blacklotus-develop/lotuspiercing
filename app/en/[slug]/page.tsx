@@ -7,6 +7,7 @@ import Link from "../../native-link";
 import { PageShell, SectionIndex } from "../../site";
 import StudioPage from "../../studio-page";
 import BookingPage from "../../booking-page";
+import CarePage from "../../care-page";
 
 const priceGroups = [
   {
@@ -125,11 +126,7 @@ function Work() {
 }
 
 function Care() {
-  return <PageShell lang="en" slug="care" eyebrow="04 / CARE" title={<>BEFORE<br />& AFTER.</>} intro="A clear guide to preparing well, caring correctly and responding early throughout the healing process.">
-    <section id="aftercare" className="sub-section frame"><SectionIndex index="01" label="AFTERCARE"/><h2>Less touching.<br />More healing.</h2><div className="care-grid"><article><span>DO / 01</span><h3>Clean hands</h3><p>Only touch your piercing when essential for cleaning, and always with clean hands.</p></article><article><span>DO / 02</span><h3>Sterile saline</h3><p>Use a sterile saline solution according to your piercer&apos;s guidance.</p></article><article><span>AVOID / 03</span><h3>No manipulation</h3><p>Do not rotate the jewelry, remove it early or put pressure on it while sleeping.</p></article><article><span>CHECK / 04</span><h3>Check-up</h3><p>If anything feels uncertain, send us a photo or book a studio check-up.</p></article></div></section>
-    <section id="healing" className="sub-section technical"><div className="frame"><SectionIndex index="02" label="HEALING"/><h2>Healing is<br />not linear.</h2><div className="timeline"><div><span>00—24 H</span><p>Tenderness and mild swelling can be a normal response.</p></div><div><span>01—04 WEEKS</span><p>The piercing may look calm while the channel is still forming.</p></div><div><span>FOLLOW-UP</span><p>A check-up and possible downsizing, depending on the piercing.</p></div><div><span>HEALED</span><p>We recommend changing jewelry based on actual condition, not just the calendar.</p></div></div></div></section>
-    <section id="minors" className="sub-section frame"><SectionIndex index="03" label="MINORS"/><div className="minor-grid"><h2>Piercing for<br />minors.</h2><div><p className="lead">Age, piercing type and the presence of a legal guardian determine the conditions for minors.</p><ul><li>Bring valid identification for both the minor and legal guardian.</li><li>The legal guardian must remain present throughout the appointment.</li><li>Some piercing types are available only from a specified age.</li><li>Please confirm the exact conditions before booking.</li></ul><Link href="/en/contact" className="text-link">CHECK THE CONDITIONS <span><ArrowIcon /></span></Link></div></div></section>
-  </PageShell>;
+  return <CarePage lang="en" />;
 }
 
 function Journal() {
