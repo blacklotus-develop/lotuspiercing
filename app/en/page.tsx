@@ -1,6 +1,13 @@
 import ArrowIcon from "../arrow-icon";
 import Link from "../native-link";
+import { pageMetadata } from "../seo";
 import { Footer, Header, SectionIndex } from "../site";
+
+export const metadata = pageMetadata({
+  lang: "en", cs: "/", en: "/en",
+  title: "Black Lotus Piercing Studio | Piercing in Prague",
+  description: "Professional piercing studio in Prague 10 – Vršovice. ASTM F-136 implant-grade titanium, controlled sterilisation, individual care and online booking.",
+});
 
 const services = [
   ["01", "Ear", "Lobe · Helix · Conch · Rook · Daith"],
@@ -29,13 +36,13 @@ export default function EnglishHome() {
       <div className="scroll-mark">SCROLL / 01—10</div>
     </section>
 
-    <section className="proof-grid frame"><div><strong>600+</strong><span>GOOGLE REVIEWS</span></div><div><strong>10+</strong><span>YEARS OF EXPERIENCE</span></div><div><strong>7000+</strong><span>COMPLETED PIERCINGS</span></div></section>
+    <section className="proof-grid frame"><div><strong>700+</strong><span>GOOGLE REVIEWS</span></div><div><strong>12</strong><span>YEARS OF EXPERIENCE</span></div><div><strong>7000+</strong><span>COMPLETED PIERCINGS</span></div></section>
 
     <section className="intro frame section-space"><SectionIndex index="01" label="STUDIO" /><div className="intro-grid"><h2>PRECISION<br />BECOMES<br />PERSONAL.</h2><div className="intro-text"><p className="lead">Precision, aesthetics and a professional approach. Piercing designed to become a natural part of your style.</p><p>Every placement begins with an anatomy consultation, the right jewelry dimensions and clear aftercare guidance.</p><Link href="/en/studio" className="text-link">DISCOVER THE STUDIO <span><ArrowIcon /></span></Link></div></div></section>
 
     <section className="services frame section-space"><SectionIndex index="02" label="PIERCING" /><div className="section-title-row"><h2>Services</h2><p>We choose every piercing with your anatomy, healing and long-term comfort in mind.</p></div><div className="service-list">{services.map(([n,title,detail])=><Link href="/en/cenik" key={n} className="service-row"><span>{n}</span><strong>{title}</strong><small>{detail}</small><b><ArrowIcon /></b></Link>)}</div></section>
 
-    <section className="material section-space"><div className="frame material-grid"><div className="material-copy"><SectionIndex index="03" label="MATERIAL" /><h2>TITANIUM<br />AS STANDARD.</h2><p>For initial piercing we use implant-grade ASTM F-136 titanium. It is lightweight, biocompatible and suitable for fresh piercings.</p><dl className="spec-grid"><div><dt>MATERIAL</dt><dd>Ti-6Al-4V ELI</dd></div><div><dt>STANDARD</dt><dd>ASTM F-136</dd></div><div><dt>APPLICATION</dt><dd>BODY JEWELRY</dd></div><div><dt>NICKEL</dt><dd>0%</dd></div></dl><Link href="/en/studio#jewelry" className="text-link">ABOUT OUR JEWELRY <span><ArrowIcon /></span></Link></div><div className="material-object"><img src="/assets/titanium.webp" alt="Titanium labret on a light background" /><span className="object-note left">BL / OBJECT 01</span><span className="object-note right">SCALE 04:01</span></div></div></section>
+    <section className="material section-space"><div className="frame material-grid"><div className="material-copy"><SectionIndex index="03" label="MATERIAL" /><h2>TITANIUM<br />AS STANDARD.</h2><p>For initial piercing we use implant-grade ASTM F-136 titanium. It is lightweight, biocompatible and suitable for fresh piercings.</p><dl className="spec-grid"><div><dt>MATERIAL</dt><dd>Ti-6Al-4V ELI</dd></div><div><dt>STANDARD</dt><dd>ASTM F-136</dd></div><div><dt>APPLICATION</dt><dd>BODY JEWELRY</dd></div><div><dt>NICKEL</dt><dd>0%</dd></div></dl><Link href="/en/studio#visit" className="text-link">ABOUT OUR JEWELRY <span><ArrowIcon /></span></Link></div><div className="material-object"><img src="/assets/titanium.webp" alt="Titanium labret on a light background" /><span className="object-note left">BL / OBJECT 01</span><span className="object-note right">SCALE 04:01</span></div></div></section>
 
     <section className="studio-visual"><img src="/assets/studio.webp" alt="Piercing studio interior" /><div className="studio-overlay" /><div className="studio-visual-copy frame"><SectionIndex index="04" label="THE SPACE" light /><h2>A CONTROLLED<br />SPACE FOR<br />INDIVIDUALITY.</h2><Link href="/en/studio" className="button button-ghost">ABOUT THE STUDIO <span><ArrowIcon /></span></Link></div></section>
 

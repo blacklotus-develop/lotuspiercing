@@ -87,11 +87,11 @@ const copy = {
   },
 } satisfies Record<Lang, Record<string, string | string[][] | string[]>>;
 
-export default function StudioPage({ lang, preview = false }: { lang: Lang; preview?: boolean }) {
+export default function StudioPage({ lang }: { lang: Lang }) {
   const t = copy[lang];
   return (
     <main className="page page-studio studio-v3">
-      <Header lang={lang} slug={preview ? "studio-preview" : "studio"} />
+      <Header lang={lang} slug="studio" />
 
       <section className="studio-v3-hero frame">
         <div className="studio-v3-hero-main">

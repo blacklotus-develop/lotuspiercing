@@ -1,0 +1,16 @@
+# Зависимости и сборка (создаются автоматически, в GitHub не нужны)
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Служебные файлы macOS
+.DS_Store
+
+# Локальные настройки и секреты
+.env*
+!.env.example
+
+# Логи
+npm-debug.log*

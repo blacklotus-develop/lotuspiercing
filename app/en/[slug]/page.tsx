@@ -4,6 +4,7 @@ import PriceList from "../../price-list";
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "../../native-link";
+import { pageMetadata } from "../../seo";
 import { PageShell, SectionIndex } from "../../site";
 import StudioPage from "../../studio-page";
 import BookingPage from "../../booking-page";
@@ -95,23 +96,6 @@ const priceGroups = [
   },
 ];
 
-function Studio() {
-  const steps = ["Pre-cleaning", "Ultrasonic bath", "Rinsing and drying", "Individual packaging", "Steam autoclave", "Verification and records"];
-  return <PageShell lang="en" slug="studio" eyebrow="01 / STUDIO" title={<>A STUDIO<br />BUILT ON PRECISION.</>} intro="A considered space, an experienced team and controlled processes. Everything for safe piercing and a calm studio experience.">
-    <section className="studio-intro-gallery frame">
-      <div className="studio-intro-main"><img src="/assets/studio-workspace-wide.webp" alt="Black Lotus Piercing Studio workspace" /></div>
-      <div className="studio-intro-side">
-        <div className="studio-intro-copy"><span>BLACK LOTUS / PRAGUE</span><strong>Since 2015.</strong><p>We have been dedicated to piercing since 2015. We work without rushing, with respect for anatomy and attention to every detail.</p><p>Our hygiene and sterilisation procedures go beyond the required minimum. We do work we believe in — and still genuinely love doing.</p></div>
-        <div className="studio-intro-secondary"><img src="/assets/studio-workspace-detail.webp" alt="Detail of the Black Lotus workspace" loading="lazy" /></div>
-      </div>
-    </section>
-    <section id="team" className="sub-section frame"><SectionIndex index="01" label="TEAM" /><h2>Two people.<br />One standard.</h2><div className="bio-grid"><article><div className="portrait bio-photo"><img src="/assets/alex-studio.webp" alt="Alex — Black Lotus founder and professional piercer" loading="lazy" /></div><span>FOUNDER / PIERCER</span><h3>Alex</h3><p>More than 12 years of experience, thousands of completed piercings and attention to every detail. Alex is the studio founder and a professional piercer who combines technical precision with an eye for aesthetics.</p><p>Each piercing is adapted to the client’s individual anatomy. He works exclusively with high-quality jewelry and follows the highest hygiene standards. His experience and personal approach ensure a safe procedure and a result designed to stand the test of time.</p></article><article><div className="portrait bio-photo"><img src="/assets/maky-studio.webp" alt="Maky — professional piercer at Black Lotus" loading="lazy" /></div><span>PIERCER</span><h3>Maky</h3><p>Maky is a professional piercer with an eye for detail, aesthetics and safety. She approaches every client individually and adapts each piercing to their anatomy and personal style.</p><p>Her goal is to make the entire experience comfortable and create a piercing you will enjoy for years to come.</p></article></div></section>
-    <section id="sterilisation" className="sub-section technical"><div className="frame"><SectionIndex index="02" label="STERILISATION" /><h2>A repeatable<br />safety protocol.</h2><div className="number-list">{steps.map((s,i)=><div key={s}><span>{String(i+1).padStart(2,"0")}</span><strong>{s}</strong><p>{i===5 ? "Every cycle is verified before instruments are stored." : "Every step is separated and follows a clearly defined sequence."}</p></div>)}</div></div></section>
-    <section id="jewelry" className="sub-section frame jewelry-page"><SectionIndex index="03" label="JEWELRY" /><div><h2>Implant-grade<br />or nothing.</h2><p>For initial application we use ASTM F-136 implant-grade titanium. We choose the right size, shape and threading for your anatomy and healing stage.</p><dl className="spec-grid"><div><dt>STANDARD</dt><dd>ASTM F-136</dd></div><div><dt>THREAD</dt><dd>INTERNAL</dd></div><div><dt>NICKEL</dt><dd>0%</dd></div><div><dt>FINISH</dt><dd>HAND POLISHED</dd></div></dl></div><img src="/assets/titanium.webp" alt="ASTM F-136 titanium jewelry" /></section>
-  </PageShell>;
-}
-
-function StudioPreview() { return <StudioPage lang="en" preview />; }
 
 function Cenik() {
   return <PageShell lang="en" slug="cenik" eyebrow="02 / PRICES" title={<>PIERCING<br />PRICE LIST.</>} intro="The final price always depends on the selected jewelry. Unless stated otherwise, prices include basic internally threaded ASTM F-136 implant-grade titanium jewelry.">
@@ -154,21 +138,49 @@ function GiftCard() {
   </PageShell>;
 }
 
-// The published Studio route and its preview share the same approved page component.
-const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="en" />, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="en" />, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+
+// Title and description of each page for Google and social previews.
+const seo: Record<string, { title: string; description: string }> = {
+  studio: {
+    title: "Studio & team | Black Lotus Piercing Prague",
+    description: "Piercing studio in Prague 10 – Vršovice. Meet our piercers Alex and Maky, see our sterilisation process and what to expect during your visit.",
+  },
+  cenik: {
+    title: "Piercing prices in Prague | Black Lotus Piercing Studio",
+    description: "Current piercing prices in Prague. Basic ASTM F-136 implant-grade titanium jewelry is included with standard piercing services.",
+  },
+  work: {
+    title: "Piercing portfolio | Black Lotus Piercing Prague",
+    description: "Examples of our work: helix, conch, nostril and more, with ASTM F-136 implant-grade titanium jewelry.",
+  },
+  care: {
+    title: "Piercing aftercare & healing | Black Lotus Piercing Prague",
+    description: "How to care for a new piercing, typical healing times and the rules for minors. A practical guide from Black Lotus.",
+  },
+  journal: {
+    title: "Piercing journal | Black Lotus Piercing Prague",
+    description: "Practical, myth-free articles about piercing: jewelry materials, healing, changing your first jewelry and what to expect at your first visit.",
+  },
+  contact: {
+    title: "Contact | Black Lotus Piercing Prague",
+    description: "Petrohradská 388/22, Prague 10 – Vršovice. Phone +420 777 547 240, email piercingprague@gmail.com. Book your appointment online.",
+  },
+  booking: {
+    title: "Book an appointment | Black Lotus Piercing Prague",
+    description: "Book your piercing online. Choose the service, your piercer and a time that suits you.",
+  },
+  "gift-card": {
+    title: "Piercing gift card | Black Lotus Piercing Prague",
+    description: "Give a piercing or jewelry. Black Lotus gift cards from 1,000 CZK, digital or printed.",
+  },
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  if (slug === "studio-preview") return { title: "Studio preview | Black Lotus", robots: { index: false, follow: false } };
-  if (slug !== "cenik" && slug !== "piercing") return {};
-  return {
-    title: "Piercing prices in Prague | Black Lotus Piercing Studio",
-    description: "Current piercing prices in Prague. Basic ASTM F-136 implant-grade titanium jewelry is included with standard piercing services.",
-    alternates: {
-      canonical: "https://lotuspiercing.cz/en/cenik/",
-      languages: { "cs-CZ": "https://lotuspiercing.cz/cenik/", en: "https://lotuspiercing.cz/en/cenik/" },
-    },
-  };
+  const page = seo[slug];
+  if (!page) return {};
+  return pageMetadata({ lang: "en", cs: `/${slug}`, en: `/en/${slug}`, ...page });
 }
 
 export function generateStaticParams() { return [...Object.keys(pages), "piercing"].map(slug => ({ slug })); }

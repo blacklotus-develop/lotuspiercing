@@ -1,6 +1,13 @@
 import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
+import { pageMetadata } from "./seo";
 import { Footer, Header, SectionIndex } from "./site";
+
+export const metadata = pageMetadata({
+  lang: "cs", cs: "/", en: "/en",
+  title: "Black Lotus Piercing Studio | Piercing v Praze",
+  description: "Profesionální piercingové studio v Praze 10 – Vršovicích. Implantátový titan ASTM F-136, důsledná sterilizace, individuální přístup a online rezervace.",
+});
 
 const services = [
   ["01", "Ucho", "Lalůček · Helix · Conch · Rook · Daith"],
@@ -38,8 +45,8 @@ export default function Home() {
       </section>
 
       <section className="proof-grid frame">
-        <div><strong>600+</strong><span>HODNOCENÍ NA GOOGLE</span></div>
-        <div><strong>10+</strong><span>LET PRAXE V OBORU</span></div>
+        <div><strong>700+</strong><span>HODNOCENÍ NA GOOGLE</span></div>
+        <div><strong>12</strong><span>LET PRAXE V OBORU</span></div>
         <div><strong>7000+</strong><span>DOKONČENÝCH PIERCINGŮ</span></div>
       </section>
 
@@ -82,7 +89,7 @@ export default function Home() {
               <div><dt>POUŽITÍ</dt><dd>TĚLOVÉ ŠPERKY</dd></div>
               <div><dt>NIKL</dt><dd>0%</dd></div>
             </dl>
-            <Link href="/studio#jewelry" className="text-link">O NAŠICH ŠPERCÍCH <span><ArrowIcon /></span></Link>
+            <Link href="/studio#visit" className="text-link">O NAŠICH ŠPERCÍCH <span><ArrowIcon /></span></Link>
           </div>
           <div className="material-object">
             <img src="/assets/titanium.webp" alt="Titanový labret na světlém pozadí" />

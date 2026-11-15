@@ -4,6 +4,7 @@ import PriceList from "../price-list";
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "../native-link";
+import { pageMetadata } from "../seo";
 import { PageShell, SectionIndex } from "../site";
 import StudioPage from "../studio-page";
 import BookingPage from "../booking-page";
@@ -95,23 +96,6 @@ const priceGroups = [
   },
 ];
 
-function Studio() {
-  const steps = ["Předčištění", "Ultrazvuková lázeň", "Oplach a sušení", "Jednotlivé balení", "Parní autokláv", "Kontrola a evidence"];
-  return <PageShell lang="cs" slug="studio" eyebrow="01 / STUDIO" title={<>STUDIO<br />POSTAVENÉ NA PŘESNOSTI.</>} intro="Promyšlený prostor, zkušený tým a kontrolované procesy. Vše pro bezpečný piercing a klidný průběh návštěvy.">
-    <section className="studio-intro-gallery frame">
-      <div className="studio-intro-main"><img src="/assets/studio-workspace-wide.webp" alt="Pracovní prostor Black Lotus Piercing Studio" /></div>
-      <div className="studio-intro-side">
-        <div className="studio-intro-copy"><span>BLACK LOTUS / PRAHA</span><strong>Od roku 2015.</strong><p>Piercingu se věnujeme od roku 2015. Pracujeme bez spěchu, s respektem k anatomii a s důrazem na každý detail.</p><p>Hygienické a sterilizační postupy máme nastavené nad rámec povinného minima. Děláme práci, které věříme — a která nás pořád baví.</p></div>
-        <div className="studio-intro-secondary"><img src="/assets/studio-workspace-detail.webp" alt="Detail pracovního prostoru Black Lotus" loading="lazy" /></div>
-      </div>
-    </section>
-    <section id="team" className="sub-section frame"><SectionIndex index="01" label="TÝM" /><h2>Dva lidé.<br />Jeden standard.</h2><div className="bio-grid"><article><div className="portrait bio-photo"><img src="/assets/alex-studio.webp" alt="Alex — zakladatel Black Lotus a profesionální piercer" loading="lazy" /></div><span>ZAKLADATEL / PIERCER</span><h3>Alex</h3><p>Více než 12 let zkušeností, tisíce provedených piercingů a důraz na každý detail. Alex je zakladatelem studia a profesionálním piercerem, který spojuje technickou preciznost s citem pro estetiku.</p><p>Každý piercing přizpůsobuje individuální anatomii klienta, pracuje výhradně s kvalitními šperky a dodržuje nejvyšší hygienické standardy. Díky zkušenostem i osobnímu přístupu se můžete spolehnout na bezpečný průběh i výsledek, který obstojí v čase.</p></article><article><div className="portrait bio-photo"><img src="/assets/maky-studio.webp" alt="Maky — profesionální piercerka Black Lotus" loading="lazy" /></div><span>PIERCERKA</span><h3>Maky</h3><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></article></div></section>
-    <section id="sterilisation" className="sub-section technical"><div className="frame"><SectionIndex index="02" label="STERILIZACE" /><h2>Opakovatelný<br />bezpečnostní proces.</h2><div className="number-list">{steps.map((s,i)=><div key={s}><span>{String(i+1).padStart(2,"0")}</span><strong>{s}</strong><p>{i===5 ? "Každý cyklus je zkontrolován před uložením nástrojů." : "Každý krok probíhá odděleně a v jasně definovaném pořadí."}</p></div>)}</div></div></section>
-    <section id="jewelry" className="sub-section frame jewelry-page"><SectionIndex index="03" label="ŠPERKY" /><div><h2>Implantátový titan.<br />Bez kompromisů.</h2><p>Pro první aplikaci používáme šperky z implantátového titanu ASTM F-136. Správný rozměr, tvar a typ závitu vybíráme podle anatomie a fáze hojení.</p><dl className="spec-grid"><div><dt>STANDARD</dt><dd>ASTM F-136</dd></div><div><dt>ZÁVIT</dt><dd>VNITŘNÍ</dd></div><div><dt>NIKL</dt><dd>0%</dd></div><div><dt>POVRCH</dt><dd>RUČNĚ LEŠTĚNÝ</dd></div></dl></div><img src="/assets/titanium.webp" alt="Titanový šperk ASTM F-136" /></section>
-  </PageShell>;
-}
-
-function StudioPreview() { return <StudioPage lang="cs" preview />; }
 
 function Cenik() {
   return <PageShell lang="cs" slug="cenik" eyebrow="02 / CENÍK" title={<>CENÍK<br />PIERCINGU.</>} intro="Konečná cena vždy záleží na vybraném šperku. Uvedené ceny zahrnují základní šperk z prvotřídního titanu ASTM F-136 s vnitřním závitem, pokud není uvedeno jinak.">
@@ -154,20 +138,49 @@ function GiftCard() {
   </PageShell>;
 }
 
-const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="cs" />, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="cs" />, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+
+// Заголовок и описание каждой страницы для Google и соцсетей.
+const seo: Record<string, { title: string; description: string }> = {
+  studio: {
+    title: "Studio a tým | Black Lotus Piercing Praha",
+    description: "Piercingové studio v Praze 10 – Vršovicích. Seznamte se s piercery Alexem a Maky, s naším sterilizačním procesem a s tím, jak probíhá návštěva.",
+  },
+  cenik: {
+    title: "Ceník piercingu Praha | Black Lotus Piercing Studio",
+    description: "Aktuální ceny piercingu v Praze. Základní šperk z implantátového titanu ASTM F-136 je u standardních aplikací součástí ceny.",
+  },
+  work: {
+    title: "Portfolio piercingů | Black Lotus Piercing Praha",
+    description: "Ukázky naší práce: helix, conch, nostril a další piercingy se šperky z implantátového titanu ASTM F-136.",
+  },
+  care: {
+    title: "Péče o piercing a hojení | Black Lotus Piercing Praha",
+    description: "Jak pečovat o nový piercing, jak dlouho se hojí jednotlivá místa a jaké podmínky platí pro nezletilé. Praktický průvodce od Black Lotus.",
+  },
+  journal: {
+    title: "Články o piercingu | Black Lotus Piercing Praha",
+    description: "Praktické články o piercingu bez mýtů: materiály šperků, hojení, výměna prvního šperku a co čekat při první návštěvě.",
+  },
+  contact: {
+    title: "Kontakt | Black Lotus Piercing Praha",
+    description: "Petrohradská 388/22, Praha 10 – Vršovice. Telefon +420 777 547 240, e-mail piercingprague@gmail.com. Rezervace termínu online.",
+  },
+  booking: {
+    title: "Rezervace termínu | Black Lotus Piercing Praha",
+    description: "Rezervujte si termín piercingu online. Vyberte službu, piercera a čas, který vám vyhovuje.",
+  },
+  "gift-card": {
+    title: "Dárkový poukaz na piercing | Black Lotus Piercing Praha",
+    description: "Darujte piercing nebo šperk. Dárkový poukaz Black Lotus od 1 000 Kč v digitální nebo tištěné podobě.",
+  },
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  if (slug === "studio-preview") return { title: "Studio preview | Black Lotus", robots: { index: false, follow: false } };
-  if (slug !== "cenik" && slug !== "piercing") return {};
-  return {
-    title: "Ceník piercingu Praha | Black Lotus Piercing Studio",
-    description: "Aktuální ceny piercingu v Praze. Základní šperk z implantátového titanu ASTM F-136 je u standardních aplikací součástí ceny.",
-    alternates: {
-      canonical: "https://lotuspiercing.cz/cenik/",
-      languages: { "cs-CZ": "https://lotuspiercing.cz/cenik/", en: "https://lotuspiercing.cz/en/cenik/" },
-    },
-  };
+  const page = seo[slug];
+  if (!page) return {};
+  return pageMetadata({ lang: "cs", cs: `/${slug}`, en: `/en/${slug}`, ...page });
 }
 
 export function generateStaticParams() { return [...Object.keys(pages), "piercing"].map(slug => ({ slug })); }

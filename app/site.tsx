@@ -9,13 +9,16 @@ const nav = {
   en: [["STUDIO", "studio"], ["PRICES", "cenik"], ["WORK", "work"], ["CARE", "care"], ["JOURNAL", "journal"], ["CONTACT", "contact"]],
 };
 
-const pathFor = (lang: Lang, slug = "") => `${lang === "en" ? "/en" : ""}${slug ? `/${slug}` : "/"}`;
+const pathFor = (lang: Lang, slug = "") => {
+  if (lang === "en") return slug ? `/en/${slug}` : "/en";
+  return slug ? `/${slug}` : "/";
+};
 
-export function Header({ lang = "cs", slug = "", switchSlug, variant }: { lang?: Lang; slug?: string; switchSlug?: string; variant?: "v2" }) {
+export function Header({ lang = "cs", slug = "", switchSlug }: { lang?: Lang; slug?: string; switchSlug?: string }) {
   const switchHref = pathFor(lang === "cs" ? "en" : "cs", switchSlug ?? slug);
-  const homeHref = variant === "v2" ? "/v2" : pathFor(lang);
+  const homeHref = pathFor(lang);
   const bookingHref = "https://n571820.alteg.io/";
-  const links = variant === "v2" ? [["PIERCING", "/v2#piercing-index"], ["STUDIO", "/v2#safety"], ["PRÁCE", "/v2#portfolio"], ["PÉČE", "/v2#healing"], ["ČLÁNKY", "/journal"], ["KONTAKT", "/v2#contact"]] : nav[lang].map(([label, page]) => [label, pathFor(lang, page)]);
+  const links = nav[lang].map(([label, page]) => [label, pathFor(lang, page)]);
   return (
     <header className="site-header">
       <Link href={homeHref} className="brand" aria-label={lang === "cs" ? "Black Lotus — domů" : "Black Lotus — home"}><span className="brand-monogram" aria-hidden="true" /><span>BLACK LOTUS®<small>{lang === "cs" ? "PIERCINGOVÉ STUDIO / PRAHA" : "PIERCING STUDIO / PRAGUE"}</small></span></Link>
