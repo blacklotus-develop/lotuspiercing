@@ -528,6 +528,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .care-guide-principles article{display:grid;grid-template-columns:70px minmax(180px,.7fr) minmax(0,1.3fr);gap:24px;align-items:start;border-bottom:1px solid var(--line);padding:28px 0}
 .care-guide-principles h4{margin:0}
 .care-guide-duration-intro{max-width:740px;margin-bottom:50px;font-size:18px}
+.care-guide-duration-intro p+p{margin-top:12px}
 .care-guide-duration-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.65fr);gap:clamp(35px,6vw,90px);align-items:start}
 .care-guide-duration-layout>img{width:100%;height:auto;object-fit:contain}
 .care-guide-duration-table>div{margin-bottom:36px}
@@ -539,13 +540,19 @@ h1,h2,h3{overflow-wrap:break-word}
 .care-guide-note p{font-size:16px;margin:0 0 12px}
 .care-guide-dark{background:#111719;color:#f5f5f2;border:0}
 .care-guide-dark .care-guide-dark-intro{font-size:19px;max-width:900px;margin:0 0 55px;color:#d7dcda}
-.care-guide-healing-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px)}
+.care-guide-healing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,4vw,64px)}
+@media(max-width:1100px){.care-guide-healing-grid{grid-template-columns:1fr;gap:48px}}
+.care-guide-healing-grid p+p,.care-guide-healing-grid ul+p{margin-top:14px}
+.care-guide-normal-list p{padding:14px 0;border-top:1px solid #2c3436}
+.care-guide-normal-list p:first-child{padding-top:0;border-top:0}
+.care-guide-normal-list strong{display:block;margin-bottom:2px}
 .care-guide-healing-grid>div{border-top:1px solid #59615e}
 .care-guide-healing-grid h3{font-size:clamp(25px,2.6vw,36px);margin:28px 0 26px}
 .care-guide-healing-grid p,.care-guide-healing-grid li{font-size:16px;line-height:1.6;color:#d7dcda}
 .care-guide-healing-grid strong{color:white;font-weight:500}
-.care-guide-healing-grid li{margin:0 0 8px}
-.care-guide-healing-grid ul{padding-left:20px}
+.care-guide-healing-grid ul{list-style:none;padding:0;margin:14px 0 0;border-bottom:1px solid #2c3436}
+.care-guide-healing-grid li{position:relative;margin:0;padding:10px 0 10px 24px;border-top:1px solid #2c3436}
+.care-guide-healing-grid li::before{content:"—";position:absolute;left:0;color:#8b9391}
 .care-guide-dark-note{display:grid;grid-template-columns:1fr 2fr;gap:35px;border-top:1px solid #59615e;margin-top:55px;padding-top:24px}
 .care-guide-dark-note p{margin:0;color:#d7dcda}
 .care-guide-ages{border-top:1px solid var(--ink);margin-top:48px}
