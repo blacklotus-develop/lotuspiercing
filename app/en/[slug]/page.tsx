@@ -166,6 +166,7 @@ function GiftCard() {
   </PageShell>;
 }
 
+// The published Studio route and its preview share the same approved page component.
 const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="en" />, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
