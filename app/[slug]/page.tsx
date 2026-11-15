@@ -166,7 +166,7 @@ function GiftCard() {
   </PageShell>;
 }
 
-const pages: Record<string, () => React.ReactNode> = { studio: Studio, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
+const pages: Record<string, () => React.ReactNode> = { studio: () => <StudioPage lang="cs" />, "studio-preview": StudioPreview, cenik: Cenik, work: Work, care: Care, journal: Journal, contact: Contact, booking: Booking, "gift-card": GiftCard };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
