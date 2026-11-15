@@ -531,7 +531,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .care-guide-duration-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.65fr);gap:clamp(35px,6vw,90px);align-items:start}
 .care-guide-duration-layout>img{width:100%;height:auto;object-fit:contain}
 .care-guide-duration-table>div{margin-bottom:36px}
-.care-guide-duration-table h3{font-size:13px;letter-spacing:.11em;font-weight:600;margin:0;padding:0 0 15px;border-bottom:1px solid var(--ink)}
+.care-guide-duration-table h3{font-size:13px;letter-spacing:.11em;font-weight:600;text-transform:uppercase;margin:0;padding:0 0 15px;border-bottom:1px solid var(--ink)}
 .care-guide-duration-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,auto);gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
 .care-guide-duration-row span:last-child{text-align:right}
 .care-guide-note{border-top:1px solid var(--ink);margin-top:54px;padding-top:20px}
