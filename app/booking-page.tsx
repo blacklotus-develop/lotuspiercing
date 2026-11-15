@@ -12,13 +12,13 @@ const bookings = {
 
 export default function BookingPage({ lang }: { lang: Lang }) {
   const cs = lang === "cs";
-  return <PageShell lang={lang} slug="booking" eyebrow={cs ? "07 / REZERVACE" : "07 / BOOKING"} title={cs ? "REZERVACE" : "BOOKING"} intro={cs ? "Váš termín. Vaše volba." : "Your appointment. Your choice."}>
+  return <PageShell lang={lang} slug="booking" eyebrow={cs ? "07 / REZERVACE" : "07 / BOOKING"} title={cs ? "Rezervujte si termín." : "BOOKING"} intro={cs ? "Vyberte si službu, piercera a volný termín online." : "Your appointment. Your choice."}>
     <section className="action-page frame booking-page-content">
       <div className="booking-primary">
         <span className="booking-label">{cs ? "ONLINE REZERVACE" : "ONLINE BOOKING"}</span>
         <h2>{cs ? "Rezervujte si svůj termín online." : "Book your appointment online."}</h2>
         <p>{cs ? "Vyberte si službu, piercera a termín, který vám vyhovuje. Jednoduše a kdykoliv." : "Choose the service, piercer and time that suit you. Simple, whenever you like."}</p>
-        <a href={bookings.general} data-url={bookings.general} className="button button-dark ms_booking booking-main-button">{cs ? "REZERVOVAT TERMÍN" : "BOOK APPOINTMENT"} <ArrowIcon /></a>
+        <a href={bookings.general} data-url={bookings.general} className="button button-dark ms_booking booking-main-button">{cs ? "VYBRAT TERMÍN" : "BOOK APPOINTMENT"} <ArrowIcon /></a>
       </div>
 
       <div className="booking-piercers">
