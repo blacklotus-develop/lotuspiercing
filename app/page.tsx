@@ -4,6 +4,7 @@ import Link from "./native-link";
 import { pageMetadata } from "./seo";
 import { Footer, Header, SectionIndex } from "./site";
 import HomeFaq from "./home-faq";
+import GiftBanner from "./gift-banner";
 import MaterialsSection from "./materials-section";
 import ServicesShowcase from "./services-showcase";
 import { faqItems } from "./home-faq-items";
@@ -107,12 +108,10 @@ export default function Home() {
             <Link href="/care#healing"><span>PO</span><strong>Hojení a kontroly</strong><b><ArrowIcon /></b></Link>
           </div>
           <Link href="/care" className="text-link">PÉČE O PIERCING <span><ArrowIcon /></span></Link>
-          <div className="gift-card">
-            <p>[ BLACK LOTUS / DÁRKOVÝ POUKAZ ]</p><h3>Darujte něco<br />osobního.</h3><span>DIGITÁLNÍ I TIŠTĚNÁ PODOBA · OD 1 000 CZK</span>
-            <Link href="/gift-card" className="button button-dark">KOUPIT POUKAZ <span><ArrowIcon /></span></Link>
-          </div>
         </div>
       </section>
+
+      <GiftBanner lang="cs" />
 
       <section className="journal frame section-space">
         <SectionIndex index="06" label="ČLÁNKY" />
