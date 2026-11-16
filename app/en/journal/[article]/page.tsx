@@ -7,6 +7,8 @@ import { Footer, Header } from "../../../site";
 
 import { articles } from "../articles";
 import RichText from "../../../journal/rich-text";
+import { articleMedia } from "../../../journal/article-media";
+import SectionExtras from "../../../journal/section-extras";
 
 export function generateStaticParams() { return Object.keys(articles).map(article => ({ article })); }
 
@@ -43,11 +45,12 @@ export default async function Article({ params }: { params: Promise<{ article: s
   const data = articles[article as keyof typeof articles];
   if (!data) notFound();
   // Čtěte také: ručně vybrané související články (pole related v articles.ts).
+  const media = articleMedia.en[article];
   const relatedArticles = data.related.map(slug => [slug, articles[slug]] as const);
   return <main><Header lang="en" slug={`journal/${article}`} switchSlug={`journal/${data.cs}`} />
     <article className="article-page frame">
       <div className="article-hero"><p>{data.tag}</p><h1>{data.title}</h1><strong>{data.lead}</strong></div>
-      <div className="article-body">{data.sections.map(([title,text],i)=><section key={title}><span>{String(i+1).padStart(2,"0")}</span><div><h2>{title}</h2><RichText text={text} /></div></section>)}</div>
+      <div className="article-body">{data.sections.map(([title,text],i)=><section key={title}><span>{String(i+1).padStart(2,"0")}</span><div><h2>{title}</h2><RichText text={text} /><SectionExtras extra={media?.[title]} lang="en" /></div></section>)}</div>
       <div className="article-cta"><p>Have a question about your piercing?</p><Link href="https://n571820.alteg.io/" className="button button-light">BOOK A CONSULTATION <ArrowIcon /></Link></div>
       <Link href="/en/journal" className="text-link"><ArrowIcon back /> BACK TO ALL ARTICLES</Link>
       <section className="journal section-space" aria-labelledby="related-articles">
