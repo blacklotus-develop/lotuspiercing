@@ -695,25 +695,41 @@ h1,h2,h3{overflow-wrap:break-word}
 .preview-arrows{display:flex;gap:6px}.preview-arrows span{width:36px;height:36px;border:1px solid var(--line);display:grid;place-items:center}
 @media(max-width:900px){.preview-ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.preview-ig-tile:nth-child(n+7){display:none}.preview-rev{grid-template-columns:1fr}.preview-rev-list{grid-template-columns:1fr}.preview-rev-list>div{border-right:0;padding:16px 0}.preview-rev-list>div+div{display:none}}
 
-/* SLUŽBY — fotografie kategorie při najetí (desktop) / malý náhled v řádku (mobil) */
-.services-showcase{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(28px,4vw,64px);align-items:stretch}
-.service-thumb{display:none}
-.services-showcase .service-row:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
-.service-preview{position:relative;min-height:380px;overflow:hidden}
-.service-preview>img,.service-preview-empty{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .35s ease}
-.service-preview>img{object-fit:cover}
-.service-preview>.is-visible{opacity:1}
-.service-preview-empty{display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:28px;border:1px solid var(--line)}
-.service-preview-empty strong{font-size:clamp(40px,4vw,64px);font-weight:400;letter-spacing:-.05em;line-height:1}
-.service-preview-empty span{font-size:13px;color:var(--muted)}
+/* SLUŽBY — interaktivní katalog (desktop: seznam + panel, mobil: akordeon) */
+.svc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,64px);align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.svc-row{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;grid-template-columns:60px minmax(0,1fr) 30px}
+.svc-row.is-active{padding-inline:16px;background:var(--cold)}
+.svc-row:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.svc-row b{transition:transform .25s}
+.svc-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,2.5vw,36px);align-items:end}
+.svc-photos{display:grid}
+.svc-photos img{grid-area:1/1;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.svc-photos img.is-visible{opacity:1}
+.svc-infos{display:grid}
+.svc-infos>.svc-info{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
+.svc-infos>.svc-info.is-visible{opacity:1;visibility:visible}
+.svc-info-label{font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.svc-info h3{font-size:clamp(30px,3vw,46px);font-weight:400;letter-spacing:-.045em;line-height:1;margin:14px 0 16px}
+.svc-info p{font-size:16px;line-height:1.55;color:#454b49;margin:0}
+.svc-info p.svc-examples{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.svc-info .text-link{margin-top:22px}
+.svc-acc{display:none}
+@media(prefers-reduced-motion:reduce){.svc-photos img,.svc-infos>.svc-info,.svc-acc,.svc-row b{transition:none}}
 @media(max-width:900px){
-  .services-showcase{grid-template-columns:1fr}
-  .service-preview{display:none}
-  .service-thumb{display:block;width:52px;height:52px;overflow:hidden}
-  .service-thumb img{width:100%;height:100%;object-fit:cover}
-  .services-showcase .service-row{grid-template-columns:60px minmax(0,1fr) minmax(0,1fr) 52px 24px}
+  .svc{grid-template-columns:1fr}
+  .svc-panel{display:none}
+  .svc-row.is-active{padding-inline:0;background:transparent}
+  .svc-list li.is-open>.svc-row{padding-inline:16px;background:var(--cold)}
+  .svc-list li.is-open>.svc-row b{transform:rotate(90deg)}
+  .svc-acc{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .svc-list li.is-open>.svc-acc{grid-template-rows:1fr}
+  .svc-acc-inner{min-height:0;overflow:hidden}
+  .svc-list li.is-open .svc-acc-inner{border-bottom:1px solid var(--line)}
+  .svc-acc-inner>img{display:block;width:100%;max-width:260px;height:auto;aspect-ratio:4/5;object-fit:cover;margin-top:20px}
+  .svc-acc-inner>.svc-info{padding:18px 0 28px}
 }
-@media(max-width:600px){.services-showcase .service-row{grid-template-columns:38px minmax(0,1fr) 52px 24px}}
+@media(max-width:600px){.svc-row{grid-template-columns:38px minmax(0,1fr) 24px}}
 
 /* MATERIÁLY — kompaktní blok místo původního „Titan jako standard“ */
 .materials{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,6vw,96px);align-items:center;padding-block:clamp(64px,8vw,120px);border-top:1px solid var(--line)}
