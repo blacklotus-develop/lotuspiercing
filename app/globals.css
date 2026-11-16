@@ -630,3 +630,67 @@ h1,h2,h3{overflow-wrap:break-word}
 .hero-slides .hero-image:first-child{opacity:1}
 @keyframes hero-fade{0%{opacity:1}26%{opacity:1}33.4%{opacity:0}92.9%{opacity:0}100%{opacity:1}}
 @media (prefers-reduced-motion: reduce){.hero-slides .hero-image{animation:none;opacity:0}.hero-slides .hero-image:first-child{opacity:1}}
+
+/* HLAVNÍ STRÁNKA — interaktivní doplňky. Schválené sekce zůstávají beze změny vzhledu. */
+/* 700+ hodnocení → recenze v Google Maps (stejná buňka jako ostatní čísla) */
+.proof-grid>.proof-link{padding:38px 26px;border-right:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.proof-link span{transition:color .2s}
+.proof-link:hover span,.proof-link:focus-visible span{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.proof-link:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+@media(max-width:900px){.proof-grid>.proof-link{border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.proof-grid>.proof-link{padding:24px 18px}}
+
+/* PROSTOR → tři části stránky Studio */
+.studio-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.studio-links a{display:grid;grid-template-columns:auto minmax(0,1fr) 20px;gap:6px 16px;align-items:start;padding:26px 24px 28px 0;border-right:1px solid var(--line)}
+.studio-links a+a{padding-left:24px}
+.studio-links a:last-child{border-right:0}
+.studio-links span{font-size:10px;letter-spacing:.1em;color:var(--muted);padding-top:7px}
+.studio-links strong{font-size:clamp(20px,1.8vw,26px);font-weight:400;letter-spacing:-.03em;text-decoration:underline transparent;text-underline-offset:4px;text-decoration-thickness:1px;transition:text-decoration-color .2s}
+.studio-links p{grid-column:2;font-size:14px;line-height:1.5;color:var(--muted);margin:0}
+.studio-links b{grid-column:3;grid-row:1;font-weight:400;padding-top:4px;transition:transform .25s}
+.studio-links a:hover strong,.studio-links a:focus-visible strong{text-decoration-color:currentColor}
+.studio-links a:hover b,.studio-links a:focus-visible b{transform:translate(3px,-3px)}
+.studio-links a:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+@media(max-width:900px){.studio-links{grid-template-columns:1fr}.studio-links a,.studio-links a+a{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.studio-links a:last-child{border-bottom:0}}
+
+/* PIERCEŘI → rezervace přímo u piercera (pod kartami, karty se nemění) */
+.team-book{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.team-book .text-link{margin-top:0}
+@media(max-width:900px){.team-book{grid-template-columns:1fr;gap:4px}}
+
+/* PŘED NÁVŠTĚVOU — organizační FAQ (stejný akordeon jako na stránce Péče) */
+.faq-home .care-guide-faq{margin-top:0}
+.faq-home .section-title-row p a{text-decoration:underline;text-underline-offset:3px}
+.care-guide-faq-answer .faq-link{margin:4px 0 8px}
+
+/* Náhledy budoucích integrací — jen s ?preview, na veřejné stránce se nevykreslí */
+.preview-block{border-top:1px dashed var(--muted)}
+.preview-badge{display:inline-block;font-size:9px;letter-spacing:.12em;border:1px solid var(--ink);padding:5px 8px;margin:0 0 24px}
+.preview-chips{display:flex;gap:6px;margin-bottom:16px}
+.preview-chips span{font-size:10px;font-weight:700;letter-spacing:.1em;padding:9px 12px;border:1px solid var(--line)}
+.preview-chips .is-on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.preview-ig-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.preview-ig-tile>div{aspect-ratio:4/5;border:1px dashed #aeb5b3;display:grid;place-items:center}
+.preview-ig-tile>div span{font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.preview-ig-tile p{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.1em;margin:8px 0 0}
+.preview-ig-tile b{font-weight:600}
+.preview-ig-tile i{font-style:normal;color:var(--muted)}
+.preview-ig-links{display:flex;flex-wrap:wrap;gap:0 40px}
+.preview-rev{display:grid;grid-template-columns:minmax(200px,.4fr) minmax(0,1fr);gap:clamp(32px,5vw,80px)}
+.preview-rev-score b{display:block;font-size:clamp(72px,8vw,120px);font-weight:400;letter-spacing:-.06em;line-height:1}
+.preview-stars{display:block;letter-spacing:3px;margin:10px 0;color:var(--muted)}
+.preview-rev-score small{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.preview-rev h2{font-size:clamp(40px,5vw,72px);font-weight:400;line-height:.95;letter-spacing:-.06em;margin:0}
+.preview-rev-note{font-size:12px;color:var(--muted);margin:14px 0 26px}
+.preview-rev-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.preview-rev-list>div{padding:16px 16px 16px 0;border-right:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.preview-rev-list>div+div{padding-left:16px}
+.preview-rev-list>div:last-child{border-right:0}
+.preview-rev-list i{display:block;height:6px;border-bottom:1px dashed #aeb5b3}
+.preview-rev-list i.short{width:60%}
+.preview-rev-list small{font-size:10px;color:var(--muted)}
+.preview-rev-list>div>b{font-size:10px;letter-spacing:.1em;font-weight:600;margin-top:8px}
+.preview-rev-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line)}
+.preview-arrows{display:flex;gap:6px}.preview-arrows span{width:36px;height:36px;border:1px solid var(--line);display:grid;place-items:center}
+@media(max-width:900px){.preview-ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.preview-ig-tile:nth-child(n+7){display:none}.preview-rev{grid-template-columns:1fr}.preview-rev-list{grid-template-columns:1fr}.preview-rev-list>div{border-right:0;padding:16px 0}.preview-rev-list>div+div{display:none}}

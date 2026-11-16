@@ -3,6 +3,18 @@ import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
 import { pageMetadata } from "./seo";
 import { Footer, Header, SectionIndex } from "./site";
+import HomeFaq from "./home-faq";
+import { faqItems } from "./home-faq-items";
+import { InstagramPreview, ReviewsPreview } from "./integration-preview";
+
+const MAP_URL = "https://maps.app.goo.gl/gQLt5m7vFCdRuKzTA";
+
+// PROSTOR → konkrétní části stránky Studio (kotvy #story, #sterilisation, #visit existují).
+const studioLinks = [
+  ["01", "Náš příběh", "Poznejte příběh Black Lotus, naše hodnoty a přístup k piercingu.", "/studio#story"],
+  ["02", "Sterilizace", "Zjistěte, jak probíhá příprava nástrojů a jak dbáme na bezpečnost každého zákroku.", "/studio#sterilisation"],
+  ["03", "Průběh návštěvy", "Podívejte se, co vás čeká od první konzultace až po samotnou aplikaci piercingu.", "/studio#visit"],
+];
 
 export const metadata = pageMetadata({
   lang: "cs", cs: "/", en: "/en",
@@ -21,9 +33,9 @@ const services = [
 const sterile = [
   ["01", "Předčištění", "Příprava nástrojů a mechanické odstranění nečistot."],
   ["02", "Ultrazvuk", "Hloubkové čištění v ultrazvukové lázni."],
-  ["03", "Kontrola", "Sušení, vizuální kontrola a jednotlivé balení."],
-  ["04", "Autokláv", "Parní sterilizace v kontrolovaném cyklu."],
-  ["05", "Evidence", "Kontrola cyklu a bezpečné skladování."],
+  ["03", "Kontrola", "Oplach, důkladné sušení a vizuální kontrola nástrojů."],
+  ["04", "Autokláv", "Parní sterilizace bezprostředně před použitím."],
+  ["05", "Evidence", "Kontrola cyklu, indikátorů a záznam do sterilizačního deníku."],
 ];
 
 export default function Home() {
@@ -42,11 +54,11 @@ export default function Home() {
             <Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <span><ArrowIcon /></span></Link>
           </div>
         </div>
-        <div className="scroll-mark">POSUN / 01—10</div>
+        <div className="scroll-mark">POSUN / 01—11</div>
       </section>
 
       <section className="proof-grid frame">
-        <div><strong>700+</strong><span>HODNOCENÍ NA GOOGLE</span></div>
+        <a href={MAP_URL} target="_blank" rel="noopener noreferrer" className="proof-link" aria-label="700+ hodnocení na Google — otevřít recenze v Google Maps"><strong>700+</strong><span>HODNOCENÍ NA GOOGLE</span></a>
         <div><strong>12</strong><span>LET PRAXE V OBORU</span></div>
         <div><strong>7000+</strong><span>DOKONČENÝCH PIERCINGŮ</span></div>
       </section>
@@ -76,6 +88,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <Link href="/cenik" className="text-link">ZOBRAZIT CENÍK <span><ArrowIcon /></span></Link>
       </section>
 
       <section className="material section-space">
@@ -108,6 +121,9 @@ export default function Home() {
           <Link href="/studio" className="button button-ghost">O STUDIU <span><ArrowIcon /></span></Link>
         </div>
       </section>
+      <nav className="studio-links frame" aria-label="Více o studiu">
+        {studioLinks.map(([n, title, text, href]) => <Link key={href} href={href}><span>{n}</span><strong>{title}</strong><p>{text}</p><b><ArrowIcon /></b></Link>)}
+      </nav>
 
       <section className="sterile frame section-space">
         <SectionIndex index="05" label="STERILISATION" />
@@ -138,8 +154,14 @@ export default function Home() {
             <div className="team-card-bio-desktop" aria-hidden="true"><div className="team-bio-content"><strong>maky</strong><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></div></div><details className="team-card-bio-mobile"><summary><span>VÍCE O MAKY</span><b>+</b></summary><div className="team-bio-content"><strong>maky</strong><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></div></details>
           </article>
         </div>
+        <div className="team-book">
+          <a href="https://n1487262.alteg.io/" className="text-link">REZERVOVAT U ALEXE <span><ArrowIcon /></span></a>
+          <a href="https://n1487261.alteg.io/" className="text-link">REZERVOVAT U MAKY <span><ArrowIcon /></span></a>
+        </div>
         <Link href="/studio#team" className="text-link">SEZNAMTE SE S TÝMEM <span><ArrowIcon /></span></Link>
       </section>
+
+      <InstagramPreview lang="cs" />
 
       <section className="work frame section-space">
         <SectionIndex index="07" label="VYBRANÉ PRÁCE" />
@@ -152,15 +174,19 @@ export default function Home() {
         <Link href="/work" className="text-link">OTEVŘÍT PORTFOLIO <span><ArrowIcon /></span></Link>
       </section>
 
+      <ReviewsPreview lang="cs" />
+
       <section className="knowledge section-space">
         <div className="frame">
           <SectionIndex index="08" label="INFORMACE" />
           <div className="section-title-row"><h2>Před<br />& po.</h2><p>Vše, co potřebujete vědět před rezervací i během hojení.</p></div>
           <div className="knowledge-links">
-            <Link href="/care#aftercare"><span>01</span><strong>Péče o nový piercing</strong><b><ArrowIcon /></b></Link>
-            <Link href="/care#healing"><span>02</span><strong>Hojení a kontroly</strong><b><ArrowIcon /></b></Link>
-            <Link href="/care#minors"><span>03</span><strong>Informace pro nezletilé</strong><b><ArrowIcon /></b></Link>
+            <Link href="/journal/prvni-piercing-krok-za-krokem"><span>PŘED</span><strong>Příprava na první piercing</strong><b><ArrowIcon /></b></Link>
+            <Link href="/care#minors"><span>PŘED</span><strong>Informace pro nezletilé</strong><b><ArrowIcon /></b></Link>
+            <Link href="/care#aftercare"><span>PO</span><strong>Péče o nový piercing</strong><b><ArrowIcon /></b></Link>
+            <Link href="/care#healing"><span>PO</span><strong>Hojení a kontroly</strong><b><ArrowIcon /></b></Link>
           </div>
+          <Link href="/care" className="text-link">PÉČE O PIERCING <span><ArrowIcon /></span></Link>
           <div className="gift-card">
             <p>[ BLACK LOTUS / DÁRKOVÝ POUKAZ ]</p><h3>Darujte něco<br />osobního.</h3><span>DIGITÁLNÍ I TIŠTĚNÁ PODOBA · OD 1 000 CZK</span>
             <Link href="/gift-card" className="button button-dark">KOUPIT POUKAZ <span><ArrowIcon /></span></Link>
@@ -172,14 +198,20 @@ export default function Home() {
         <SectionIndex index="09" label="ČLÁNKY" />
         <div className="section-title-row"><h2>Poznámky<br />z praxe.</h2><Link href="/journal" className="text-link">VŠECHNY ČLÁNKY <span><ArrowIcon /></span></Link></div>
         <div className="article-grid">
-          <Link href="/journal/vymena-prvniho-sperku"><span>PÉČE / 06 MIN</span><h3>Kdy je správný čas vyměnit první šperk?</h3><p>Proč nerozhoduje jen počet týdnů a jak poznat klidné hojení.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/titan-vs-chirurgicka-ocel"><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
           <Link href="/journal/prvni-piercing-krok-za-krokem"><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/proc-neni-kazdy-piercing-pro-kazdeho"><span>ANATOMIE / 07 MIN</span><h3>Proč není každý piercing pro každého</h3><p>Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/titan-vs-chirurgicka-ocel"><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
         </div>
       </section>
 
+      <section className="faq-home frame section-space" aria-labelledby="faq-home-title">
+        <SectionIndex index="10" label="PŘED NÁVŠTĚVOU" />
+        <div className="section-title-row"><h2 id="faq-home-title">Co je dobré<br />vědět?</h2><p>Rezervace, ceny, nezletilí a další organizační otázky. Péči o piercing a hojení najdete v <Link href="/care">průvodci péčí</Link>.</p></div>
+        <HomeFaq items={faqItems("cs")} />
+      </section>
+
       <section className="visit frame section-space">
-        <SectionIndex index="10" label="NÁVŠTĚVA" />
+        <SectionIndex index="11" label="NÁVŠTĚVA" />
         <h2>JSME PŘIPRAVENI,<br />AŽ BUDETE VY.</h2>
         <div className="visit-details">
           <div><span>STUDIO</span><p>Petrohradská 388/22<br />Praha 10 — Vršovice</p></div>
