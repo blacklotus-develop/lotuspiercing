@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
 import { SectionIndex, type Lang } from "./site";
@@ -57,6 +57,11 @@ export default function ServicesShowcase({ lang, index }: { lang: Lang; index: s
   const [shown, setShown] = useState(0);              // desktop: vybraná kategorie (zůstává i po odjetí myší)
   const [open, setOpen] = useState<number | null>(0); // mobil: otevřená položka akordeonu
   const toggle = (i: number) => { setShown(i); setOpen(open === i ? null : i); };
+  // Krátká prodleva při najetí myší: když kurzor jen přejíždí přes řádky cestou k odkazu „Zobrazit ceny“,
+  // kategorie se nepřepne. Fokus z klávesnice a klik přepínají okamžitě.
+  const hoverTimer = useRef<number | undefined>(undefined);
+  const hoverIn = (i: number) => { window.clearTimeout(hoverTimer.current); hoverTimer.current = window.setTimeout(() => setShown(i), 150); };
+  const hoverOut = () => window.clearTimeout(hoverTimer.current);
 
   return <section className="services frame section-space">
     <SectionIndex index={index} label={t.label} />
@@ -66,7 +71,7 @@ export default function ServicesShowcase({ lang, index }: { lang: Lang; index: s
         {t.items.map((c, i) => <li key={c.title} className={open === i ? "is-open" : undefined}>
           <button type="button" className={`service-row svc-row ${shown === i ? "is-active" : ""}`}
             aria-expanded={open === i} aria-controls={`svc-acc-${lang}-${i}`}
-            onMouseEnter={() => setShown(i)} onFocus={() => setShown(i)} onClick={() => toggle(i)}>
+            onMouseEnter={() => hoverIn(i)} onMouseLeave={hoverOut} onFocus={() => setShown(i)} onClick={() => toggle(i)}>
             <span>{num(i)}</span><strong>{c.title}</strong><b aria-hidden="true"><ArrowIcon /></b>
           </button>
           {/* Mobil: obsah akordeonu */}

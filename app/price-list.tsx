@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 // Kategorii lze otevřít odkazem: /cenik#ucho, /cenik#oblicej, /en/cenik#ear … (kotva = id skupiny).
 const subscribeHash = (onChange: () => void) => {
@@ -88,6 +88,15 @@ export default function PriceList({ groups, labels }: PriceListProps) {
   const hashGroup = groups.find((group) => group.id === hash)?.id;
   const activeId = hashGroup ?? groups[0]?.id ?? "";
   const [activeItem, setActiveItem] = useState<number | null>(null);
+
+  // Příchod odkazem na kategorii (např. z hlavní stránky): po načtení posunout k ceníku.
+  // Prohlížeč to sám neudělá spolehlivě (obnovení pozice, hydratace), proto krátké zpoždění.
+  useEffect(() => {
+    const anchor = document.getElementById(readHash());
+    if (!anchor || !anchor.classList.contains("price-anchor")) return;
+    const timer = window.setTimeout(() => anchor.scrollIntoView({ block: "start", behavior: "instant" }), 120);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const selectGroup = (id: string) => {
     window.history.replaceState(null, "", `#${id}`);
