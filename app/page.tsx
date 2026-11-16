@@ -4,6 +4,7 @@ import Link from "./native-link";
 import { pageMetadata } from "./seo";
 import { Footer, Header, SectionIndex } from "./site";
 import HomeFaq from "./home-faq";
+import CoverImage from "./journal/cover-image";
 import GiftBanner from "./gift-banner";
 import MaterialsSection from "./materials-section";
 import ServicesShowcase from "./services-showcase";
@@ -117,9 +118,9 @@ export default function Home() {
         <SectionIndex index="06" label="ČLÁNKY" />
         <div className="section-title-row"><h2>Poznámky<br />z praxe.</h2><Link href="/journal" className="text-link">VŠECHNY ČLÁNKY <span><ArrowIcon /></span></Link></div>
         <div className="article-grid has-covers">
-          <Link href="/journal/prvni-piercing-krok-za-krokem"><img src="/assets/journal-prvni-piercing.webp" width="900" height="800" alt="Piercingy ušních lalůčků se šperky" loading="lazy" /><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/proc-neni-kazdy-piercing-pro-kazdeho"><img src="/assets/journal-anatomie.webp" width="900" height="800" alt="Piercingy chrupavky na různé anatomii ucha" loading="lazy" /><span>ANATOMIE / 07 MIN</span><h3>Proč není každý piercing pro každého</h3><p>Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/titan-vs-chirurgicka-ocel"><img src="/assets/journal-materialy.webp" width="900" height="800" alt="Různé šperky v piercingu ucha" loading="lazy" /><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/prvni-piercing-krok-za-krokem"><CoverImage lang="cs" slug="prvni-piercing-krok-za-krokem" sizes="(max-width: 900px) 104px, 33vw" /><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/proc-neni-kazdy-piercing-pro-kazdeho"><CoverImage lang="cs" slug="proc-neni-kazdy-piercing-pro-kazdeho" sizes="(max-width: 900px) 104px, 33vw" /><span>ANATOMIE / 07 MIN</span><h3>Proč není každý piercing pro každého</h3><p>Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/titan-vs-chirurgicka-ocel"><CoverImage lang="cs" slug="titan-vs-chirurgicka-ocel" sizes="(max-width: 900px) 104px, 33vw" /><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
         </div>
       </section>
 

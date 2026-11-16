@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
 import styles from "./journal-index.module.css";
+import CoverImage from "./journal/cover-image";
 
 type Language = "cs" | "en";
 type Category = "care" | "materials" | "guide" | "healing" | "minors" | "anatomy";
@@ -100,8 +101,9 @@ export default function JournalIndex({ lang }: { lang: Language }) {
       </div>
 
       {filtered.length > 0 ? (
-        <div className={`article-index ${styles.results}`}>
+        <div className={`article-index has-covers ${styles.results}`}>
           {filtered.map((article) => <Link href={lang === "cs" ? `/journal/${article.slug}` : `/en/journal/${article.slug}`} key={article.slug}>
+            <CoverImage lang={lang} slug={article.slug} sizes="(max-width: 600px) 84px, 120px" />
             <span>{article.number} / {article.label}</span>
             <h2>{article.title}</h2>
             <p>{article.excerpt}</p>

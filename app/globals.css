@@ -728,7 +728,7 @@ h1,h2,h3{overflow-wrap:break-word}
 
 /* ČLÁNKY — obálky v náhledech článků */
 .article-grid.has-covers a{min-height:0;padding:22px 22px 64px;display:flex;flex-direction:column}
-.article-grid.has-covers img{width:100%;height:auto;aspect-ratio:9/8;object-fit:cover;margin-bottom:18px;transition:opacity .25s}
+.article-grid.has-covers img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;margin-bottom:18px;transition:opacity .25s}
 .article-grid.has-covers h3{margin:16px 0 12px;text-decoration:underline transparent;text-underline-offset:5px;text-decoration-thickness:1px;transition:text-decoration-color .2s}
 .article-grid.has-covers a:hover img{opacity:.85}
 .article-grid.has-covers a:hover h3,.article-grid.has-covers a:focus-visible h3{text-decoration-color:currentColor}
@@ -790,3 +790,25 @@ h1,h2,h3{overflow-wrap:break-word}
 html:has(.article-lightbox[open]){overflow:hidden}
 @media(max-width:600px){.article-gallery{grid-template-columns:1fr;gap:10px}.article-lightbox{padding-inline:0}.article-lightbox-bar{padding-inline:14px}}
 @media(prefers-reduced-motion:reduce){.article-gallery img{transition:none}}
+
+/* Obálky článků (app/journal/covers.ts): záhlaví článku a seznam /journal */
+.article-hero.has-cover{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,26vw,400px);gap:clamp(32px,5vw,80px);align-items:end}
+.article-hero.has-cover strong{margin-left:0;max-width:640px}
+.article-hero-cover{margin:0}
+.article-hero-cover img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.article-index.has-covers>a{grid-template-columns:120px 130px minmax(0,1.2fr) minmax(0,1fr) 110px}
+.article-index.has-covers>a>img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;transition:opacity .25s}
+.article-index.has-covers>a:hover>img{opacity:.88}
+@media(max-width:900px){
+  .article-hero.has-cover{grid-template-columns:1fr;align-items:start}
+  .article-hero-cover{max-width:420px}
+  .article-index.has-covers>a{grid-template-columns:96px minmax(0,1fr);column-gap:20px;row-gap:8px}
+  .article-index.has-covers>a>img{grid-row:1/span 4;grid-column:1}
+  .article-index.has-covers>a>span,.article-index.has-covers>a>h2,.article-index.has-covers>a>p,.article-index.has-covers>a>b{grid-column:2}
+  .article-index.has-covers>a>b{text-align:left}
+}
+@media(max-width:600px){
+  .article-hero-cover{max-width:none}
+  .article-index.has-covers>a{grid-template-columns:84px minmax(0,1fr);column-gap:16px}
+}
+@media(prefers-reduced-motion:reduce){.article-index.has-covers>a>img{transition:none}}
