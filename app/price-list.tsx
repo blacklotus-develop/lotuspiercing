@@ -1,6 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+
+// Kategorii lze otevřít odkazem: /cenik#ucho, /cenik#oblicej, /en/cenik#ear … (kotva = id skupiny).
+const subscribeHash = (onChange: () => void) => {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
+};
+const readHash = () => decodeURIComponent(window.location.hash.slice(1));
 
 type PriceItem = {
   name: string;
@@ -77,16 +84,21 @@ function EarScheme({
 }
 
 export default function PriceList({ groups, labels }: PriceListProps) {
-  const [activeId, setActiveId] = useState(groups[0]?.id ?? "");
+  const hash = useSyncExternalStore(subscribeHash, readHash, () => "");
+  const hashGroup = groups.find((group) => group.id === hash)?.id;
+  const activeId = hashGroup ?? groups[0]?.id ?? "";
   const [activeItem, setActiveItem] = useState<number | null>(null);
 
   const selectGroup = (id: string) => {
-    setActiveId(id);
+    window.history.replaceState(null, "", `#${id}`);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
     setActiveItem(null);
   };
 
   return (
     <div className="price-browser">
+      {/* Neviditelné kotvy: prohlížeč při otevření /cenik#ucho sám posune stránku k ceníku. */}
+      {groups.map((group) => <span key={group.id} id={group.id} className="price-anchor" aria-hidden="true" />)}
       <span className="price-tabs-label">{labels.tabs}</span>
       <div className="price-tabs" role="tablist" aria-label={labels.tabs}>
         {groups.map((group) => {

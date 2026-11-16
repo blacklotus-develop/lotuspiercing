@@ -743,3 +743,6 @@ h1,h2,h3{overflow-wrap:break-word}
   .article-grid.has-covers h3{margin:6px 0 6px;font-size:22px}
   .article-grid.has-covers b{bottom:20px;right:0}
 }
+
+/* Ceník otevřený odkazem na kategorii (#ucho …): nezakrývat ho hlavičkou */
+.price-anchor{display:block;height:0;scroll-margin-top:96px}
