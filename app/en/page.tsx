@@ -61,7 +61,9 @@ export default function EnglishHome() {
         <div className="team-card-summary"><h3>maky</h3><p>Professional piercer</p><span className="team-more">HOVER FOR DETAILS</span></div>
         <div className="team-card-bio-desktop" aria-hidden="true"><div className="team-bio-content"><strong>maky</strong><p>Maky is a professional piercer with an eye for detail, aesthetics and safety. She approaches every client individually and adapts each piercing to their anatomy and personal style.</p><p>Her goal is to make the entire experience comfortable and create a piercing you will enjoy for years to come.</p></div></div><details className="team-card-bio-mobile"><summary><span>MORE ABOUT MAKY</span><b>+</b></summary><div className="team-bio-content"><strong>maky</strong><p>Maky is a professional piercer with an eye for detail, aesthetics and safety. She approaches every client individually and adapts each piercing to their anatomy and personal style.</p><p>Her goal is to make the entire experience comfortable and create a piercing you will enjoy for years to come.</p></div></details>
       </article>
-    </div><div className="team-book"><a href="https://n1487262.alteg.io/" className="text-link">BOOK WITH ALEX <span><ArrowIcon /></span></a><a href="https://n1487261.alteg.io/" className="text-link">BOOK WITH MAKY <span><ArrowIcon /></span></a></div><Link href="/en/studio#team" className="text-link">MEET THE TEAM <span><ArrowIcon /></span></Link></section>
+      <a href="https://n1487262.alteg.io/" className="team-book-link team-book-alex">BOOK WITH ALEX <span><ArrowIcon /></span></a>
+      <a href="https://n1487261.alteg.io/" className="team-book-link team-book-maky">BOOK WITH MAKY <span><ArrowIcon /></span></a>
+    </div><div className="team-footer"><p>Learn more about our piercers and studio.</p><Link href="/en/studio#team" className="team-footer-link">MEET OUR TEAM <span><ArrowIcon /></span></Link></div></section>
 
     <MaterialsSection lang="en" index="04" />
 

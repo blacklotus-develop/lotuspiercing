@@ -86,12 +86,14 @@ export default function Home() {
             <div className="team-card-summary"><h3>maky</h3><p>Profesionální piercerka</p><span className="team-more">PŘEJEĎTE PRO DETAIL</span></div>
             <div className="team-card-bio-desktop" aria-hidden="true"><div className="team-bio-content"><strong>maky</strong><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></div></div><details className="team-card-bio-mobile"><summary><span>VÍCE O MAKY</span><b>+</b></summary><div className="team-bio-content"><strong>maky</strong><p>Maky je profesionální piercerka s citem pro detail, estetiku a bezpečnost. Ke každému klientovi přistupuje individuálně a každý piercing přizpůsobuje anatomii i osobnímu stylu.</p><p>Jejím cílem je, aby celý zážitek proběhl v příjemné atmosféře a výsledkem byl piercing, který vám bude dělat radost po mnoho let.</p></div></details>
           </article>
+          {/* Rezervace přímo pod kartou piercera (na mobilu pořadí: Alex, odkaz, Maky, odkaz) */}
+          <a href="https://n1487262.alteg.io/" className="team-book-link team-book-alex">REZERVOVAT U ALEXE <span><ArrowIcon /></span></a>
+          <a href="https://n1487261.alteg.io/" className="team-book-link team-book-maky">REZERVOVAT U MAKY <span><ArrowIcon /></span></a>
         </div>
-        <div className="team-book">
-          <a href="https://n1487262.alteg.io/" className="text-link">REZERVOVAT U ALEXE <span><ArrowIcon /></span></a>
-          <a href="https://n1487261.alteg.io/" className="text-link">REZERVOVAT U MAKY <span><ArrowIcon /></span></a>
+        <div className="team-footer">
+          <p>Více o našich piercerech a studiu.</p>
+          <Link href="/studio#team" className="team-footer-link">POZNAT NÁŠ TÝM <span><ArrowIcon /></span></Link>
         </div>
-        <Link href="/studio#team" className="text-link">SEZNAMTE SE S TÝMEM <span><ArrowIcon /></span></Link>
       </section>
 
       <MaterialsSection lang="cs" index="04" />
