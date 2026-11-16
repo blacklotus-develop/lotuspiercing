@@ -1,3 +1,4 @@
+import HeroSlides from "./hero-slides";
 import ArrowIcon from "./arrow-icon";
 import Link from "./native-link";
 import { pageMetadata } from "./seo";
@@ -30,7 +31,7 @@ export default function Home() {
     <main>
       <Header lang="cs" />
       <section className="hero">
-        <img src="/assets/hero-main.webp" alt="Detail ucha s titanovým piercingem" className="hero-image" />
+        <HeroSlides alt="Detail ucha s několika piercingy a stříbrnými šperky" />
         <div className="hero-shade" />
         <div className="hero-topline"><span>[ PIERCINGOVÉ STUDIO / PRAHA ]</span><span>50°03&apos;58.6&quot;N / 14°27&apos;05.9&quot;E</span></div>
         <div className="hero-copy">

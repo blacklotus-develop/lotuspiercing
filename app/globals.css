@@ -623,3 +623,10 @@ h1,h2,h3{overflow-wrap:break-word}
   .contact-block p{font-size:16px}
   .contact-block .button{width:100%}
 }
+
+/* Úvodní foto: pomalé prolínání snímků (app/hero-slides.tsx). 7 s na snímek, 1,5 s prolnutí. */
+.hero-slides{position:absolute;inset:0}
+.hero-slides .hero-image{opacity:0;animation:hero-fade calc(var(--count) * 7s) infinite;animation-delay:calc(var(--i) * 7s - var(--count) * 7s)}
+.hero-slides .hero-image:first-child{opacity:1}
+@keyframes hero-fade{0%{opacity:1}26%{opacity:1}33.4%{opacity:0}92.9%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion: reduce){.hero-slides .hero-image{animation:none;opacity:0}.hero-slides .hero-image:first-child{opacity:1}}
