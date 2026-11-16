@@ -4,6 +4,8 @@ import Link from "./native-link";
 import { pageMetadata } from "./seo";
 import { Footer, Header, SectionIndex } from "./site";
 import HomeFaq from "./home-faq";
+import MaterialsSection from "./materials-section";
+import ServicesShowcase from "./services-showcase";
 import { faqItems } from "./home-faq-items";
 import { InstagramPreview, ReviewsPreview } from "./integration-preview";
 
@@ -22,26 +24,13 @@ export const metadata = pageMetadata({
   description: "Profesionální piercingové studio v Praze 10 – Vršovicích. Implantátový titan ASTM F-136, důsledná sterilizace, individuální přístup a online rezervace.",
 });
 
-const services = [
-  ["01", "Ucho", "Lalůček · Helix · Conch · Rook · Daith"],
-  ["02", "Obličej", "Nostril · Septum · Obočí · Bridge"],
-  ["03", "Tělo", "Pupík · Bradavky · Surface"],
-  ["04", "Intimní", "Individuální konzultace podle anatomie"],
-  ["05", "Microdermal", "Aplikace · Kontrola · Odstranění"],
-];
 
-const sterile = [
-  ["01", "Předčištění", "Příprava nástrojů a mechanické odstranění nečistot."],
-  ["02", "Ultrazvuk", "Hloubkové čištění v ultrazvukové lázni."],
-  ["03", "Kontrola", "Oplach, důkladné sušení a vizuální kontrola nástrojů."],
-  ["04", "Autokláv", "Parní sterilizace bezprostředně před použitím."],
-  ["05", "Evidence", "Kontrola cyklu, indikátorů a záznam do sterilizačního deníku."],
-];
 
 export default function Home() {
   return (
     <main>
       <Header lang="cs" />
+
       <section className="hero">
         <HeroSlides alt="Detail ucha s několika piercingy a stříbrnými šperky" />
         <div className="hero-shade" />
@@ -54,7 +43,7 @@ export default function Home() {
             <Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <span><ArrowIcon /></span></Link>
           </div>
         </div>
-        <div className="scroll-mark">POSUN / 01—11</div>
+        <div className="scroll-mark">POSUN / 01—08</div>
       </section>
 
       <section className="proof-grid frame">
@@ -63,82 +52,24 @@ export default function Home() {
         <div><strong>7000+</strong><span>DOKONČENÝCH PIERCINGŮ</span></div>
       </section>
 
-      <section className="intro frame section-space">
-        <SectionIndex index="01" label="STUDIO" />
-        <div className="intro-grid">
-          <h2>PŘESNOST<br />JE OSOBNÍ.</h2>
-          <div className="intro-text">
-            <p className="lead">Přesnost, estetika a profesionální přístup. Piercing, který se stane přirozenou součástí vašeho stylu.</p>
-            <p>Každému umístění předchází konzultace anatomie, výběr správného rozměru šperku a srozumitelné vysvětlení následné péče.</p>
-            <Link href="/studio" className="text-link">PROZKOUMAT STUDIO <span><ArrowIcon /></span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="services frame section-space">
-        <SectionIndex index="02" label="PIERCING" />
-        <div className="section-title-row">
-          <h2>Služby</h2>
-          <p>Jednotlivé typy piercingu vybíráme s ohledem na anatomii, hojení a váš dlouhodobý komfort.</p>
-        </div>
-        <div className="service-list">
-          {services.map(([n, title, detail]) => (
-            <Link href="/cenik" key={n} className="service-row">
-              <span>{n}</span><strong>{title}</strong><small>{detail}</small><b><ArrowIcon /></b>
-            </Link>
-          ))}
-        </div>
-        <Link href="/cenik" className="text-link">ZOBRAZIT CENÍK <span><ArrowIcon /></span></Link>
-      </section>
-
-      <section className="material section-space">
-        <div className="frame material-grid">
-          <div className="material-copy">
-            <SectionIndex index="03" label="MATERIÁL" />
-            <h2>TITAN<br />JAKO STANDARD.</h2>
-            <p>Pro první aplikaci používáme implantátový titan ASTM F-136. Je lehký, biokompatibilní a vhodný pro čerstvý piercing.</p>
-            <dl className="spec-grid">
-              <div><dt>MATERIÁL</dt><dd>Ti-6Al-4V ELI</dd></div>
-              <div><dt>STANDARD</dt><dd>ASTM F-136</dd></div>
-              <div><dt>POUŽITÍ</dt><dd>TĚLOVÉ ŠPERKY</dd></div>
-              <div><dt>NIKL</dt><dd>0%</dd></div>
-            </dl>
-            <Link href="/studio#visit" className="text-link">O NAŠICH ŠPERCÍCH <span><ArrowIcon /></span></Link>
-          </div>
-          <div className="material-object">
-            <img src="/assets/titanium.webp" alt="Titanový labret na světlém pozadí" />
-            <span className="object-note left">BL / OBJEKT 01</span><span className="object-note right">MĚŘÍTKO 04:01</span>
-          </div>
-        </div>
-      </section>
+      <ServicesShowcase lang="cs" index="01" />
 
       <section className="studio-visual">
         <img src="/assets/studio.webp" alt="Interiér piercingového studia" />
         <div className="studio-overlay" />
         <div className="studio-visual-copy frame">
-          <SectionIndex index="04" label="PROSTOR" light />
+          <SectionIndex index="02" label="PROSTOR" light />
           <h2>PROSTOR<br />PRO VAŠI<br />INDIVIDUALITU.</h2>
           <Link href="/studio" className="button button-ghost">O STUDIU <span><ArrowIcon /></span></Link>
         </div>
       </section>
+
       <nav className="studio-links frame" aria-label="Více o studiu">
         {studioLinks.map(([n, title, text, href]) => <Link key={href} href={href}><span>{n}</span><strong>{title}</strong><p>{text}</p><b><ArrowIcon /></b></Link>)}
       </nav>
 
-      <section className="sterile frame section-space">
-        <SectionIndex index="05" label="STERILISATION" />
-        <div className="section-title-row">
-          <h2>Sterilní díky procesu,<br />ne slibu.</h2>
-          <p>Bezpečnost není slogan. Je to soubor opakovatelných kroků, kontroly a dokumentace.</p>
-        </div>
-        <div className="process-grid">
-          {sterile.map(([n, title, text]) => <article key={n}><span>{n}</span><i /><h3>{title}</h3><p>{text}</p></article>)}
-        </div>
-        <Link href="/studio#sterilisation" className="text-link">CELÝ PROCES STERILIZACE <span><ArrowIcon /></span></Link>
-      </section>
-
       <section className="team frame section-space">
-        <SectionIndex index="06" label="LIDÉ" />
+        <SectionIndex index="03" label="LIDÉ" />
         <div className="section-title-row"><h2>Lidé za<br />Black Lotus.</h2><p>Dva přístupy, jeden standard: klid, preciznost a respekt k vašemu tělu.</p></div>
         <div className="team-grid">
           <article className="team-card" tabIndex={0}>
@@ -161,24 +92,13 @@ export default function Home() {
         <Link href="/studio#team" className="text-link">SEZNAMTE SE S TÝMEM <span><ArrowIcon /></span></Link>
       </section>
 
+      <MaterialsSection lang="cs" index="04" />
+
       <InstagramPreview lang="cs" />
-
-      <section className="work frame section-space">
-        <SectionIndex index="07" label="VYBRANÉ PRÁCE" />
-        <div className="section-title-row"><h2>Pro vaši<br />anatomii.</h2><p>Výběr realizací. Každé umístění je navrženo pro konkrétní anatomii.</p></div>
-        <div className="work-grid">
-          <figure className="work-a"><img src="/assets/conch.webp" alt="Conch piercing" /><figcaption><span>001 / CONCH</span><span>TITAN · ASTM F-136</span></figcaption></figure>
-          <figure className="work-b"><img src="/assets/nostril.webp" alt="Nostril piercing" /><figcaption><span>002 / NOSTRIL</span><span>TITAN · ASTM F-136</span></figcaption></figure>
-          <figure className="work-c"><img src="/assets/hero.webp" alt="Helix piercing" /><figcaption><span>003 / HELIX</span><span>TITAN · ASTM F-136</span></figcaption></figure>
-        </div>
-        <Link href="/work" className="text-link">OTEVŘÍT PORTFOLIO <span><ArrowIcon /></span></Link>
-      </section>
-
-      <ReviewsPreview lang="cs" />
 
       <section className="knowledge section-space">
         <div className="frame">
-          <SectionIndex index="08" label="INFORMACE" />
+          <SectionIndex index="05" label="INFORMACE" />
           <div className="section-title-row"><h2>Před<br />& po.</h2><p>Vše, co potřebujete vědět před rezervací i během hojení.</p></div>
           <div className="knowledge-links">
             <Link href="/journal/prvni-piercing-krok-za-krokem"><span>PŘED</span><strong>Příprava na první piercing</strong><b><ArrowIcon /></b></Link>
@@ -195,23 +115,25 @@ export default function Home() {
       </section>
 
       <section className="journal frame section-space">
-        <SectionIndex index="09" label="ČLÁNKY" />
+        <SectionIndex index="06" label="ČLÁNKY" />
         <div className="section-title-row"><h2>Poznámky<br />z praxe.</h2><Link href="/journal" className="text-link">VŠECHNY ČLÁNKY <span><ArrowIcon /></span></Link></div>
-        <div className="article-grid">
-          <Link href="/journal/prvni-piercing-krok-za-krokem"><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/proc-neni-kazdy-piercing-pro-kazdeho"><span>ANATOMIE / 07 MIN</span><h3>Proč není každý piercing pro každého</h3><p>Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.</p><b><ArrowIcon /></b></Link>
-          <Link href="/journal/titan-vs-chirurgicka-ocel"><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
+        <div className="article-grid has-covers">
+          <Link href="/journal/prvni-piercing-krok-za-krokem"><img src="/assets/journal-prvni-piercing.webp" width="900" height="800" alt="Piercingy ušních lalůčků se šperky" loading="lazy" /><span>PRŮVODCE / 08 MIN</span><h3>První piercing: co čekat krok za krokem</h3><p>Od konzultace až po první kontrolu ve studiu.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/proc-neni-kazdy-piercing-pro-kazdeho"><img src="/assets/journal-anatomie.webp" width="900" height="800" alt="Piercingy chrupavky na různé anatomii ucha" loading="lazy" /><span>ANATOMIE / 07 MIN</span><h3>Proč není každý piercing pro každého</h3><p>Jak anatomie ovlivňuje umístění, výběr šperku i dlouhodobý výsledek.</p><b><ArrowIcon /></b></Link>
+          <Link href="/journal/titan-vs-chirurgicka-ocel"><img src="/assets/journal-materialy.webp" width="900" height="800" alt="Různé šperky v piercingu ucha" loading="lazy" /><span>MATERIÁLY / 09 MIN</span><h3>Titan vs. chirurgická ocel</h3><p>Co patří do čerstvého piercingu a podle čeho poznat kvalitní šperk.</p><b><ArrowIcon /></b></Link>
         </div>
       </section>
 
+      <ReviewsPreview lang="cs" />
+
       <section className="faq-home frame section-space" aria-labelledby="faq-home-title">
-        <SectionIndex index="10" label="PŘED NÁVŠTĚVOU" />
+        <SectionIndex index="07" label="PŘED NÁVŠTĚVOU" />
         <div className="section-title-row"><h2 id="faq-home-title">Co je dobré<br />vědět?</h2><p>Rezervace, ceny, nezletilí a další organizační otázky. Péči o piercing a hojení najdete v <Link href="/care">průvodci péčí</Link>.</p></div>
         <HomeFaq items={faqItems("cs")} />
       </section>
 
       <section className="visit frame section-space">
-        <SectionIndex index="11" label="NÁVŠTĚVA" />
+        <SectionIndex index="08" label="NÁVŠTĚVA" />
         <h2>JSME PŘIPRAVENI,<br />AŽ BUDETE VY.</h2>
         <div className="visit-details">
           <div><span>STUDIO</span><p>Petrohradská 388/22<br />Praha 10 — Vršovice</p></div>
