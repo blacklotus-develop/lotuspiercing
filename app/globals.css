@@ -347,7 +347,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .price-ear-table{min-width:0}
 .price-ear-table .price-list>div{transition:background-color .2s ease}
 .price-ear-table .price-list>div.is-active{background:rgba(207,210,208,.3)}
-@media(max-width:900px){.price-ear-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:24px}.ear-scheme{position:relative}}
+@media(max-width:900px){.price-ear-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:24px}.ear-scheme{position:relative;top:auto}}
 @media(max-width:700px){.price-ear-layout{grid-template-columns:1fr}.ear-scheme{width:100%;max-height:78vh}.ear-scheme img{width:100%;height:auto}.price-ear-table{margin-top:8px}}
 
 
