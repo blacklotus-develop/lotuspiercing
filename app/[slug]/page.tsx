@@ -9,6 +9,7 @@ import { PageShell, SectionIndex } from "../site";
 import StudioPage from "../studio-page";
 import BookingPage from "../booking-page";
 import CarePage from "../care-page";
+import ContactPage from "../contact-page";
 
 const priceGroups = [
   {
@@ -118,9 +119,7 @@ function Journal() {
 }
 
 function Contact() {
-  return <PageShell lang="cs" slug="contact" eyebrow="06 / KONTAKT" title={<>NAVŠTIVTE<br />BLACK LOTUS.</>} intro="Objednání probíhá online. Pokud si nejste jistí vhodným typem piercingu nebo podmínkami pro nezletilé, napište či zavolejte.">
-    <section className="contact-grid frame"><div className="contact-card"><span>01 / ADRESA</span><h2>Petrohradská<br />388/22</h2><p>Praha 10 — Vršovice<br />Červený dům, 1. vchod</p><p>Tram: Nádraží Vršovice / 5 min<br />Bus: Ukrajinská / 1 min</p><a href="https://maps.google.com/?q=Petrohradská+388/22+Praha" className="text-link">OTEVŘÍT MAPU <ArrowIcon /></a></div><div className="contact-card dark"><span>02 / REZERVACE</span><h2>Vyberte si<br />termín.</h2><p>Vyberte službu, piercera a způsob kontaktu. Potvrzení vám přijde e-mailem.</p><Link href="/booking" className="button button-light">REZERVOVAT TERMÍN <ArrowIcon /></Link></div><div className="contact-card"><span>03 / KONTAKT</span><h2>Ozvěte se.</h2><p><a href="tel:+420777547240">+420 777 547 240</a><br/><a href="mailto:piercingprague@gmail.com">piercingprague@gmail.com</a></p><p>Instagram<br/><a href="https://www.instagram.com/lotus.piercing/">@lotus.piercing <ArrowIcon /></a></p></div><div className="contact-card gift-contact"><span>04 / DÁRKOVÝ POUKAZ</span><h2>Tištěně<br />nebo digitálně.</h2><p>Dárkové poukazy od 1 000 Kč. Tištěná nebo digitální podoba.</p><Link href="/gift-card" className="text-link">OBJEDNAT POUKAZ <ArrowIcon /></Link></div></section>
-  </PageShell>;
+  return <ContactPage lang="cs" />;
 }
 
 function Booking() {
