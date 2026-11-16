@@ -55,7 +55,7 @@ export default function Home() {
       <ServicesShowcase lang="cs" index="01" />
 
       <section className="studio-visual">
-        <img src="/assets/studio.webp" alt="Interiér piercingového studia" />
+        <img src="/assets/prostor-studio.webp" alt="Pracovní prostor Black Lotus se zelenou stěnou, umyvadlem a parním autoklávem" />
         <div className="studio-overlay" />
         <div className="studio-visual-copy frame">
           <SectionIndex index="02" label="PROSTOR" light />

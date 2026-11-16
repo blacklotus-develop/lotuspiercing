@@ -42,7 +42,7 @@ export default function EnglishHome() {
 
     <ServicesShowcase lang="en" index="01" />
 
-    <section className="studio-visual"><img src="/assets/studio.webp" alt="Piercing studio interior" /><div className="studio-overlay" /><div className="studio-visual-copy frame"><SectionIndex index="02" label="THE SPACE" light /><h2>A CONTROLLED<br />SPACE FOR<br />INDIVIDUALITY.</h2><Link href="/en/studio" className="button button-ghost">ABOUT THE STUDIO <span><ArrowIcon /></span></Link></div></section>
+    <section className="studio-visual"><img src="/assets/prostor-studio.webp" alt="The Black Lotus treatment room with a green wall, sink and steam autoclave" /><div className="studio-overlay" /><div className="studio-visual-copy frame"><SectionIndex index="02" label="THE SPACE" light /><h2>A CONTROLLED<br />SPACE FOR<br />INDIVIDUALITY.</h2><Link href="/en/studio" className="button button-ghost">ABOUT THE STUDIO <span><ArrowIcon /></span></Link></div></section>
 
     <nav className="studio-links frame" aria-label="More about the studio">{studioLinks.map(([n, title, text, href]) => <Link key={href} href={href}><span>{n}</span><strong>{title}</strong><p>{text}</p><b><ArrowIcon /></b></Link>)}</nav>
 

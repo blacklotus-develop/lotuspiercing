@@ -762,3 +762,6 @@ h1,h2,h3{overflow-wrap:break-word}
 
 /* Ceník otevřený odkazem na kategorii (#ucho …): nezakrývat ho hlavičkou */
 .price-anchor{display:block;height:0;scroll-margin-top:96px}
+
+/* PROSTOR — skutečná fotografie studia; na mobilu výřez posunutý k zelené stěně a pracovní ploše */
+@media(max-width:900px){.studio-visual>img{object-position:72% center}}
