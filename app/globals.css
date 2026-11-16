@@ -593,6 +593,10 @@ h1,h2,h3{overflow-wrap:break-word}
   .care-guide-healing-grid h3{margin:28px 0 26px}
 }
 
+/* Nenápadný odkaz pod úvodním textem stránky (např. Kontakt → Péče#nezletilí) */
+.page-intro-link{margin:24px 0 0 35%}
+@media(max-width:900px){.page-intro-link{margin-left:0}}
+
 /* KONTAKT — asymetrická dvousloupcová kompozice (vlevo adresa + kontakt, vpravo rezervace + poukaz) */
 .contact-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-areas:"address booking" "direct gift";column-gap:clamp(40px,6vw,96px);row-gap:clamp(40px,5vw,72px);padding-block:clamp(24px,3vw,40px) var(--space-section)}
 .contact-address{grid-area:address}.contact-booking{grid-area:booking}.contact-direct{grid-area:direct}.contact-gift{grid-area:gift}

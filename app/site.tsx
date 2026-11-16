@@ -48,6 +48,6 @@ export function SectionIndex({ index, label, light = false }: { index: string; l
   return <div className={`section-index ${light ? "is-light" : ""}`}><span>{index}</span><i /><b>{label}</b></div>;
 }
 
-export function PageShell({ eyebrow, title, intro, children, lang = "cs", slug, switchSlug }: { eyebrow: string; title: React.ReactNode; intro: string; children: React.ReactNode; lang?: Lang; slug: string; switchSlug?: string }) {
-  return <main className={`page page-${slug}`}><Header lang={lang} slug={slug} switchSlug={switchSlug} /><section className="page-hero frame"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="page-intro">{intro}</p><span className="page-code">BLACK LOTUS / {lang === "cs" ? "PRAHA" : "PRAGUE"} / 2026</span></section>{children}<Footer lang={lang} /></main>;
+export function PageShell({ eyebrow, title, intro, introLink, children, lang = "cs", slug, switchSlug }: { eyebrow: string; title: React.ReactNode; intro: string; introLink?: { label: string; href: string }; children: React.ReactNode; lang?: Lang; slug: string; switchSlug?: string }) {
+  return <main className={`page page-${slug}`}><Header lang={lang} slug={slug} switchSlug={switchSlug} /><section className="page-hero frame"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="page-intro">{intro}</p>{introLink && <Link href={introLink.href} className="text-link page-intro-link">{introLink.label} <ArrowIcon /></Link>}<span className="page-code">BLACK LOTUS / {lang === "cs" ? "PRAHA" : "PRAGUE"} / 2026</span></section>{children}<Footer lang={lang} /></main>;
 }

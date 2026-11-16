@@ -7,7 +7,8 @@ const MAP_URL = "https://maps.app.goo.gl/gQLt5m7vFCdRuKzTA";
 const copy = {
   cs: {
     eyebrow: "06 / KONTAKT", title: <>NAVŠTIVTE<br />BLACK LOTUS.</>,
-    intro: "Objednání probíhá online. Pokud si nejste jistí vhodným typem piercingu nebo podmínkami pro nezletilé, napište či zavolejte.",
+    intro: "Termín si jednoduše rezervujete online. Vyberte si službu, piercera a čas, který vám vyhovuje. Pokud potřebujete poradit s výběrem piercingu nebo máte další otázky, rádi vám pomůžeme.",
+    minors: { label: "PIERCING PRO NEZLETILÉ", href: "/care#minors" },
     addressLabel: "01 / ADRESA", city: "Praha 10 — Vršovice", building: "Červený dům, 1. vchod", map: "OTEVŘÍT MAPU",
     contactLabel: "02 / KONTAKT", contactTitle: "Ozvěte se.",
     bookingLabel: "03 / REZERVACE", bookingTitle: "Rezervujte si termín.", bookingText: "Vyberte službu, piercera a volný termín online. Potvrzení rezervace vám přijde e‑mailem.", bookingButton: "REZERVOVAT TERMÍN", bookingHref: "/booking",
@@ -15,7 +16,8 @@ const copy = {
   },
   en: {
     eyebrow: "06 / CONTACT", title: <>VISIT<br />BLACK LOTUS.</>,
-    intro: "Appointments are booked online. If you are unsure about a piercing or the conditions for minors, call or write to us.",
+    intro: "Booking your appointment online is quick and easy. Choose the service, your piercer and a time that suits you. If you need help choosing a piercing or have any other questions, we are happy to help.",
+    minors: { label: "PIERCING FOR MINORS", href: "/en/care#minors" },
     addressLabel: "01 / ADDRESS", city: "Prague 10 — Vršovice", building: "Red building, first entrance", map: "OPEN MAP",
     contactLabel: "02 / CONTACT", contactTitle: "Get in touch.",
     bookingLabel: "03 / BOOKING", bookingTitle: "Book your appointment.", bookingText: "Choose a service, piercer and available time online. Your booking confirmation will arrive by email.", bookingButton: "BOOK APPOINTMENT", bookingHref: "/en/booking",
@@ -27,7 +29,7 @@ const copy = {
 // Na desktopu je rozmístí mřížka: vlevo adresa + kontakt, vpravo rezervace + poukaz.
 export default function ContactPage({ lang }: { lang: Lang }) {
   const t = copy[lang];
-  return <PageShell lang={lang} slug="contact" eyebrow={t.eyebrow} title={t.title} intro={t.intro}>
+  return <PageShell lang={lang} slug="contact" eyebrow={t.eyebrow} title={t.title} intro={t.intro} introLink={t.minors}>
     <section className="contact-layout frame">
       <div className="contact-block contact-address">
         <p className="contact-index">{t.addressLabel}</p>
