@@ -64,7 +64,7 @@ html:has(.mobile-navigation[open]),body:has(.mobile-navigation[open]){overflow:h
 @media(max-width:600px){.site-header .brand small{display:none}.site-header .header-actions{gap:12px}.site-header .brand{font-size:11px}.mobile-navigation{padding-inline:14px}.mobile-navigation-top{min-height:64px}}
 
 /* Shared type hierarchy and spacing rhythm across both languages. */
-:root{--space-section:clamp(64px,7vw,104px);--space-heading:clamp(28px,3.2vw,48px);--type-section:clamp(36px,4.8vw,72px);--type-page:clamp(48px,7vw,104px);--type-card:clamp(24px,2.6vw,36px)}
+:root{--space-section:clamp(64px,7vw,104px);--space-heading:clamp(28px,3.2vw,48px);--type-section:clamp(36px,4.8vw,72px);--type-page:clamp(46px,5.6vw,82px);--type-card:clamp(24px,2.6vw,36px)}
 .section-space,.sub-section{padding-block:var(--space-section)}
 section.frame.section-space+section.frame.section-space{padding-top:0}
 h1,h2,h3{overflow-wrap:break-word}
@@ -87,7 +87,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .gift-card{margin-top:var(--space-section);min-height:380px}.gift-card h3{font-size:clamp(44px,6.2vw,88px);line-height:1.05;letter-spacing:-.055em;margin-top:72px}
 .article-grid a{min-height:285px;padding-bottom:48px}.article-grid h3{font-size:clamp(24px,2.3vw,34px);line-height:1.2;margin:32px 0 16px;letter-spacing:-.035em}.article-grid p{font-size:16px;line-height:1.5}
 .visit h2{font-size:clamp(44px,7.2vw,108px);line-height:1.04;letter-spacing:-.06em}.visit-details{margin-top:44px}
-.page-hero{min-height:0;padding-top:100px;padding-bottom:48px}.page-hero h1{font-size:var(--type-page);line-height:1.05;letter-spacing:-.055em}.page-intro{font-size:clamp(20px,2vw,28px);line-height:1.45;margin-top:32px;margin-left:35%;max-width:760px}.page-code{top:24px}
+.page-hero{min-height:0;padding-top:100px;padding-bottom:48px}.page-hero h1{font-size:var(--type-page);line-height:1.02;letter-spacing:-.05em}.page-intro{font-size:clamp(20px,2vw,28px);line-height:1.45;margin-top:32px;margin-left:35%;max-width:760px}.page-code{top:24px}
 .sub-visual{padding-block:48px}.sub-visual img{height:55vh;min-height:360px}.sub-visual strong{font-size:var(--type-card);line-height:1.15}
 .price-list strong{font-size:clamp(22px,2.5vw,34px);line-height:1.25}.price-list b{font-size:18px}.price-list>div{padding-block:20px}.price-note{font-size:14px;line-height:1.5}
 .booking-band{margin-bottom:var(--space-section);padding:40px}.booking-band h2{font-size:var(--type-section);line-height:1.06;letter-spacing:-.05em;margin-top:70px}.booking-band .button{top:40px;right:40px}
@@ -96,11 +96,11 @@ h1,h2,h3{overflow-wrap:break-word}
 .article-index h2{font-size:clamp(24px,2.5vw,36px);line-height:1.2;letter-spacing:-.035em}.article-index p{font-size:16px;line-height:1.5}
 .contact-card{min-height:420px}.contact-card h2{font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-.04em;margin:48px 0 20px}
 .action-intro{margin-bottom:var(--space-heading)}.action-option{min-height:300px;padding-bottom:52px}.action-option strong{font-size:var(--type-card);line-height:1.2;margin-top:44px}.booking-info{margin-top:48px}.booking-info>div{min-height:0}.voucher-grid a{min-height:240px}.voucher-grid strong{font-size:clamp(44px,5vw,72px)}
-.article-page{padding-bottom:var(--space-section)}.article-hero{padding:80px 0 48px}.article-hero h1{font-size:clamp(40px,5.8vw,80px);line-height:1.1;letter-spacing:-.045em;margin-top:28px;max-width:1100px}.article-hero strong{margin-top:32px;margin-left:20%;font-size:clamp(22px,2.2vw,30px);line-height:1.4}.article-body{padding:48px 0}.article-body section{padding-block:32px}.article-body h2{font-size:clamp(28px,3vw,40px);line-height:1.2;letter-spacing:-.035em;margin-bottom:20px}.article-cta p{font-size:clamp(24px,3vw,36px);line-height:1.2}
+.article-page{padding-bottom:var(--space-section)}.article-hero{padding:80px 0 48px}.article-hero h1{font-size:var(--type-page);line-height:1.1;letter-spacing:-.045em;margin-top:28px;max-width:1100px}.article-hero strong{margin-top:32px;margin-left:20%;font-size:clamp(22px,2.2vw,30px);line-height:1.4}.article-body{padding:48px 0}.article-body section{padding-block:32px}.article-body h2{font-size:clamp(28px,3vw,40px);line-height:1.2;letter-spacing:-.035em;margin-bottom:20px}.article-cta p{font-size:clamp(24px,3vw,36px);line-height:1.2}
 .footer{padding-block:56px;gap:32px}.copyright{margin-top:24px}.footer>div:not(.footer-brand){font-size:14px;line-height:1.5}
 @media(max-width:900px){.page-intro{margin-left:0}.article-index>a{gap:20px}.hero-action-row{grid-template-columns:1fr}.hero-action-row .button{width:max-content}}
 @media(max-width:600px){
- :root{--space-section:56px;--space-heading:28px;--type-section:clamp(32px,8.8vw,42px);--type-page:clamp(38px,10.5vw,56px);--type-card:clamp(24px,6.5vw,30px)}
+ :root{--space-section:56px;--space-heading:28px;--type-section:clamp(32px,8.8vw,42px);--type-page:clamp(38px,9.5vw,50px);--type-card:clamp(24px,6.5vw,30px)}
  .section-index{margin-bottom:22px}.hero h1{font-size:clamp(38px,12vw,64px);line-height:1.05;letter-spacing:-.055em}.hero-action-row .button{width:100%}
  .section-title-row{gap:20px}.intro-grid,.material-grid,.minor-grid{gap:28px}.intro-text{padding-top:0}.text-link{gap:18px}
  .service-row{grid-template-columns:28px minmax(0,1fr) 22px;gap:12px}.knowledge-links a{grid-template-columns:32px minmax(0,1fr) 22px;gap:12px;padding-block:20px}
@@ -115,7 +115,7 @@ h1,h2,h3{overflow-wrap:break-word}
  .archive,.article-index,.contact-grid,.action-page{padding-block:32px 56px}.archive{gap:36px}.article-index>a{gap:16px;padding-block:24px}
  .contact-card{min-height:0;padding:24px}.contact-card h2{margin-top:32px}.contact-card .button{margin-top:24px}.contact-card a{overflow-wrap:anywhere}
  .action-intro{margin-bottom:28px}.action-option{min-height:260px;padding:24px 24px 52px}.action-option strong{margin-top:32px}.booking-info{margin-top:32px}.voucher-grid a{min-height:220px}
- .article-hero{padding:64px 0 32px}.article-hero h1{font-size:clamp(34px,9vw,48px);line-height:1.12}.article-hero strong{margin:24px 0 0;font-size:22px}.article-body{padding-block:24px}.article-body section{grid-template-columns:24px minmax(0,1fr);gap:14px;padding-block:28px}.article-body h2{font-size:28px}.article-cta{padding:24px}
+ .article-hero{padding:64px 0 32px}.article-hero h1{font-size:var(--type-page);line-height:1.12}.article-hero strong{margin:24px 0 0;font-size:22px}.article-body{padding-block:24px}.article-body section{grid-template-columns:24px minmax(0,1fr);gap:14px;padding-block:28px}.article-body h2{font-size:28px}.article-cta{padding:24px}
  .footer{padding-block:40px;gap:28px}.copyright{margin-top:12px}
 }
 
@@ -278,7 +278,7 @@ h1,h2,h3{overflow-wrap:break-word}
 /* Price page hierarchy */
 .page-cenik .page-hero{padding-top:82px;padding-bottom:36px;border-bottom:0}
 .page-booking .page-hero{padding-top:82px;padding-bottom:28px;border-bottom:0}
-.page-booking .page-hero h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em}
+.page-booking .page-hero h1{font-size:var(--type-page);line-height:1.02;letter-spacing:-.05em}
 .page-booking .page-intro{margin-top:24px}
 .page-booking .page-code{display:none}
 .page-booking .booking-page-content{padding-top:12px}
@@ -303,7 +303,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .booking-contact p{max-width:680px;font-size:17px;line-height:1.55;color:#454b49;margin:0 0 24px}
 .booking-contact>div{display:flex;flex-wrap:wrap;gap:12px 36px;font-size:15px}
 .booking-contact a{text-decoration:underline;text-underline-offset:4px}
-.page-cenik .page-hero h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em}
+.page-cenik .page-hero h1{font-size:var(--type-page);line-height:1.02;letter-spacing:-.05em}
 .page-cenik .page-intro{margin-top:26px}
 .page-cenik .price-tabs-label{margin-bottom:14px;font-size:12px;letter-spacing:.14em;color:var(--ink)}
 .page-cenik .price-tabs{gap:10px;padding:18px 0 30px}
@@ -311,7 +311,7 @@ h1,h2,h3{overflow-wrap:break-word}
 @media(max-width:600px){
   .page-cenik .page-hero{padding-top:64px;padding-bottom:28px}
   .page-booking .page-hero{padding-top:64px;padding-bottom:24px}
-  .page-booking .page-hero h1{font-size:clamp(38px,9.5vw,50px)}
+  .page-booking .page-hero h1{font-size:var(--type-page)}
   .page-booking .page-intro{margin-top:18px}
   .page-booking .booking-page-content{padding-top:8px}
   .booking-primary{padding:22px 0 44px}
@@ -328,7 +328,7 @@ h1,h2,h3{overflow-wrap:break-word}
   .page-booking .booking-info{margin-top:44px}
   .booking-contact{margin-top:42px;padding-top:28px}
   .booking-contact p{font-size:16px}
-  .page-cenik .page-hero h1{font-size:clamp(38px,9.5vw,50px)}
+  .page-cenik .page-hero h1{font-size:var(--type-page)}
   .page-cenik .page-intro{margin-top:20px}
   .page-cenik .price-tabs-label{font-size:11px}
   .page-cenik .price-tabs{padding-top:14px;padding-bottom:22px}
@@ -389,7 +389,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .studio-anchor{scroll-margin-top:92px}
 .studio-v3-hero{padding-top:clamp(70px,7vw,106px);border-bottom:1px solid var(--ink)}
 .studio-v3-hero-main{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:clamp(48px,8vw,130px);align-items:end;padding-bottom:clamp(44px,5vw,68px)}
-.studio-v3-hero-copy h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em;font-weight:500;margin:0;text-transform:uppercase}
+.studio-v3-hero-copy h1{font-size:var(--type-page);line-height:1.02;letter-spacing:-.05em;font-weight:500;margin:0;text-transform:uppercase}
 .studio-v3-hero-copy>p:last-child{margin:38px 0 0;font-size:clamp(22px,2.2vw,32px);line-height:1.15;letter-spacing:-.035em}
 .studio-v3-hero-image{width:100%;aspect-ratio:16/7;overflow:hidden;background:var(--cold)}
 .studio-v3-hero-image img{width:100%;height:100%;object-fit:cover;object-position:center 53%;filter:saturate(.9) contrast(1.02)}
@@ -472,7 +472,7 @@ h1,h2,h3{overflow-wrap:break-word}
   .studio-anchor{scroll-margin-top:74px}
   .studio-v3-hero{padding-top:72px}
   .studio-v3-hero-main{grid-template-columns:1fr;gap:54px;padding-bottom:38px}
-  .studio-v3-hero-copy h1{font-size:clamp(38px,9.5vw,50px)}
+  .studio-v3-hero-copy h1{font-size:var(--type-page)}
   .studio-v3-hero-copy>p:last-child{margin-top:26px;font-size:23px}
   .studio-v3-hero-image{aspect-ratio:4/3}
   .studio-v3-hero-image img{object-position:44% center}
@@ -511,7 +511,7 @@ h1,h2,h3{overflow-wrap:break-word}
 
 /* CARE guide — scoped to the existing care route */
 .care-guide-hero{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:clamp(48px,8vw,130px);align-items:end;padding-top:clamp(70px,7vw,106px);padding-bottom:clamp(44px,5vw,68px);border-bottom:1px solid var(--ink)}
-.care-guide-hero-copy h1{font-size:clamp(46px,5.6vw,82px);line-height:1.02;letter-spacing:-.05em;font-weight:500;margin:0;text-transform:uppercase}
+.care-guide-hero-copy h1{font-size:var(--type-page);line-height:1.02;letter-spacing:-.05em;font-weight:500;margin:0;text-transform:uppercase}
 .care-guide-hero-copy>p:last-child{max-width:720px;font-size:clamp(22px,2.2vw,32px);line-height:1.2;letter-spacing:-.035em;margin:38px 0 0}
 .care-guide [id]{scroll-margin-top:92px}
 .care-guide-section{padding-block:clamp(75px,9vw,130px);border-bottom:1px solid var(--line)}
@@ -583,7 +583,7 @@ h1,h2,h3{overflow-wrap:break-word}
 .care-guide-consult{border-top:1px solid var(--ink);border-bottom:0}
 .care-guide-consult p:not(.care-guide-index){max-width:700px;font-size:18px;margin-bottom:28px}
 @media(max-width:900px){.care-guide-hero{grid-template-columns:1.4fr .8fr;gap:40px}.care-guide-duration-layout{grid-template-columns:1fr 260px;gap:28px}.care-guide-principles article{grid-template-columns:42px 1fr}.care-guide-principles p{grid-column:2}.care-guide-consent{gap:30px}}
-@media(max-width:600px){.care-guide-hero{grid-template-columns:1fr;gap:44px;padding-top:72px;padding-bottom:38px}.care-guide-hero-copy h1{font-size:clamp(38px,9.5vw,50px)}.care-guide-hero-copy>p:last-child{font-size:22px;margin-top:26px}.care-guide [id]{scroll-margin-top:74px}.care-guide-section{padding-block:70px}.care-guide-section h2{font-size:clamp(36px,10vw,48px)}.care-guide-section h3{font-size:27px;margin-top:45px}.care-guide-opening,.care-guide-duration-layout,.care-guide-healing-grid,.care-guide-consent{grid-template-columns:1fr;gap:26px}.care-guide-opening img{max-height:none}.care-guide-steps{grid-template-columns:1fr;gap:0}.care-guide-steps article{border-bottom:1px solid var(--line);padding:20px 0}.care-guide-steps h4{margin:10px 0}.care-guide-principles article{gap:12px;padding:22px 0}.care-guide-duration-layout>img{max-width:440px}.care-guide-duration-row{grid-template-columns:minmax(0,1fr) minmax(120px,auto);font-size:14px}.care-guide-dark-note{grid-template-columns:1fr;gap:8px}.care-guide-ages article{grid-template-columns:1fr;gap:8px}.care-guide-ages article>span{font-size:70px}.care-guide-consent{margin-top:45px}.care-guide-consent .button{width:100%;font-size:10px;gap:12px}.care-guide-faq-item button{grid-template-columns:28px minmax(0,1fr) 24px;gap:10px;padding:22px 0;font-size:19px}.care-guide-faq-answer{margin-left:38px}.care-guide-consult .button{width:100%}}
+@media(max-width:600px){.care-guide-hero{grid-template-columns:1fr;gap:44px;padding-top:72px;padding-bottom:38px}.care-guide-hero-copy h1{font-size:var(--type-page)}.care-guide-hero-copy>p:last-child{font-size:22px;margin-top:26px}.care-guide [id]{scroll-margin-top:74px}.care-guide-section{padding-block:70px}.care-guide-section h2{font-size:clamp(36px,10vw,48px)}.care-guide-section h3{font-size:27px;margin-top:45px}.care-guide-opening,.care-guide-duration-layout,.care-guide-healing-grid,.care-guide-consent{grid-template-columns:1fr;gap:26px}.care-guide-opening img{max-height:none}.care-guide-steps{grid-template-columns:1fr;gap:0}.care-guide-steps article{border-bottom:1px solid var(--line);padding:20px 0}.care-guide-steps h4{margin:10px 0}.care-guide-principles article{gap:12px;padding:22px 0}.care-guide-duration-layout>img{max-width:440px}.care-guide-duration-row{grid-template-columns:minmax(0,1fr) minmax(120px,auto);font-size:14px}.care-guide-dark-note{grid-template-columns:1fr;gap:8px}.care-guide-ages article{grid-template-columns:1fr;gap:8px}.care-guide-ages article>span{font-size:70px}.care-guide-consent{margin-top:45px}.care-guide-consent .button{width:100%;font-size:10px;gap:12px}.care-guide-faq-item button{grid-template-columns:28px minmax(0,1fr) 24px;gap:10px;padding:22px 0;font-size:19px}.care-guide-faq-answer{margin-left:38px}.care-guide-consult .button{width:100%}}
 @media(prefers-reduced-motion:reduce){.care-guide-faq-answer{transition:none}}
 @media(max-width:600px){
   .care-guide-duration-table h3{font-size:13px;margin:0;padding:0 0 15px}
